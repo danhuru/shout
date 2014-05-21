@@ -1,0 +1,4 @@
+$(function()
+{
+    $('#newsfeed').jScrollPane();
+});
