@@ -4,28 +4,12 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05b7c534-71b7-4b7d-a96b-2c45947a6ec3" name="Default" comment="Second Commit&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Users.php" afterPath="$PROJECT_DIR$/application/models/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/create.php" afterPath="$PROJECT_DIR$/application/controllers/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/create.php" afterPath="$PROJECT_DIR$/application/views/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/editprofile.php" afterPath="$PROJECT_DIR$/application/controllers/editprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/editprofile.php" afterPath="$PROJECT_DIR$/application/views/editprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fb_custom.js" afterPath="$PROJECT_DIR$/js/fb_custom.js" />
+    <list default="true" id="05b7c534-71b7-4b7d-a96b-2c45947a6ec3" name="Default" comment="Moved from session to database facebook info&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/search.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fb_login.js" afterPath="$PROJECT_DIR$/js/fb_login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/header.php" afterPath="$PROJECT_DIR$/application/views/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/home.css" afterPath="$PROJECT_DIR$/css/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/application/controllers/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/home.php" afterPath="$PROJECT_DIR$/application/views/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/invite.php" afterPath="$PROJECT_DIR$/application/controllers/invite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/invite.php" afterPath="$PROJECT_DIR$/application/views/invite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/login.css" afterPath="$PROJECT_DIR$/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/login.php" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/preview.php" afterPath="$PROJECT_DIR$/application/controllers/preview.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/preview.php" afterPath="$PROJECT_DIR$/application/views/preview.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/search.php" afterPath="$PROJECT_DIR$/application/controllers/search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/search.php" afterPath="$PROJECT_DIR$/application/views/search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/viewprofile.php" afterPath="$PROJECT_DIR$/application/controllers/viewprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/viewprofile.php" afterPath="$PROJECT_DIR$/application/views/viewprofile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/topmenu.js" afterPath="$PROJECT_DIR$/js/topmenu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -49,64 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="35" selection-start="3530" selection-end="3530" vertical-scroll-proportion="-59.5" vertical-offset="0" max-vertical-offset="4505">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="75" selection-start="2130" selection-end="2134" vertical-scroll-proportion="-12.269231" vertical-offset="446" max-vertical-offset="1003">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="53" selection-start="398" selection-end="398" vertical-scroll-proportion="0.24626866" vertical-offset="123" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fb_login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fb_login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="50" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="816">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fb_custom.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/fb_custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="5" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="11" selection-start="1812" selection-end="1924" vertical-scroll-proportion="-7.8461537" vertical-offset="918" max-vertical-offset="1598">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="16" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2363">
+            <state line="3" column="44" selection-start="231" selection-end="231" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -115,16 +45,36 @@
       <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="14" selection-start="1688" selection-end="1688" vertical-scroll-proportion="-8.0" vertical-offset="561" max-vertical-offset="1615">
+            <state line="5" column="1" selection-start="33" selection-end="167" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/home.css">
+      <file leaf-file-name="fb_login.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/fb_login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="17" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="7225">
+            <state line="12" column="43" selection-start="710" selection-end="710" vertical-scroll-proportion="0.34228188" vertical-offset="0" max-vertical-offset="799">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topmenu.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/topmenu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="1" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="850">
+              <folding>
+                <element signature="e#32#678#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fb_load_sdk.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fb_load_sdk.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="41" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
               <folding />
             </state>
           </provider>
@@ -186,15 +136,15 @@
         <option value="$PROJECT_DIR$/application/views/invite.php" />
         <option value="$PROJECT_DIR$/application/controllers/invite.php" />
         <option value="$PROJECT_DIR$/application/controllers/invitefriends.php" />
-        <option value="$PROJECT_DIR$/application/views/invitefriends.php" />
         <option value="$PROJECT_DIR$/css/invitefriends.css" />
-        <option value="$PROJECT_DIR$/application/views/header.php" />
-        <option value="$PROJECT_DIR$/js/topmenu.js" />
         <option value="$PROJECT_DIR$/js/fb_custom.js" />
         <option value="$PROJECT_DIR$/css/login.css" />
-        <option value="$PROJECT_DIR$/js/fb_login.js" />
         <option value="$PROJECT_DIR$/application/controllers/login.php" />
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
+        <option value="$PROJECT_DIR$/js/fb_login.js" />
+        <option value="$PROJECT_DIR$/js/topmenu.js" />
+        <option value="$PROJECT_DIR$/application/views/invitefriends.php" />
+        <option value="$PROJECT_DIR$/application/views/header.php" />
       </list>
     </option>
   </component>
@@ -450,7 +400,11 @@
       <created>1400658342727</created>
       <updated>1400658342727</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Moved from session to database facebook info">
+      <created>1400685861732</created>
+      <updated>1400685861732</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -463,7 +417,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.06808199" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16544656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26647145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26647145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12913907" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -513,7 +467,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Second Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second Commit" />
+    <MESSAGE value="Moved from session to database facebook info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved from session to database facebook info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -546,11 +501,6 @@
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="254" column="38" selection-start="8885" selection-end="8886" vertical-scroll-proportion="0.4880734" vertical-offset="4052" max-vertical-offset="6307" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fb_load_sdk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/preview.css">
@@ -829,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/invitefriends.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="301" selection-end="301" vertical-scroll-proportion="0.26842105" vertical-offset="0" max-vertical-offset="799">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="91" column="35" selection-start="3530" selection-end="3530" vertical-scroll-proportion="-59.5" vertical-offset="0" max-vertical-offset="4505">
@@ -843,44 +786,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/topmenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="7" selection-start="444" selection-end="444" vertical-scroll-proportion="0.71308726" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="16" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2363">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fb_custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="5" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="75" selection-start="2130" selection-end="2134" vertical-scroll-proportion="-12.269231" vertical-offset="446" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fb_login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="50" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.0" vertical-offset="139" max-vertical-offset="816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="14" selection-start="1688" selection-end="1688" vertical-scroll-proportion="-8.0" vertical-offset="561" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
@@ -894,7 +802,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="53" selection-start="398" selection-end="398" vertical-scroll-proportion="0.24626866" vertical-offset="123" max-vertical-offset="765">
+        <state line="22" column="2" selection-start="539" selection-end="539" vertical-scroll-proportion="0.45062837" vertical-offset="123" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fb_custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="1" selection-start="217" selection-end="217" vertical-scroll-proportion="0.11409396" vertical-offset="0" max-vertical-offset="596">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/invitefriends.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="3" selection-start="41" selection-end="41" vertical-scroll-proportion="0.11929824" vertical-offset="0" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="44" selection-start="231" selection-end="231" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fb_load_sdk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="41" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/topmenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="1" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="850">
+          <folding>
+            <element signature="e#32#678#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="1" selection-start="33" selection-end="167" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fb_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="43" selection-start="710" selection-end="710" vertical-scroll-proportion="0.34228188" vertical-offset="0" max-vertical-offset="799">
           <folding />
         </state>
       </provider>

@@ -20,10 +20,6 @@ class Home extends CI_Controller {
 
         // GET USER_EVENTS
 
-        $login_url = $this->facebook->getLogoutUrl();
-        echo 'Please <a href="' . $login_url . '">login.</a>';
-        session_destroy();
-
         $events=$this->Users->get_user_events($user_id);
 
         // LOAD THE VIEWS

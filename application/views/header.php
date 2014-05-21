@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/header.css'); ?>">
 <script src="/shout/js/jquery-1.11.0.min.js"></script>
+<script src="js/fb_load_sdk.js" ></script>
 <script src="/shout/js/topmenu.js"></script>
 
 <div id="header">
@@ -43,7 +44,7 @@
 
             <div id="link" onmouseover="dropdown()" onclick="redirect('viewprofile')">View profile</div>
             <div id="link" onmouseover="dropdown()" onclick="redirect('editprofile')">Edit profile</div>
-            <div id="link" onmouseover="dropdown()" onclick="redirect('home/logout')">Log Out</div>
+            <div id="link" onmouseover="dropdown()" onclick="logout()">Log Out</div>
 
         </div >
 

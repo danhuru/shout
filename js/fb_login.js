@@ -12,7 +12,6 @@ window.fbAsyncInit = function() {
     FB.Event.subscribe('auth.authResponseChange', function(response) {
         // Here we specify what we do with the response anytime this event occurs.
 
-        alert(response.status);
 
         if (response.status === 'connected') {
             // The response object is returned with a status field that lets the app know the current
