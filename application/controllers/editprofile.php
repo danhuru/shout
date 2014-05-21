@@ -16,28 +16,23 @@ class Editprofile extends CI_Controller {
         try {
 
 
-        $user_id = $this->facebook->getUser();
+       $user_id = $this->facebook->getUser();
 
     //    $username = $this->facebook->api('/me','GET'); //test login
 
-        $user_id='1570612986';
 
-        $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
-        $fb_info=unserialize(base64_decode($fromDatabase)); // decode $fb_info
 
-        //Get last education
+       // $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
+       // $fb_info=unserialize(base64_decode($fromDatabase)); // decode $fb_info
 
-        $i=0;
-        foreach ($fb_info[0]['education'] as $school)
-        $schools[$i++]= $school['school']['name'];
+        $fb_info=$this->Users->select_user($user_id); // GET USER FACEBOOK INFO
 
         $hobbies=$this->Users->get_hobbies($user_id);
         $aboutme=$this->Users->get_aboutme($user_id);
-        $bckpic=$this->Users->get_bckpic($user_id);
 
 
         $this->load->view('header',array('data' => $fb_info));
-        $this->load->view('editprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme,'bckpic' => $bckpic, 'schools' => $schools, 'user_id' => $user_id)); // load the view
+        $this->load->view('editprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
         $this->load->view('footer');
 
 

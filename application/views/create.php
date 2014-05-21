@@ -29,25 +29,25 @@ $image= base_url('images/background'.$bck.'.jpg');
     <br>
     <div id="mainbox">
         <br>
-        <div id="loggedin">Logged in as <?php echo $data[0]['name'];?>.</div>
+        <div id="loggedin">Logged in as <?php echo $data['USER_NAME'];?>.</div>
         <br>
         <br>
         <div id="mainbox_contents">
 
             <div id="profile_info">
-                <img src="<?php echo $data[0]['pic_big'];?>"
+                <img src="<?php echo $data['PIC_BIG'];?>"></img>
                 <br>
-                <h3><?php echo $data[0]['name'];?> </h3>
+                <h3><?php echo $data['USER_NAME'];?> </h3>
                 <Br>
-                <?php echo $data[0]['sex'].', '.$data[0]['relationship_status'];?>
+                <?php echo $data['USER_SEX'].', '.$data['RELATIONSHIP'];?>
                 <br>
-                <?php echo $data[0]['friend_count'].' friends'; ?>
+                <?php echo $data['FRIEND_COUNT'].' friends'; ?>
                 <br>
-                <?php echo $data[0]['current_location']['name']; ?>
+                <?php echo $data['CURRENT_LOCATION']; ?>
                 <br>
-                <?php echo $data[0]['education'][0]['school']['name']; ?> //  show all
+                <?php echo $data['CURRENT_EDUCATION']; ?>
                 <br>
-                <?php echo $data[0]['work'][0]['employer']['name']; ?> // show all
+                <?php echo $data['CURRENT_WORK']; ?>
             </div>
 
             <div id="profile_form">

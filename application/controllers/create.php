@@ -7,25 +7,19 @@ class Create extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('Passions'); // Load the Passions Model Class
+        $this->load->model('Users');
     }
 
     public function index()
     {
-        $user_id='1570612986';
+        $user_id = $this->facebook->getUser();
+        $user_fb_info=$this->Users->select_user($user_id);
 
-        $fql ='select pic_big, pic_small, name, birthday_date, sex, relationship_status, friend_count, current_location, education, work from user where uid='.$user_id;
-        $fb_info = $this->facebook->api(array(
-            'method' => 'fql.query',
-            'query' => $fql,
-        ));
+      // $toDatabse = base64_encode(serialize($fb_info)); // encode $fb_info
+       // $this->session->set_userdata('fb_info', $toDatabse); // save to ci_sessions
 
-        $toDatabse = base64_encode(serialize($fb_info)); // encode $fb_info
-        $this->session->set_userdata('fb_info', $toDatabse); // save to ci_sessions
+        $this->load->view('create',array('data' => $user_fb_info));
 
-        $this->load->view('create',array('data' => $fb_info));
-
-        //$this->load->view('spread/autocomplete');
     }
     public function get_hints($str)
     {

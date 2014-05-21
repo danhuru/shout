@@ -7,51 +7,43 @@ class Search extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('Passions');
-
     }
 
     public function index()
     {
+        $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
+        $fb_info=unserialize(base64_decode($fromDatabase)); // decode $fb_info
 
-       $this->load->view('search');
-
+        $this->load->view('header',array('data' => $fb_info));
+        $this->load->view('search');
+        $this->load->view('footer');
     }
 
-    public function facebook_search()
-    {
-/* make the API call */
+    public function searchResult($filter)
 
-     $access_token =  $this->facebook->getAccessToken();
-        $this->facebook->setAccessToken($access_token);
-
-        $user_id = $this->facebook->getUser();
-
-$response = $this->facebook->api("1570612986/home");
-
-$fb_json=json_encode($response);
-
-echo $fb_json;
-/* handle the result */
-    }
-
-    public function passions_search($str)
     {
 
-        $result=$this->Passions->get_hints($str);
 
-       // print_r($result);
-        echo json_encode($result);
 
-    /*  if ($result) {
+        // Build HTML list
 
-       foreach ($result as $row)
-
+        for ($id=0; $id<count($data); $id++)
         {
-            echo $row['user_id'].' '.$row['passions'].'<Br>';
+            if ($filter!="show_me_all") {
+                if (stripos($data[$id]['name'],$filter) !== FALSE)
+                {
+                    echo "<div id='divfriends'>".'<img id="pic" src="'.$data[$id]['pic_square'].'"><text id="textname">'.$data[$id]['name'].'</text><button class ="invitebutton" id="friend_'.$data[$id]['uid'].'" onclick="invite('.$data[$id]['uid'].',\''.'\')">Invite</button>'."</div>";
+                }
+            }
+            else
+            {
+                echo "<div id='divfriends'>".'<img id="pic" src="'.$data[$id]['pic_square'].'"><text id="textname">'.$data[$id]['name'].'</text><button class ="invitebutton" id="friend_'.$data[$id]['uid'].'" onclick="invite('.$data[$id]['uid'].',\''.'\')">Invite</button>'."</div>";
+            }
         }
-    }*/
+
     }
+
+
 
 
 }

@@ -24,8 +24,9 @@ class Login extends CI_Controller {
 
      //FIRST CHECK IF USER IS LOGGED IN FACEBOOK
 
-        $user_id = $this->facebook->getUser();
-      //  echo $user_id;
+
+       $user_id = $this->facebook->getUser();
+        //  echo $user_id;
 
     if($user_id) {
 
@@ -33,25 +34,28 @@ class Login extends CI_Controller {
         // If not, we'll get an exception, which we handle below.
         try {
 
-         //  $username = $this->facebook->api('/me','GET');
+           $test = $this->facebook->api('/me','GET');
 
-            $user_id="TestId"; //TEMP
-            $username="Test User"; //TEMP
+            $user_id = $this->facebook->getUser();
+            $user_fb_info=$this->Users->select_user($user_id);
 
+            if($user_fb_info) {
 
+            redirect(site_url('home'));
 
-         //  $user_exists=$this->Users->select_user($user_id); // Check username and redirect status
-        $user_exists=0;
-          if($user_exists) // If the user is in the db or not
-          {
-            echo $user_exists['username']; // TEMP
-            //$this->load->view('home',$user_exists['redirect']); // Redirect user to the proper page
-            redirect(site_url($user_exists['redirect']));
-          }
-            else {
-             //     $this->Users->insert_user($user_id, $username, 'create_profile');
-             //$this->load->view('create_profile'); // User has never logged in before. Redirect to Create_profile
-            redirect(site_url('create'));
+            }
+
+            else
+
+            {
+                $fql ='select uid, pic_big, pic, pic_small, name, birthday_date, sex, relationship_status, friend_count, current_location, education, work from user where uid='.$user_id;
+                $fb_info = $this->facebook->api(array(
+                    'method' => 'fql.query',
+                    'query' => $fql,
+                ));
+
+                $this->Users->insert_user($fb_info); //insert facebook info in db
+                redirect(site_url('create'));
             }
 
 

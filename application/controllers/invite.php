@@ -6,11 +6,12 @@ class Invite extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->model('Users');
     }
 
     private function get_friends()
     {
-        $user_id = $this->facebook->getUser(); // Get facebook user
+        $user_id = $this->facebook->getUser();
 
         // FQL select
 
@@ -30,11 +31,14 @@ class Invite extends CI_Controller {
 
      public function index()
     {
-        $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
-        $username=unserialize(base64_decode($fromDatabase)); // decode $fb_info
+       // $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
+       // $username=unserialize(base64_decode($fromDatabase)); // decode $fb_info
+
+        $user_id = $this->facebook->getUser();
+        $fb_info=$this->Users->select_user($user_id);
 
         $this->get_friends(); // call get_friends to retrieve facebook friends
-        $this->load->view('invite',array('data' => $username)); // load the view
+        $this->load->view('invite',array('data' => $fb_info)); // load the view
     }
 
 

@@ -36,19 +36,19 @@ $image= base_url('images/background'.$bck.'.jpg');
 
             <div id="profile_info">
 
-                <img id="profile_pic" src="<?php echo $data[0]['pic_big'];?>"></img>
-                <div id="profile_name"><?php echo $data[0]['name'];?>
+                <img id="profile_pic" src="<?php echo $data['PIC_BIG'];?>"></img>
+                <div id="profile_name"><?php echo $data['USER_NAME'];?>
                 </div>
                 <div id="profile_details">
 
                     <?php
 
-                    if ($data[0]['sex']) echo ucfirst($data[0]['sex']);
-                    if ($data[0]['relationship_status']) echo ', '.$data[0]['relationship_status'];
-                    if ($data[0]['friend_count']) echo '<br>Has '.$data[0]['friend_count'].' friends';
-                    if ($data[0]['current_location']['name']) echo '<br>Lives in '.$data[0]['current_location']['name'];
-                    if (end($schools)) echo '<br>Studied at '.end($schools);
-                    if ($data[0]['work'][0]['employer']['name']) echo '<br>Works at '.$data[0]['work'][0]['employer']['name'];
+                    if ($data['USER_SEX']) echo ucfirst($data['USER_SEX']);
+                    if ($data['RELATIONSHIP']) echo ', '.$data['RELATIONSHIP'];
+                    if ($data['FRIEND_COUNT']) echo '<br>Has '.$data['FRIEND_COUNT'].' friends';
+                    if ($data['CURRENT_LOCATION']) echo '<br>Lives in '.$data['CURRENT_LOCATION'];
+                    if ($data['CURRENT_EDUCATION']) echo '<br>Studied at '.$data['CURRENT_EDUCATION'];
+                    if ($data['CURRENT_WORK']) echo '<br>Works at '.$data['CURRENT_WORK'];
 
                     ?>
 
