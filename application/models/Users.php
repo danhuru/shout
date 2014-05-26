@@ -50,8 +50,6 @@ public function insert_user($fb_info)
         if ($query->num_rows() > 0)  return $query->result_array();
     }
 
-
-
 public function get_aboutme($user_id)
     {
         $this->db->select('user_id,aboutme,endorsements,author');

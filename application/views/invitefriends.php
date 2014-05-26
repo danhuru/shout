@@ -21,8 +21,8 @@ $image= base_url('images/background'.$bck.'.jpg');
 <div id="mainbox_contents">
 <p id="step_description"> Invite your facebook friends to endorse you! </p>
 <br>
-<p id="filter"><label id="label">Filter by name:</label>
-<input id="filter"type="text" size="30" onkeyup="showResult(this.value)"> </p>
+<p id="filter"><label id="label">Filter by name: </label>
+<input id="filter"type="text" size="150" onkeyup="showResult(this.value)"> </p>
 <div id="showfriends">
 <div id="showfriendsresults"></div>
 </div>

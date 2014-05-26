@@ -10,7 +10,7 @@
     </div>
     <div id ="rightmenu">
 
-        <a href="search.php"><img width=42px height=42px onmouseover="icon_switch(this,'search_hover.jpg')" onmouseout="icon_switch(this,'search.jpg')" src="<?php echo base_url('images/search.jpg');?>"></img></a>
+        <a href="search"><img width=42px height=42px onmouseover="icon_switch(this,'search_hover.jpg')" onmouseout="icon_switch(this,'search.jpg')" src="<?php echo base_url('images/search.jpg');?>"></img></a>
         <a href="search.php"><img width=42px height=42px onmouseover="icon_switch(this,'messages_hover.jpg')" onmouseout="icon_switch(this,'messages.jpg')" src="<?php echo base_url('images/messages.jpg');?>"></img></a>
         <a href="search.php"><img width=42px height=42px onmouseover="icon_switch(this,'alert_hover.jpg')" onmouseout="icon_switch(this,'alert.jpg')" src="<?php echo base_url('images/alert.jpg');?>"></img></a>
         <a href="invitefriends"><img id="settings" width=42px height=42px onmouseover="icon_switch(this,'settings_hover.jpg')" onmouseout="icon_switch(this,'settings.jpg')" src="<?php echo base_url('images/settings.jpg');?>"></img></a>

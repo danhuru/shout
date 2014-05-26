@@ -14,4 +14,31 @@ class Hobbies extends CI_Model {
         $this->db->delete('user_hobbies');
     }
 
+    public function search_hobbies($term,$user_id)
+    {
+        $this->db->select('*');
+        $this->db->from('user_hobbies');
+        $this->db->like('hobby', $term);
+        $this->db->join('users_facebook', 'user_hobbies.user_id = users_facebook.user_id','inner');
+       // $this->db->where('user_id !=', $user_id);
+        $this->db->order_by('user_hobbies.endorsements', "desc");
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->result_array();
+    }
+
+    public function search_hobbies_default($user_id)
+    {
+        $this->db->select('*');
+        $this->db->from('user_hobbies');
+        $this->db->join('users_facebook', 'user_hobbies.user_id = users_facebook.USER_ID','inner');
+       //  $this->db->where('user_id !=', $user_id);
+        $this->db->order_by('user_hobbies.user_id', "random");
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->result_array();
+    }
+
+
+
 }

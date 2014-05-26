@@ -26,180 +26,152 @@ body{
 {
     /*background-color: #BAD537;*/
     width: 100%;
-    height: 100%;
+    height: 95%;
     margin: auto;
 }
-#invitebox
+#searchbox
 {
-    background-color: rgba(255, 255, 255, 0.70);
-    color:black;
-    border-radius:25px;
-}
-#showResults
-{
-    margin: auto;
-    overflow-y: scroll;
-    text-align: left;
     margin-left: 15%;
-    width: 75%;
-    height: 60%;
-    border:1px solid white;
-    float:left;
+    width: auto%;
 }
-#label
+#search
 {
-    color: lightgrey;
+    width:50%;
+    height:5%;
     font-size: 16px;
+    border-radius: 4px;
+    padding-left: 1%;
+    margin-bottom: 2%;
+    background-color: rgba(60, 60, 60, 0.70);
+    color:white;
 }
-#showSearchResults
+#search:focus
 {
-    margin: auto;
-    width: 90%;
+    background-color: rgba(100, 100, 100, 0.70);
 }
-#divfriends
+#titles
 {
-    float:left;
-    width: 46%;
-    border-radius:5px;
-    background-color: rgba(255, 255, 255, 0.70);
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 15px;
-    /*border: 5px 5px 5px 5px; */
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+    color:white;
+    width: 65%;
+    margin-left: 11%;
+    margin-bottom: 1%;
+    height:3%;
+    background-color: rgba(10, 10, 10, 0.70);
+    padding-left: 3%;
+    padding-top:1%;
+    padding-bottom: 1%;
+    font-size: 18px;
+    font-weight: bold;
 }
-#button
+#resultsbox
 {
     float:left;
     margin-left: 10%;
-    margin-top: 15%;
+    overflow-y: auto;
+    height:80%;
+    width:68%;
 }
-.button {
-    background-color:#bbd537;
-    -webkit-border-top-left-radius:6px;
-    -moz-border-radius-topleft:6px;
-    border-top-left-radius:6px;
-    -webkit-border-top-right-radius:6px;
-    -moz-border-radius-topright:6px;
-    border-top-right-radius:6px;
-    -webkit-border-bottom-right-radius:6px;
-    -moz-border-radius-bottomright:6px;
-    border-bottom-right-radius:6px;
-    -webkit-border-bottom-left-radius:6px;
-    -moz-border-radius-bottomleft:6px;
-    border-bottom-left-radius:6px;
-    text-indent:0px;
-    border:1px solid #83c41a;
-    display:inline-block;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:20px;
-    font-weight:bold;
-    font-style:normal;
-    height:40px;
-    line-height:40px;
-    width:133px;
-    text-decoration:none;
-    text-align:center;
-    text-shadow:1px 1px 0px #689324;
-}
-.button:hover
+#showSearchResults
 {
-    background-color:#8cb82b;
-    cursor: hand;
+    width: 100%;
+    height: 95%;
+    /*border: 1px solid;*/
 }
-.button:active
+#user
 {
-    position:relative;
-    top:1px;
+    background-color: rgba(50, 50, 50, 0.70);
+    color:white;
+    width:43%;
+    height:27%;
+    margin-top: 3%;
+    margin-left:3%;
+    padding-left: 1%;
+    float:left;
+    border-radius: 10px;
+
+}
+#profile_info_left
+{
+    float:left;
+    width:26%;
+    margin-bottom: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 #pic
 {
     float:left;
-    margin-left: 3%;
-    margin-top: 1%;
-    margin-bottom: 1%;
 }
-#textname
+#pic img
+{
+    width:100%;
+    height:70%;
+}
+#username
 {
     float:left;
-    width:50%;
+    color:orange;
+    background-color: rgba(10, 10, 10, 0.70);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width:100%;
+}
+#profile_info
+{
+    float:left;
+    width:69%;
+    padding-top:4%;
+    padding-left: 5%;
+}
+#cur_location
+{
+    float:left;
+}
+#hobby
+{
+    float:left;
+    font-size: 110%;
+}
+#endorse_nr1
+{
+    float:left;
+    padding-left: 1%;
+}
+#show_nr_endorsement
+{
+    float:left;
+    padding-left: 1%;
+    font-size: 18px;
+}
+#interact
+{
+    float:left;
     margin-top: 6%;
+    width:100%;
+}
+#pic_interact
+{
+    float:left;
+}
+#viewprofile
+{
+    float:left;
+    width:30%;
+}
+#viewprofile:hover {cursor:hand;}
+#message
+{
+    float:left;
+    width:38%;
+    margin-left: 15%;
+}
+#message:hover  {cursor:hand;}
+#text
+{
+    float:left;
     margin-left: 5%;
-    margin-bottom: 5%;
-}
-.invitebutton
-{
-    float:right;
-    margin-top: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
-}
-.invitebutton
-{
-    background-color:#bbd537;
-    -webkit-border-top-left-radius:6px;
-    -moz-border-radius-topleft:6px;
-    border-top-left-radius:6px;
-    -webkit-border-top-right-radius:6px;
-    -moz-border-radius-topright:6px;
-    border-top-right-radius:6px;
-    -webkit-border-bottom-right-radius:6px;
-    -moz-border-radius-bottomright:6px;
-    border-bottom-right-radius:6px;
-    -webkit-border-bottom-left-radius:6px;
-    -moz-border-radius-bottomleft:6px;
-    border-bottom-left-radius:6px;
-    text-indent:0px;
-    border:1px solid #83c41a;
-    display:inline-block;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:13px;
-    font-weight:bold;
-    font-style:normal;
-    height:25px;
-    line-height:25px;
-    width:59px;
-    text-decoration:none;
-    text-align:center;
-    text-shadow:1px 1px 0px #689324;
-}
-.invitebutton:hover
-{
-    background-color:#8cb82b;
-    cursor: hand;
-}
-.invitebutton:active
-{
-    position:relative;
-    top:1px;
-}
-#step
-{
-    font-size: 50px;
-    color: lightgrey;
-}
-#step_description
-{
-    font-size: 25px;
-    color: lightgrey;
-    margin: auto;
-}
-#step_details
-{
-    padding-left: 15px;
-    padding-right: 15px;
-    color: lightgrey;
-}
-#loggedin
-{
-    float:right;
-    color: lightgrey;
-    padding-right: 5px;
-    margin-right: 3%;
+    margin-top: 3%;
 }
 #loader
 {

@@ -4,6 +4,7 @@
 
     <script type="text/javascript" src="/shout/js/home.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/home.css'); ?>">
+
          <!-- styles needed by jScrollPane -->
     <link rel="STYLESHEET" type="text/css" href="<?php echo base_url('css/jquery.jscrollpane.css'); ?>">
     <!-- latest jQuery direct from google's CDN -->
@@ -13,7 +14,7 @@
     <!-- the jScrollPane script -->
     <script type="text/javascript" src="/shout/js/jquery.jscrollpane.min.js"></script>
 
-    <script type="text/javascript" src="/shout/js/home.js"></script>
+
 
 </head>
 

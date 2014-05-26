@@ -50,6 +50,19 @@ body{
     color: lightgrey;
     font-size: 16px;
 }
+#filter
+{
+    width:60%;
+    font-size: 16px;
+    border-radius: 4px;
+    padding-left: 1%;
+    background-color: transparent;
+    color:white;
+}
+#filter:focus
+{
+    background-color: rgba(100, 100, 100, 0.70);
+}
 #showfriendsresults
 {
     margin: auto;
