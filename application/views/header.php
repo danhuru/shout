@@ -10,14 +10,13 @@
     </div>
     <div id ="rightmenu">
 
-        <a href="search"><img width=42px height=42px onmouseover="icon_switch(this,'search_hover.jpg')" onmouseout="icon_switch(this,'search.jpg')" src="<?php echo base_url('images/search.jpg');?>"></img></a>
-        <a href="search.php"><img width=42px height=42px onmouseover="icon_switch(this,'messages_hover.jpg')" onmouseout="icon_switch(this,'messages.jpg')" src="<?php echo base_url('images/messages.jpg');?>"></img></a>
-        <a href="search.php"><img width=42px height=42px onmouseover="icon_switch(this,'alert_hover.jpg')" onmouseout="icon_switch(this,'alert.jpg')" src="<?php echo base_url('images/alert.jpg');?>"></img></a>
-        <a href="invitefriends"><img id="settings" width=42px height=42px onmouseover="icon_switch(this,'settings_hover.jpg')" onmouseout="icon_switch(this,'settings.jpg')" src="<?php echo base_url('images/settings.jpg');?>"></img></a>
-
+        <a href="search"><img width=42px height=42px src="<?php echo base_url('images/search.jpg');?>"></img></a>
+        <a href="search.php"><img width=42px height=42px src="<?php echo base_url('images/messages.jpg');?>"></img></a>
+        <a href="search.php"><img width=42px height=42px src="<?php echo base_url('images/alert.jpg');?>"></img></a>
+        <a href="invitefriends"><img width=42px height=42px src="<?php echo base_url('images/settings.jpg');?>"></img></a>
 
     </div>
-    <div id ="mainmenu" onclick="dropdown()">
+    <div id ="mainmenu">
 
 
 
@@ -40,11 +39,11 @@
             </div>
         </a>
 
-        <div id="mainmenu_expanded" onmouseout="dropdown_fade()">
+        <div id="mainmenu_expanded">
 
-            <div id="link" onmouseover="dropdown()" onclick="redirect('viewprofile')">View profile</div>
-            <div id="link" onmouseover="dropdown()" onclick="redirect('editprofile')">Edit profile</div>
-            <div id="link" onmouseover="dropdown()" onclick="logout()">Log Out</div>
+            <div id="link" onclick="redirect('viewprofile')">View profile</div>
+            <div id="link" onclick="redirect('editprofile')">Edit profile</div>
+            <div id="link" onclick="logout()">Log Out</div>
 
         </div >
 

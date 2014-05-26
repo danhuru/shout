@@ -1,9 +1,9 @@
 <html>
 
 <head>
-   <script src="/shout/js/create_profile.js"></script>
-    <script src="/shout/js/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/create.css'); ?>"">
+    <script src="/shout/js/jquery-1.11.0.min.js"></script>
+    <script src="/shout/js/create.js"></script>
 </head>
 
 <body>
@@ -29,50 +29,81 @@ $image= base_url('images/background'.$bck.'.jpg');
     <br>
     <div id="mainbox">
         <br>
-        <div id="loggedin">Logged in as <?php echo $data['USER_NAME'];?>.</div>
-        <br>
-        <br>
-        <div id="mainbox_contents">
+           <div id="mainbox_contents">
 
             <div id="profile_info">
-                <img src="<?php echo $data['PIC_BIG'];?>"></img>
-                <br>
-                <h3><?php echo $data['USER_NAME'];?> </h3>
-                <Br>
-                <?php echo $data['USER_SEX'].', '.$data['RELATIONSHIP'];?>
-                <br>
-                <?php echo $data['FRIEND_COUNT'].' friends'; ?>
-                <br>
-                <?php echo $data['CURRENT_LOCATION']; ?>
-                <br>
-                <?php echo $data['CURRENT_EDUCATION']; ?>
-                <br>
-                <?php echo $data['CURRENT_WORK']; ?>
+
+                <img id="profile_pic" src="<?php echo $data['PIC_BIG'];?>"></img>
+                <div id="profile_name"><?php echo $data['USER_NAME'];?>
+                </div>
+                <div id="profile_details">
+
+                <?php
+
+                if ($data['USER_SEX']) echo ucfirst($data['USER_SEX']);
+                if ($data['RELATIONSHIP']) echo ', '.$data['RELATIONSHIP'];
+                if ($data['FRIEND_COUNT']) echo '<br>Has '.$data['FRIEND_COUNT'].' friends';
+                if ($data['CURRENT_LOCATION']) echo '<br>Lives in '.$data['CURRENT_LOCATION'];
+                if ($data['CURRENT_EDUCATION']) echo '<br>Studied at '.$data['CURRENT_EDUCATION'];
+                if ($data['CURRENT_WORK']) echo '<br>Works at '.$data['CURRENT_WORK'];
+
+                ?>
+                </div>
+
             </div>
 
             <div id="profile_form">
                 <form action="create_profile/commit_form" id="create_profile" method="post">
-                    <p>
-                        <label for='passions'>Passions</label><br><br>
-                        <input type="text" id="passions" name="passions" onkeyup="showHint(this.value)"/>
+
+                    <div id="addhobbies">
+
+                        <label>Add a hobby</label>
+                        <br><br>
+                        <input type="text" id="addhobby"></input>
+
+
+                        <div id="addhobbiessuggestions">
+
+                         e.g. tennis, reading...
+
+                        </div >
+
+
                         <input class="smallbutton" type="submit" name="submit" value="Add">
-                    </p>
+
+
+
+                    </div>
+
+
+
+                    <div id="showhobbies">
 
                     <p>My hobbies</p>
 
-                    <p>
-                        <label for='aboutme'>Say something about you</label><br><br>
-                        <input type="text" id="aboutme" name="aboutme" ></input>
+                    </div>
+
+                    <div id="addaboutmes">
+
+                        <label>Say something about you</label>
+                        <br><br>
+                        <input type="text" id="addaboutme" />
                         <input class="smallbutton" type="submit" name="submit" value="Add">
-                    </p>
+
+                    </div>
+
+                    <div id="showaboutme">
 
                     <p>My personality</p>
 
-                    <p>
-                        <label for='bckpic'>Background picture</label><br><br>
+                    </div>
+
+                    <div id="bckpic">
+
+                        <label>Background picture</label><br><br>
                         <input id="bckpic" type="file" name="pic" accept="image/*">
 
-                    </p>
+                    </div>
 
                 </form>
             </div>

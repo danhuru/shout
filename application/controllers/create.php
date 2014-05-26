@@ -8,6 +8,7 @@ class Create extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('Users');
+        $this->load->model('Hobbies');
     }
 
     public function index()
@@ -21,54 +22,20 @@ class Create extends CI_Controller {
         $this->load->view('create',array('data' => $user_fb_info));
 
     }
-    public function get_hints($str)
+    public function get_hints($term)
     {
         //if (strlen($str)>1) // Hint string has at least 2 chars
         //{
-        $hint=$this->Passions->get_hints($str);
-        if($hint)
+        $hints=$this->Hobbies->get_hobbies_hints($term);
+        if($hints)
         {
 
-       foreach($hint as $row)
+       foreach($hints as $hint)
          {
-             echo $row['passions'];
-
-                 //'<text id="added" onclick="addPassion(this.value)">'.$row['passions'].'</text> ';
-
-            // echo $row['passions'];
+             echo '<text id="option">'.$hint['hobby_desc'].'</text><br>';
           }
         }
       }
-
-    public function search($term) {
-        //connect to your database
-
-        //$term = trim(strip_tags($_GET['term']));//retrieve the search term that autocomplete sends
-
-        $hint=$this->Passions->get_hints($term);
-       // if($hint)
-//        {
-
-  //          foreach($hint as $row)
-    //        {
-      //          echo $row['passions'];
-
-       //     }
-       // }
-
-        echo json_encode($hint);//format the array into json data
-
-   /*     while ($row = mysql_fetch_array($result,MYSQL_ASSOC))//loop through the retrieved values
-        {
-            $row['value']=htmlentities(stripslashes($row['value']));
-            $row['id']=(int)$row['id'];
-            $row_set[] = $row;//build an array
-        }
-        echo json_encode($row_set);//format the array into json data
-    }
-*/
-
-}
 
     public function commit_form()
 

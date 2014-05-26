@@ -38,7 +38,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
             <div id="searchbox">
 
-            <input id="search" autocomplete="off" autofocus= type="text" size="30" onclick="this.value=''" onkeyup="searchResult(this.value)" value="type a hobby..." >
+            <input id="search" autocomplete="off" autofocus type="text" size="30" onclick="this.value=''" onkeyup="searchResult(this.value)" value="type a hobby..." >
 
             </div>
 

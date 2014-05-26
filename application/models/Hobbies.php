@@ -39,6 +39,16 @@ class Hobbies extends CI_Model {
         if ($query->num_rows() > 0)  return $query->result_array();
     }
 
+    public function get_hobbies_hints($term)
 
+    {
+        $this->db->select('*');
+        $this->db->from('hobbies');
+        $this->db->like('hobby_desc', $term);
+        $this->db->order_by('hobby_desc','desc');
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->result_array();
+    }
 
 }

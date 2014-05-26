@@ -12,25 +12,32 @@ window.fbAsyncInit = function() {
      FB.Event.subscribe("auth.logout", function() {window.location = '/shout'});
 };
 
-function icon_switch(x, img_desc)
-{
-    img_desc='images/'.concat(img_desc);
-    x.src=img_desc;
-}
+$(function(){
 
-function dropdown()
+    //Main menu
 
-    {
-        var x=document.getElementById("mainmenu_expanded");
-        x.style.display="block";
-        }
+    $("#mainmenu").click(function(){
+        $("#mainmenu_expanded").toggle();
+    });
+    $("#mainmenu_expanded").mouseleave(function(){
+        $("#mainmenu_expanded").hide();
+    });
 
- function dropdown_fade()
+    //Right menu
 
-    {
-        var x=document.getElementById("mainmenu_expanded");
-        x.style.display="none";
-        }
+    $("#rightmenu").find("img").hover(
+        function(){
+            $(this).attr("src",function(i,origValue){
+                return origValue.replace(".jpg","_hover.jpg");
+            });
+        },
+        function(){
+            $(this).attr("src",function(i,origValue){
+                return origValue.replace("_hover.jpg",".jpg");
+            });
+        });
+});
+
 
   function redirect(url)
     {
@@ -38,12 +45,6 @@ function dropdown()
         }
 
 
-function dropdown()
-
-{
-    var x=document.getElementById("mainmenu_expanded");
-    x.style.display="block";
-}
 
 function logout(){
 
