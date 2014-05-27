@@ -8,6 +8,11 @@
 
 <body>
 
+<div id="jquerypopup">
+
+
+</div>
+
 
 
 <div id="header">
@@ -53,67 +58,85 @@ $image= base_url('images/background'.$bck.'.jpg');
             </div>
 
             <div id="profile_form">
-                <form action="create_profile/commit_form" id="create_profile" method="post">
+
 
                     <div id="addhobbies">
 
-                        <label>Add a hobby</label>
-                        <br><br>
-                        <input type="text" id="addhobby"></input>
+                        <div id="titles">Add a hobby</div >
 
+                        <input type="text" id="addhobby" autocomplete="off" value="type here..."></input>
 
                         <div id="addhobbiessuggestions">
 
-                         e.g. tennis, reading...
-
-                        </div >
+                            e.g. tennis, reading...
 
 
-                        <input class="smallbutton" type="submit" name="submit" value="Add">
-
+                        </div>
 
 
                     </div>
 
-
-
                     <div id="showhobbies">
 
-                    <p>My hobbies</p>
+                    <div id="titles_small">My hobbies </div>
 
                     </div>
 
                     <div id="addaboutmes">
 
-                        <label>Say something about you</label>
-                        <br><br>
-                        <input type="text" id="addaboutme" />
-                        <input class="smallbutton" type="submit" name="submit" value="Add">
+                        <div id="titles">Say something about you</div>
+
+                        <input type="text" id="addaboutme" autocomplete="off" value="type here..."></input>
+
+                        <div id="addaboutmesuggestions">
+
+                            e.g. great listener, always punctual...
+
+                        </div>
+
+                        <input id="addaboutmebutton" class="smallbutton"  value="Add"></input>
 
                     </div>
 
                     <div id="showaboutme">
 
-                    <p>My personality</p>
+                    <div id="titles_small">My personality </div>
 
                     </div>
 
                     <div id="bckpic">
 
-                        <label>Background picture</label><br><br>
-                        <input id="bckpic" type="file" name="pic" accept="image/*">
+                        <div id="titles">Background picture</div>
+
+
+                        <?php echo $error;?>
+
+                        <?php echo form_open_multipart('create/do_upload');?>
+
+                        <input type="file" name="userfile" size="20" />
+
+                        <br /><br />
+
+                        <input type="submit" value="upload" />
+
+                         </form>
+
+
 
                     </div>
 
-                </form>
+
+                <div id="button">
+
+                 <input class="button" type="submit" name="submit" value="Next">
+
+
+                </div>
+
             </div>
 
 
-            <div id="button">
-                <form action="preview" method="post">
-                    <input class="button" type="submit" name="submit" value="Next">
-                </form>
-            </div>
+
         </div>
     </div>
 </div>

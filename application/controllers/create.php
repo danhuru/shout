@@ -9,6 +9,7 @@ class Create extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('Users');
         $this->load->model('Hobbies');
+        $this->load->helper(array('form', 'url'));
     }
 
     public function index()
@@ -19,7 +20,8 @@ class Create extends CI_Controller {
       // $toDatabse = base64_encode(serialize($fb_info)); // encode $fb_info
        // $this->session->set_userdata('fb_info', $toDatabse); // save to ci_sessions
 
-        $this->load->view('create',array('data' => $user_fb_info));
+        $this->load->view('create',array('data' => $user_fb_info, 'error'=>' '));
+      //  $this->load->view('upload_form', array('error' => ' ' ));
 
     }
     public function get_hints($term)
@@ -36,6 +38,30 @@ class Create extends CI_Controller {
           }
         }
       }
+
+    function do_upload()
+    {
+        $config['upload_path'] = './images/upload/';
+        $config['allowed_types'] = 'gif|jpg|png';
+       $config['max_size']	= '15000000';
+     //   $config['max_width']  = '1024';
+     //   $config['max_height']  = '768';
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload())
+        {
+            echo "bla";
+            $error = array('error' => $this->upload->display_errors());
+            echo $error['error'];
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+
+
+        }
+    }
 
     public function commit_form()
 
