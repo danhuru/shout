@@ -94,7 +94,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                         </div>
 
-                        <input id="addaboutmebutton" class="smallbutton"  value="Add"></input>
+                        <input id="addaboutmebutton" type="button" class="smallbutton"  value="Add"></input>
 
                     </div>
 
@@ -112,7 +112,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                         <div id="titles">Background picture (optional)</div>
 
 
-                        <form name="multiform" id="multiform" action="do_upload" method="POST" enctype="multipart/form-data">
+                        <form name="multiform" id="multiform" action="create/do_upload" method="POST" enctype="multipart/form-data">
                          (.jpg olny) <input type="file" name="userpic" />
                         </form>
 
@@ -125,7 +125,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                     </div>
 
                 <div id="button">
-                    <input id="formprofilebutton" class="button" type="button" value="Next">
+                    <input id="submitprofile" class="button" type="button" value="Next">
                 </div>
 
             </div>

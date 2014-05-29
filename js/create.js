@@ -43,7 +43,7 @@ $("#addhobbies").mouseleave(function(){
     {
         el='<div id="hobbydetails">';
 
-        el=el+'<div id="hobby_name">'+hobby+'</div>'; // add hobby title
+        el=el+'<div id="hobby_name" class="hobbyname">'+hobby+'</div>'; // add hobby title
 
         // show images
         el=el+'<div id="img_endorse">';
@@ -62,7 +62,7 @@ $("#addhobbies").mouseleave(function(){
 
         el=el+'<div id="details">';
 
-        el=el+'<input type="text" id="detailsinput" autocomplete="off" value="what, where, with who..."></input>';
+        el=el+'<input type="text" id="detailsinput" class="hobbydetails" autocomplete="off" value="what, where, with who..."></input>';
 
         el=el+'</div>'; //end details
 
@@ -97,7 +97,7 @@ $("#addhobbies").mouseleave(function(){
     function add_aboutme(aboutme)
     {
         el='<div id="aboutmecircle" style="background-image: url(\'/shout/images/circle'+Math.floor((Math.random() * 4) + 1)+'.png\')">';
-        el=el+'<div id="what">';
+        el=el+'<div id="what" class="aboutme">';
         el=el+aboutme;
         el=el+'</div>';
         el=el+'<div id="deletecircle">x</div>';
@@ -213,6 +213,7 @@ function getResults(str){
 
         $("#multiform").submit(function(e)
         {
+
             $("#multi-msg").html('<img src="/shout/images/ajax-loader4.gif"/>');
 
             var formObj = $(this);
@@ -233,7 +234,6 @@ function getResults(str){
                     processData:false,
                     success: function(data, textStatus, jqXHR)
                     {
-
                         if(data.substr(0,6)=='Error:') $("#multi-msg").text(data);
                         else
                         {
@@ -291,5 +291,77 @@ function getResults(str){
 
 // Submit Profile form
 
+
+    $("#submitprofile").click(function()
+
+       {
+
+           //Define Error array
+
+           var errorList = [];
+
+            //Collect hobby data
+
+           var hobbyList = [];
+           var hobbyDetailsList=[];
+
+
+           $(".hobbyname").each(function() {
+
+
+               hobbyList.push($(this).text());
+
+               //Fetch hobby details
+
+               var hobbydetails=$(this).siblings("#details").children("#detailsinput").val();
+               if (hobbydetails=="" || hobbydetails=="what, where, with who...")
+               {
+                  errorList.push("Please share some details about your hobby.");
+                   //add here div with relative position
+                  return false;
+               }
+              else hobbyDetailsList.push(hobbydetails);
+
+           });
+
+           if (hobbyList.length==0)
+           {
+               errorList.push("Please insert at least one hobby.");
+           }
+
+           //Collect about me data
+
+           var aboutmeList = [];
+           $(".aboutme").each(function() { aboutmeList.push($(this).text()) });
+
+           if (aboutmeList.length==0)
+           {
+               errorList.push("Please tell us something about you.");
+           }
+
+           for (i=0; i<hobbyList.length; i++)
+
+           {
+           alert(hobbyList[i]);
+           alert(hobbyDetailsList[i]);
+           }
+
+           for (i=0; i<errorList.length; i++)
+
+           {
+               alert(errorList[i]);
+           }
+
+
+           for (i=0; i<aboutmeList.length; i++)
+
+           {
+               alert(aboutmeList[i]);
+           }
+
+
+          }
+
+    );
 
 });
