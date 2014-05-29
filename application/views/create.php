@@ -62,7 +62,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                     <div id="addhobbies">
 
-                        <div id="titles">Add a hobby</div >
+                        <div id="titles">Add a hobby *</div >
 
                         <input type="text" id="addhobby" autocomplete="off" value="type here..."></input>
 
@@ -84,7 +84,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                     <div id="addaboutmes">
 
-                        <div id="titles">Say something about you</div>
+                        <div id="titles">Say something about you *</div>
 
                         <input type="text" id="addaboutme" autocomplete="off" value="type here..."></input>
 
@@ -104,33 +104,28 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                     </div>
 
-                    <div id="bckpic">
-
-                        <div id="titles">Background picture</div>
 
 
-                        <?php echo $error;?>
 
-                        <?php echo form_open_multipart('create/do_upload');?>
+                <div id="bckpic">
 
-                        <input type="file" name="userfile" size="20" />
+                        <div id="titles">Background picture (optional)</div>
 
-                        <br /><br />
 
-                        <input type="submit" value="upload" />
+                        <form name="multiform" id="multiform" action="do_upload" method="POST" enctype="multipart/form-data">
+                         (.jpg olny) <input type="file" name="userpic" />
+                        </form>
 
-                         </form>
+                        <input type="button" id="multi-post" class="smallbutton" value="Upload"></input>
+
+                        <div id="multi-msg"></div>
 
 
 
                     </div>
 
-
                 <div id="button">
-
-                 <input class="button" type="submit" name="submit" value="Next">
-
-
+                    <input id="formprofilebutton" class="button" type="button" value="Next">
                 </div>
 
             </div>

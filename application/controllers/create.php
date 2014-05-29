@@ -39,41 +39,45 @@ class Create extends CI_Controller {
         }
       }
 
-    function do_upload()
+    public function do_upload()
     {
-        $config['upload_path'] = './images/upload/';
-        $config['allowed_types'] = 'gif|jpg|png';
-       $config['max_size']	= '15000000';
+       $user_id = $this->facebook->getUser();
+
+       $config['upload_path'] = './images/upload/';
+       $config['allowed_types'] = 'jpg';
+       $config['overwrite']='TRUE';
+       $config['max_size']	= '2048';
+       $config['file_name'] = 'bckpic_'.$user_id.'.jpg';
      //   $config['max_width']  = '1024';
      //   $config['max_height']  = '768';
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload())
+
+        if ( ! $this->upload->do_upload('userpic'))
         {
-            echo "bla";
-            $error = array('error' => $this->upload->display_errors());
-            echo $error['error'];
+            $error =$this->upload->display_errors('','');
+           // $this->upload->display_errors('<text>', '</text>');
+            echo 'Error: '.$error;
         }
         else
         {
-            $data = array('upload_data' => $this->upload->data());
-
-
+            $data =$this->upload->data();
+            //var_dump( $data);
+            echo $data['orig_name'];
         }
     }
 
-    public function commit_form()
-
+    public function process_form()
     {
-        // if all ok than redirect to
-        // insert new step into db
 
-        echo site_url('invite');
-        redirect(site_url('invite')); // or published_profile
+        var_dump($_FILES);
+
+        var_dump($_POST);
+
+        echo "Form processed";
 
     }
-
 
 }
 

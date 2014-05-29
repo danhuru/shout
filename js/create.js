@@ -1,5 +1,5 @@
 
-function demo (){alert("submitted");}
+
 
 
 $(function(){
@@ -186,10 +186,110 @@ function getResults(str){
 //Upload image
 
 
-    $("#uploadpic").click(function(){
 
-       alert( $("#bckpicbutton").attr("src") );
+        function getDoc(frame) {
+            var doc = null;
 
-    });
+            // IE8 cascading access check
+            try {
+                if (frame.contentWindow) {
+                    doc = frame.contentWindow.document;
+                }
+            } catch(err) {
+            }
+
+            if (doc) { // successful getting content
+                return doc;
+            }
+
+            try { // simply checking may throw in ie8 under ssl or mismatched protocol
+                doc = frame.contentDocument ? frame.contentDocument : frame.document;
+            } catch(err) {
+                // last attempt
+                doc = frame.document;
+            }
+            return doc;
+        }
+
+        $("#multiform").submit(function(e)
+        {
+            $("#multi-msg").html('<img src="/shout/images/ajax-loader4.gif"/>');
+
+            var formObj = $(this);
+            var formURL = formObj.attr("action");
+
+            if(window.FormData !== undefined)  // for HTML5 browsers
+//	if(false)
+            {
+
+                var formData = new FormData(this);
+                $.ajax({
+                    url: formURL,
+                    type: 'POST',
+                    data:  formData,
+                    mimeType:"multipart/form-data",
+                    contentType: false,
+                    cache: false,
+                    processData:false,
+                    success: function(data, textStatus, jqXHR)
+                    {
+
+                        if(data.substr(0,6)=='Error:') $("#multi-msg").text(data);
+                        else
+                        {
+                            $("#multi-msg").html('');
+                            var url='/shout/images/upload/' + data;
+                            $('#main').css('background-image', 'url(' + url + ')');
+
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown)
+                    {
+                        $("#multi-msg").text(errorThrown);
+                    }
+                });
+                e.preventDefault();
+           //     e.unbind();
+            }
+            else  //for older browsers
+            {
+                //generate a random id
+                var  iframeId = 'unique' + (new Date().getTime());
+
+                //create an empty iframe
+                var iframe = $('<iframe src="javascript:false;" name="'+iframeId+'" />');
+
+                //hide it
+                iframe.hide();
+
+                //set form target to iframe
+                formObj.attr('target',iframeId);
+
+                //Add iframe to body
+                iframe.appendTo('body');
+                iframe.load(function(e)
+                {
+                    var doc = getDoc(iframe[0]);
+                    var docRoot = doc.body ? doc.body : doc.documentElement;
+                    var data = docRoot.innerHTML;
+                  //  $("#multi-msg").html('<pre><code>'+data+'</code></pre>');
+                    $('#main').css('background-image', 'url(' + 'images/upload/' + data + ')');
+                });
+
+            }
+
+        });
+
+
+        $("#multi-post").click(function()
+        {
+
+            $("#multiform").submit();
+
+        });
+
+
+// Submit Profile form
+
 
 });
