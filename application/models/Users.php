@@ -40,7 +40,7 @@ public function insert_user($fb_info)
 
      }
 
- public function get_hobbies($user_id)
+public function get_hobbies($user_id)
     {
         $this->db->select('*');
         $this->db->from('user_hobbies');
@@ -49,6 +49,38 @@ public function insert_user($fb_info)
 
         if ($query->num_rows() > 0)  return $query->result_array();
     }
+
+public function insert_user_hobbies($user_id,$hobbylist,$hobbydetailslist)
+    {
+
+
+        for ($i=0; $i<count($hobbylist); $i++)
+
+        {
+            $data = array(
+                'USER_ID' => $user_id,
+                'HOBBY' => $hobbylist[$i] ,
+                'DETAILS' => $hobbydetailslist[$i],
+                'ENDORSEMENTS' => '0'
+            );
+
+            $this->db->insert('user_hobbies', $data);
+
+        }
+
+
+
+    }
+
+public function update_redirect_page($user_id,$value)
+{
+$data = array(
+'REDIRECT_PAGE' => $value,
+);
+
+$this->db->where('USER_ID', $user_id);
+$this->db->update('users_facebook', $data);
+}
 
 public function get_aboutme($user_id)
     {
@@ -59,6 +91,29 @@ public function get_aboutme($user_id)
 
         if ($query->num_rows() > 0)  return $query->result_array();
 }
+
+public function insert_user_aboutme($user_id,$aboutmelist)
+    {
+
+
+        for ($i=0; $i<count($aboutmelist); $i++)
+
+        {
+            $data = array(
+                'USER_ID' => $user_id,
+                'ABOUTME' => $aboutmelist[$i] ,
+                'AUTHOR' => 'you',
+                'ENDORSEMENTS' => '0'
+            );
+
+            $this->db->insert('user_aboutme', $data);
+
+        }
+
+
+
+    }
+
 public function get_bckpic($user_id)
 {
         $this->db->select('user_id,bckpic');
@@ -69,7 +124,18 @@ public function get_bckpic($user_id)
         if ($query->num_rows() > 0)  return $query->row_array();
 }
 
-    public function get_user_events($user_id)
+public function update_bck_pic($user_id,$bckpic)
+{
+    $data = array(
+        'BCK_PIC' => $bckpic,
+    );
+
+    $this->db->where('USER_ID', $user_id);
+    $this->db->update('users_facebook', $data);
+
+}
+
+public function get_user_events($user_id)
     {
         $this->db->select('*');
         $this->db->from('user_events');

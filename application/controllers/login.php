@@ -55,6 +55,7 @@ class Login extends CI_Controller {
                 ));
 
                 $this->Users->insert_user($fb_info); //insert facebook info in db
+                $this->Users->update_redirect_page($user_id,'create');
                 redirect(site_url('create'));
             }
 

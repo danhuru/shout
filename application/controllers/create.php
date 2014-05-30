@@ -10,6 +10,7 @@ class Create extends CI_Controller {
         $this->load->model('Users');
         $this->load->model('Hobbies');
         $this->load->helper(array('form', 'url'));
+        $this->load->helper('security');
     }
 
     public function index()
@@ -71,11 +72,16 @@ class Create extends CI_Controller {
     public function process_form()
     {
 
-        var_dump($_FILES);
-
-        var_dump($_POST);
-
-        echo "Form processed";
+        $user_id = $this->facebook->getUser();
+        // Fetch variables and run XSS filtering
+        $hobbylist=$this->input->post('hobbylist',TRUE);
+        $hobbydetailslist=$this->input->post('hobbydetailslist',TRUE);
+        $aboutmelist=$this->input->post('aboutmelist',TRUE);
+        $bckpic=$this->input->post('bckpic',TRUE);
+        $this->Users->insert_user_hobbies($user_id,$hobbylist,$hobbydetailslist); //insert hobbies
+        $this->Users->insert_user_aboutme($user_id,$aboutmelist); //insert aboutme
+        $this->Users->update_bck_pic($user_id,$bckpic); //update bckpic flag
+        $this->Users->update_redirect_page($user_id,'preview');
 
     }
 

@@ -1,7 +1,5 @@
 
 
-
-
 $(function(){
 
 
@@ -185,7 +183,7 @@ function getResults(str){
 
 //Upload image
 
-
+        var bckpic;
 
         function getDoc(frame) {
             var doc = null;
@@ -240,7 +238,7 @@ function getResults(str){
                             $("#multi-msg").html('');
                             var url='/shout/images/upload/' + data;
                             $('#main').css('background-image', 'url(' + url + ')');
-
+                            bckpic=1;
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown)
@@ -273,7 +271,10 @@ function getResults(str){
                     var docRoot = doc.body ? doc.body : doc.documentElement;
                     var data = docRoot.innerHTML;
                   //  $("#multi-msg").html('<pre><code>'+data+'</code></pre>');
-                    $('#main').css('background-image', 'url(' + 'images/upload/' + data + ')');
+                    $("#multi-msg").html('');
+                    var url='/shout/images/upload/' + data;
+                    $('#main').css('background-image', 'url(' + url + ')');
+                    bckpic=1;
                 });
 
             }
@@ -296,6 +297,10 @@ function getResults(str){
 
        {
 
+           //Remove errors
+
+           $(document).find(".error").remove();
+
            //Define Error array
 
            var errorList = [];
@@ -313,20 +318,25 @@ function getResults(str){
 
                //Fetch hobby details
 
-               var hobbydetails=$(this).siblings("#details").children("#detailsinput").val();
-               if (hobbydetails=="" || hobbydetails=="what, where, with who...")
+               var hobbydetails=$(this).siblings("#details").children("#detailsinput");
+               if (hobbydetails.val()=="" || hobbydetails.val()=="what, where, with who...")
                {
-                  errorList.push("Please share some details about your hobby.");
+
+                   //$("p").append("Some appended text.");
+                   //<div id="multi-msg"></div>
+                   hobbydetails.after('<div id="errormsg" class="error">Please share some details about your hobby.</div>');
+                   errorList.push("Please share some details about your hobby.");
                    //add here div with relative position
                   return false;
                }
-              else hobbyDetailsList.push(hobbydetails);
+              else hobbyDetailsList.push(hobbydetails.val());
 
            });
 
            if (hobbyList.length==0)
            {
                errorList.push("Please insert at least one hobby.");
+               $("#addhobby").after('<div id="errormsg" class="error">Please insert at least one hobby.</div>');
            }
 
            //Collect about me data
@@ -334,30 +344,32 @@ function getResults(str){
            var aboutmeList = [];
            $(".aboutme").each(function() { aboutmeList.push($(this).text()) });
 
+
+
            if (aboutmeList.length==0)
            {
+
                errorList.push("Please tell us something about you.");
+               $("#addaboutmebutton").after('<div id="errormsg" class="error">Please tell us something about you.</div>');
            }
 
-           for (i=0; i<hobbyList.length; i++)
+            if (errorList.length==0)  {
 
-           {
-           alert(hobbyList[i]);
-           alert(hobbyDetailsList[i]);
-           }
+                 $.post('create/process_form', {
+                    hobbylist: hobbyList,
+                    hobbydetailslist: hobbyDetailsList,
+                    aboutmelist: aboutmeList,
+                    bckpic: bckpic
+                } , function(data,status){
+                  //  alert("Data: " + data + "\nStatus: " + status);
 
-           for (i=0; i<errorList.length; i++)
+                     window.location.href = "preview";
 
-           {
-               alert(errorList[i]);
-           }
+                });
+
+            }
 
 
-           for (i=0; i<aboutmeList.length; i++)
-
-           {
-               alert(aboutmeList[i]);
-           }
 
 
           }
