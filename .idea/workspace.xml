@@ -4,20 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05b7c534-71b7-4b7d-a96b-2c45947a6ec3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/finish.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Users.php" afterPath="$PROJECT_DIR$/application/models/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/editprofile.js" afterPath="$PROJECT_DIR$/js/editprofile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/editprofile.php" afterPath="$PROJECT_DIR$/application/views/editprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/finish.php" afterPath="$PROJECT_DIR$/application/controllers/finish.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/finish.php" afterPath="$PROJECT_DIR$/application/views/finish.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/login.php" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/preview.css" afterPath="$PROJECT_DIR$/css/preview.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/preview.php" afterPath="$PROJECT_DIR$/application/views/preview.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/viewprofile.css" afterPath="$PROJECT_DIR$/css/viewprofile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/viewprofile.js" afterPath="$PROJECT_DIR$/js/viewprofile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/viewprofile.php" afterPath="$PROJECT_DIR$/application/controllers/viewprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/viewprofile.php" afterPath="$PROJECT_DIR$/application/views/viewprofile.php" />
+    <list default="true" id="05b7c534-71b7-4b7d-a96b-2c45947a6ec3" name="Default" comment="Started Jquery Implementation&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -552,7 +539,11 @@
       <created>1401456095692</created>
       <updated>1401456095692</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Started Jquery Implementation&#10;">
+      <created>1401462986548</created>
+      <updated>1401462986548</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
