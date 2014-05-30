@@ -25,14 +25,21 @@ $image= base_url('images/background'.$bck.'.jpg');
 
     echo '<div id="endorse_nr1">';
 
-        for ($i=1;$i<=$hobby['endorsements'];$i++)
+        $j=1;
+        for ($j;$j<=$hobby['endorsements'] && $j<=5;$j++)
 
         {
-        echo '<img src='.base_url('images/endorse_nr.png').' width="25px" >';
+            echo '<img src='.base_url('images/endorse_nr.png').' width="25px" >';
+        }
+
+        for ($j;$j<=5;$j++)
+
+        {
+            echo '<img src='.base_url('images/endorse_nr_grey.png').' width="25px" >';
         }
         echo '</div>';
 
-    echo '<div id="show_nr_endorsement">';
+        echo '<div id="show_nr_endorsement">';
         echo $hobby['endorsements'];
         echo '</div>';
 
@@ -45,7 +52,7 @@ $image= base_url('images/background'.$bck.'.jpg');
     ?>
     </div>
 <div id="popus_aboutme" class="popup">
-    <?php
+     <?php
     foreach ($aboutme as $about)
     {
         $rand=rand(1,4);
@@ -118,12 +125,19 @@ $image= base_url('images/background'.$bck.'.jpg');
                     echo '<div id="hobby">'.ucfirst($hobby['hobby']).'</div>';
 
                     echo '<div id="endorse_nr1">';
-
-                    for ($j=1;$j<=$hobby['endorsements'];$j++)
+                    $j=1;
+                    for ($j;$j<=$hobby['endorsements'] && $j<=5;$j++)
 
                     {
                         echo '<img src='.base_url('images/endorse_nr.png').' width="25px" >';
                     }
+
+                    for ($j;$j<=5;$j++)
+
+                    {
+                        echo '<img src='.base_url('images/endorse_nr_grey.png').' width="25px" >';
+                    }
+
                     echo '</div>';
 
                     echo '<div id="show_nr_endorsement">';

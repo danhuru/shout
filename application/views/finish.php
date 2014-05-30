@@ -4,8 +4,8 @@
 
     <script src="/shout/js/fb_login.js" ></script>
     <script src="/shout/js/fb_load_sdk.js" ></script>
-    <script src="/shout/js/twitter.js" ></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/finish.css'); ?>"">
+    <script src="/shout/js/finish.js" ></script>
 
 </head>
 
@@ -32,7 +32,7 @@ $image= base_url('images/background'.$bck.'.jpg');
     <br>
     <div id="mainbox">
         <br>
-        <div id="loggedin">Logged in as <?php echo $data[0]['name'];?>.</div>
+
         <br>
         <br>
         <div id="mainbox_contents">
@@ -43,7 +43,7 @@ $image= base_url('images/background'.$bck.'.jpg');
             <div id="text_content">
             <p id="step_details">Here is the public link to your profile:
 
-            <a href="profile/danhuru">shout/profile/danhuru</a>
+            <a href="<?php echo 'profile/'.$data['PROFILE_URL'];?>">shout/profile/<?php echo $data['PROFILE_URL'];?></a>
 
             </p>
             <p id="step_details">You can add the link on your CV, blog, social network profile or anywhere you want. </p>
@@ -56,9 +56,9 @@ $image= base_url('images/background'.$bck.'.jpg');
 
 
             <div id="button">
-                <form action="home" method="post">
-                    <input class="button" type="submit" name="submit" value="Finish">
-                </form>
+
+                    <input id="finish" class="button" type="button" name="submit" value="Finish" >
+
             </div>
         </div>
     </div>

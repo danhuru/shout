@@ -11,7 +11,6 @@
 <body>
 
 
-
 <?php $bck=rand(1,6);
 $image= base_url('images/background'.$bck.'.jpg');
 ?>

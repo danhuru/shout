@@ -7,13 +7,14 @@ class Finish extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
-
+        $this->load->model('Users');
     }
 
     public function index()
     {
-        $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
-        $username=unserialize(base64_decode($fromDatabase)); // decode $fb_info
+        $user_id = $this->facebook->getUser();
+        $username=$this->Users->select_user($user_id);
+       // var_dump($username['PROFILE_URL']);
         $this->load->view('finish',array('data' => $username)); // load the view
     }
 }

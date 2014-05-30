@@ -54,6 +54,8 @@ class Login extends CI_Controller {
                     'query' => $fql,
                 ));
 
+                $fb_info['profile_url'] = strtolower(preg_replace('/\s+/', '', $fb_info[0]['name']));
+
                 $this->Users->insert_user($fb_info); //insert facebook info in db
                 $this->Users->update_redirect_page($user_id,'create');
                 redirect(site_url('create'));
