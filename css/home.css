@@ -1,7 +1,19 @@
 body{
     font: 16px Calibri, sans-serif;
 }
-
+.viewmore
+{
+    float:left;
+    width:100%;
+    text-align: center;
+    margin-bottom: 2%;
+    text-decoration: underline;
+    font-size: 14px;
+}
+.viewmore:hover
+{
+    cursor:hand;
+}
 #main
 {
     width: 100%;
@@ -125,6 +137,7 @@ hr
    /* border-left: 1px solid; ; */
     border-color: white;
     overflow-y: auto;
+    z-index: 0;
 }
 #event
 {
@@ -154,6 +167,7 @@ hr
     width: 73%;
     height:100%;
     background-color: rgba(50, 50, 50, 0.70);
+    border:2px solid rgba(50, 50, 50, 0.70);
     /*background-color: rgba(255, 255, 255, 0.80); */
     margin-left: 1%;
     border-radius:15px;
@@ -165,6 +179,7 @@ hr
     width: 73%;
     height:100%;
     background-color: rgba(50, 50, 50, 0.70);
+    border:2px solid rgba(50, 50, 50, 0.70);
     /*background-color: rgba(255, 255, 255, 0.80);*/
     margin-right: 1%;
     border-radius:15px;
@@ -221,6 +236,11 @@ hr
     padding-right:2%;
     margin-bottom: 2%;
 }
+#status:hover
+{
+    cursor: hand;
+    text-decoration: underline;
+}
 #endorsement_panel
 {
     float:right;
@@ -259,7 +279,7 @@ hr
     /*   box-shadow: 10px 10px 5px rgba(50, 50, 50, 0.70); */
     background-color: rgba(50, 50, 50, 0.70);
     /*border-radius:15px;*/
-    height: 50%;
+    height: 53%;
     margin-top: 10%;
 }
 #about
@@ -274,12 +294,13 @@ hr
     padding-top: 11%;
     color:white;
     text-align: center;
+    font-size: 70%;
 }
 
 #what
 {
-    font-size: 90%;
     color:white;
+    font-size: 120%;
 }
 #endorse_nr1
 {

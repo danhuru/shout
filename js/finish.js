@@ -2,8 +2,8 @@
 
 $(function(){
 
-$("#finish").click(function(){
-    window.location.href = "home";
-});
+    $("#finish").click(function(){
+        window.location.href = "home";
+    });
 
 });

@@ -1,0 +1,34 @@
+.popup
+{
+    display:none;
+    position: absolute;
+    background-color: black;
+    background-color: rgba(25, 25, 25, 0.95);
+    border-radius: 10px;
+    border:5px solid white;
+    width:40%;
+    height:70%;
+    margin-left:30%;
+    margin-right:30%;
+    margin-top:5%;
+    overflow-y: auto;
+    color:lightgrey;
+    padding-top:10px;
+    padding-bottom:10px;
+    z-index: 50000;
+}
+#overlay
+{
+    position:absolute;
+    display:none;
+    width:100%;
+    height:100%;
+    background-color: rgba(25, 25, 25, 0.7);
+    min-height: 400px;
+    min-width: 1200px;
+}
+#popup_aboutme
+{
+    font-size: 130%;
+    width:500px;
+}

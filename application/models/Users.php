@@ -42,7 +42,8 @@ public function insert_user($fb_info)
             'CURRENT_EDUCATION' => $fb_info[0]['education'][0]['school']['name'] ,
             'CURRENT_WORK' => $fb_info[0]['work'][0]['employer']['name'] ,
             'REDIRECT_PAGE' => 'create',
-            'PROFILE_URL' => $fb_info['profile_url']
+            'PROFILE_URL' => $fb_info['profile_url'],
+            'EMAIL' => $fb_info['email']
         );
 
         $this->db->insert('users_facebook', $data);

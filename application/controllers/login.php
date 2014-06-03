@@ -48,11 +48,13 @@ class Login extends CI_Controller {
             else
 
             {
-                $fql ='select uid, pic_big, pic, pic_small, name, birthday_date, sex, relationship_status, friend_count, current_location, education, work from user where uid='.$user_id;
+                $fql ='select uid, pic_big, pic, pic_small, name, birthday_date, sex, relationship_status, friend_count, current_location, education, work, email from user where uid='.$user_id;
                 $fb_info = $this->facebook->api(array(
                     'method' => 'fql.query',
                     'query' => $fql,
                 ));
+
+               // var_dump($fb_info);
 
                 $fb_info['profile_url'] = strtolower(preg_replace('/\s+/', '', $fb_info[0]['name']));
 

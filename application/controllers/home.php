@@ -24,6 +24,7 @@ class Home extends CI_Controller {
 
         // LOAD THE VIEWS
         $this->load->view('header',array('data' => $fb_info));
+        $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
         $this->load->view('home',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme,'events' => $events)); // load the view
         $this->load->view('footer');
     }

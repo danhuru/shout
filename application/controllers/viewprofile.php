@@ -22,6 +22,7 @@ class Viewprofile extends CI_Controller {
         $aboutme=$this->Users->get_aboutme($user_id);
 
         $this->load->view('header',array('data' => $fb_info));
+        $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme));
         $this->load->view('viewprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
         $this->load->view('footer');
     }
@@ -50,6 +51,7 @@ class Viewprofile extends CI_Controller {
 
 
             $this->load->view('header',array('data' => $fb_info));
+            $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
             $this->load->view('viewprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
             $this->load->view('footer');
 

@@ -3,6 +3,8 @@ $(function(){
 
     // Popup hobbies
 
+
+
     $("#view_hobbies").click(function(e)
     {
         $("#popup_hobbies").fadeIn();
@@ -12,12 +14,11 @@ $(function(){
     );
 
 
-
     // Popup aboutme
 
     $("#view_aboutme").click(function(e)
         {
-            $("#popus_aboutme").fadeIn();
+            $("#popup_aboutme").fadeIn();
             $("#overlay").fadeIn();
             e.stopPropagation();
         }
@@ -28,7 +29,7 @@ $(function(){
     $("#overlay").click(function()
     {
         $("#popup_hobbies").fadeOut();
-        $("#popus_aboutme").fadeOut();
+        $("#popup_aboutme").fadeOut();
         $("#overlay").fadeOut();
     });
 
