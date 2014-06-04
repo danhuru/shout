@@ -20,21 +20,13 @@ $(function(){
       {
 
           // Add endorsement
-
           url=location.href;
-
           var urlString = [];
-
           urlString = url.split("/");
-
           urlString.reverse();
-
           thisUser=urlString[0];
 
-          alert(thisUser);
-
-
-          $.post("/shout/viewprofile/add_endorsement/",{hobby: hobby, thisUser: thisUser},function(data,status)
+          $.post("/shout/viewprofile/add_hobby_endorsement/",{hobby: hobby, thisUser: thisUser},function(data,status)
           {
              $("#popup_endorse_hobbies").html(data);
           });

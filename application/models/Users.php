@@ -16,7 +16,7 @@ public function select_user($user_id)
     if ($query->num_rows() > 0)  return $query->row_array();
     }
 
-    public function select_user_profile($profile)
+public function select_user_profile($profile)
     {
         $this->db->select('*');
         $this->db->from('users_facebook');
@@ -158,5 +158,45 @@ public function get_user_events($user_id)
         if ($query->num_rows() > 0)  return $query->result_array();
     }
 
+public function insert_user_events
+(
+    $event_type,
+    $event_type_desc,
+    $user_anonymous,
+    $user_ip,
+    $user_id_initiator,
+    $user_name_initiator,
+    $user_profilelink_initiator,
+    $user_id_receiving,
+    $user_name_receiving,
+    $user_profilelink_receiving,
+    $endorsement_desc,
+    $endorsement_value,
+    $message_content
+)
+    {
+            $data = array(
+                'EVENT_TYPE' => $event_type,
+                'EVENT_TYPE_DESC' => $event_type_desc ,
+                'USER_ANONYMOUS' => $user_anonymous ,
+                'USER_IP' => $user_ip ,
+                'USER_ID_INITIATOR' => $user_id_initiator,
+                'USER_NAME_INITIATOR' => $user_name_initiator,
+                'USER_PROFILELINK_INITIATOR' => $user_profilelink_initiator,
+                'USER_ID_RECEIVING' => $user_id_receiving,
+                'USER_NAME_RECEIVING' => $user_name_receiving,
+                'USER_PROFILELINK_RECEIVING' => $user_profilelink_receiving,
+                'ENDORSEMENT_STATUS' => '1',
+                'ENDORSEMENT_DESC' => $endorsement_desc,
+                'ENDORSEMENT_VALUE' => $endorsement_value,
+                'MESSAGE_CONTENT' => $message_content,
+                'MESSAGE_STATUS' => '1',
+                'EVENT_TIMESTAMP' => date('Y-m-d').' '.date("h:i:s")
+            );
+
+          $this->db->insert('user_events', $data);
+
+        //$this->db-query_display();
+    }
 
 }

@@ -1,9 +1,5 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/popups.css'); ?>">
 <script src="/shout/js/popups.js"></script>
-<script src="js/fb_login.js" ></script>
-<script src="js/fb_load_sdk.js" ></script>
-<script src="js/fb_custom.js" ></script>
-
 
 <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];

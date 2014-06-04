@@ -8,7 +8,7 @@ class Viewprofile extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('Users');
-        $this->load->model('Endorse');
+     //   $this->load->model('Endorse');
     }
 
     public function index()
@@ -83,21 +83,35 @@ class Viewprofile extends CI_Controller {
 
     }
 
-    public function add_endorsement()
+    public function add_hobby_endorsement()
 
     {
 
-        $amount='0.1'; // user  is not logged on
+
+        //user is not logged in
+
         $hobby=$this->input->post('hobby'); // GET HOBBY
         $profile=$this->input->post('thisUser'); // GET PROFILE
-        $user_id=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
+        $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
 
-        $currentvalue=$this->Endorse->select_endorsement($user_id['USER_ID'],$hobby); //GET CURRENT ENDORSEMENT
-        $newvalue=$currentvalue[0]["endorsements"]+$amount;
+      //  $currentvalue=$this->Endorse->select_endorsement($user_id['USER_ID'],$hobby); //GET CURRENT ENDORSEMENT
+      //  $newvalue=$currentvalue[0]["endorsements"]+$amount;
 
-        $this->Endorse->endorse_hobby($user_id['USER_ID'],$hobby,$newvalue);
+//        $this->Endorse->endorse_hobby($user_id['USER_ID'],$hobby,$newvalue);
 
-        echo 'Endorsed for '.$hobby.'!';
+
+    $user_ip = $this->input->ip_address();
+    $user_id_receiving=$user_info['USER_ID'];
+    $user_name_receiving=$user_info['USER_NAME'];
+    $user_profilelink_receiving=$user_info['PROFILE_URL'];
+    $endorsement_desc=$hobby;
+    $endorsement_value=0.1; // not logged in
+
+
+
+$this->Users->insert_user_events(1,'endorsement-hobby','1',$user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+
+ echo 'Endorsed for '.$hobby.'!';
 
     }
 
