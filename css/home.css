@@ -25,7 +25,6 @@ body{
     background-size:100% 100%;
     min-height: 400px;
     min-width: 1200px;
-    max-height: 1000px;
 }
 #mainbox
 {
@@ -137,7 +136,7 @@ hr
    /* border-left: 1px solid; ; */
     border-color: white;
     overflow-y: auto;
-    z-index: 0;
+    z-index: -100;
 }
 #event
 {

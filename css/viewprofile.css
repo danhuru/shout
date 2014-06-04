@@ -1,16 +1,6 @@
 body{
     font: 16px Calibri, sans-serif;
 }
-#link
-{
-    background:white;
-    color:black;
-}
-#link:hover
-{
-    background:green;
-    color:white;
-}
 
 #name_small
 {

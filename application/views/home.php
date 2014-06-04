@@ -32,8 +32,6 @@ $image= base_url('images/background'.$bck.'.jpg');
 
     <div id="mainbox">
 
-        <!--    <div id="loggedin">Logged in as <?php echo $data[0]['name'];?>.</div> -->
-
         <div id="mainbox_contents">
 
 

@@ -8,6 +8,7 @@ class Viewprofile extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('Users');
+        $this->load->model('Endorse');
     }
 
     public function index()
@@ -50,16 +51,19 @@ class Viewprofile extends CI_Controller {
             $aboutme=$this->Users->get_aboutme($fb_info['USER_ID']);
 
 
-            $this->load->view('header',array('data' => $fb_info));
-            $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
-            $this->load->view('viewprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
-            $this->load->view('footer');
+          //  $this->load->view('header',array('data' => $fb_info));
+          //  $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
+          //  $this->load->view('viewprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
+         //  $this->load->view('footer');
 
             //else show only public profile
 
-           // $this->load->view('header_public',array('data' => $fb_info));
-         //   $this->load->view('viewprofile_public',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme,'bckpic' => $bckpic, 'schools' => $schools)); // load the view
-          //  $this->load->view('footer');
+             $user_is_loggedin=0;
+
+              $this->load->view('header',array('data' => $fb_info));
+              $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme, 'user_is_logged_in' => $user_is_loggedin)); // load the view
+              $this->load->view('viewprofile_public',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
+              $this->load->view('footer');
 
 
         }
@@ -71,11 +75,29 @@ class Viewprofile extends CI_Controller {
 
         else
         {
-        echo "Sorry this profile does not exist";
+     //   echo "Sorry this profile does not exist";
 
             //REDIRECT TO ERROR PAGE;
 
         }
+
+    }
+
+    public function add_endorsement()
+
+    {
+
+        $amount='0.1'; // user  is not logged on
+        $hobby=$this->input->post('hobby'); // GET HOBBY
+        $profile=$this->input->post('thisUser'); // GET PROFILE
+        $user_id=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
+
+        $currentvalue=$this->Endorse->select_endorsement($user_id['USER_ID'],$hobby); //GET CURRENT ENDORSEMENT
+        $newvalue=$currentvalue[0]["endorsements"]+$amount;
+
+        $this->Endorse->endorse_hobby($user_id['USER_ID'],$hobby,$newvalue);
+
+        echo 'Endorsed for '.$hobby.'!';
 
     }
 
