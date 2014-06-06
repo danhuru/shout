@@ -43,7 +43,7 @@ public function insert_user($fb_info)
             'CURRENT_WORK' => $fb_info[0]['work'][0]['employer']['name'] ,
             'REDIRECT_PAGE' => 'create',
             'PROFILE_URL' => $fb_info['profile_url'],
-            'EMAIL' => $fb_info['email']
+            'EMAIL' => $fb_info[0]['email']
         );
 
         $this->db->insert('users_facebook', $data);
@@ -71,7 +71,7 @@ public function insert_user_hobbies($user_id,$hobbylist,$hobbydetailslist)
         {
             $data = array(
                 'USER_ID' => $user_id,
-                'HOBBY' => $hobbylist[$i] ,
+                'HOBBY' => ucfirst($hobbylist[$i]) ,
                 'DETAILS' => $hobbydetailslist[$i],
                 'ENDORSEMENTS' => '0'
             );
@@ -113,7 +113,7 @@ public function insert_user_aboutme($user_id,$aboutmelist)
         {
             $data = array(
                 'USER_ID' => $user_id,
-                'ABOUTME' => $aboutmelist[$i] ,
+                'ABOUTME' => ucfirst($aboutmelist[$i]) ,
                 'AUTHOR' => 'you',
                 'ENDORSEMENTS' => '0'
             );
@@ -158,6 +158,35 @@ public function get_user_events($user_id)
         if ($query->num_rows() > 0)  return $query->result_array();
     }
 
+public function check_already_endorsed_loggedin($hobby, $user_id_initiator,$user_id_receiving,$event_type)
+
+{
+    $this->db->select('*');
+    $this->db->from('user_events');
+    $this->db->where('user_id_initiator', $user_id_initiator);
+    $this->db->where('user_id_receiving', $user_id_receiving);
+    $this->db->where('endorsement_desc', $hobby);
+    $this->db->where('event_type', $event_type);
+    $query = $this->db->get();
+    if ($query->num_rows() > 0)   return $query->result_array();
+
+}
+
+public function check_already_endorsed_anonymous($endorsement_desc, $user_ip,$user_id_receiving,$event_type)
+
+    {
+        $this->db->select('*');
+        $this->db->from('user_events');
+        $this->db->where('user_ip', $user_ip);
+        $this->db->where('user_id_receiving', $user_id_receiving);
+        $this->db->where('endorsement_desc', $endorsement_desc);
+        $this->db->where('event_type', $event_type);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)   return $query->result_array();
+
+    }
+
 public function insert_user_events
 (
     $event_type,
@@ -196,7 +225,6 @@ public function insert_user_events
 
           $this->db->insert('user_events', $data);
 
-        //$this->db-query_display();
     }
 
 }

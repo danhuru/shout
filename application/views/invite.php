@@ -31,8 +31,6 @@ $image= base_url('images/background'.$bck.'.jpg');
 <br>
 <div id="mainbox">
 <br>
-<div id="loggedin">Logged in as <?php echo $data['USER_NAME'];?>.</div>
-<br>
 <br>
 <div id="mainbox_contents">
 <p id="step_description"> Get endorsed by your facebook friends! </p>
@@ -42,10 +40,8 @@ $image= base_url('images/background'.$bck.'.jpg');
 <div id="showfriends">
 <div id="showfriendsresults"></div>
 </div>
-<div id="button">
-<form action="finish" method="post">
+<div id="button" onclick="window.location.href='finish'">
     <input class="button" type="submit" name="submit" value="Next">
-</form>
 </div>
 </div>
  </div>

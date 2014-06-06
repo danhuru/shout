@@ -25,16 +25,23 @@ class Invitefriends extends CI_Controller {
             $toDatabse = base64_encode(serialize($friends_info)); // encode $friends_info
             $this->session->set_userdata('friends', $toDatabse); // save to ci_sessions
 
-        } catch(FacebookApiException $e) {echo "Error";}
+        } catch(FacebookApiException $e) { redirect('/'); } // Your FB session expired
 
     }
 
      public function index()
     {
-       // $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
-       // $username=unserialize(base64_decode($fromDatabase)); // decode $fb_info
-
         $user_id = $this->facebook->getUser();
+        if($user_id)
+        {
+            // We have a user ID, so probably a logged in user.
+            // If not, we'll get an exception, which we handle below.
+            try
+            {
+                $test = $this->facebook->api('/me?fields=id');
+                if ($test)
+                {
+
         $fb_info=$this->Users->select_user($user_id);
 
         $this->get_friends(); // call get_friends to retrieve facebook friends
@@ -42,6 +49,28 @@ class Invitefriends extends CI_Controller {
         $this->load->view('header',array('data' => $fb_info));
         $this->load->view('invitefriends',array('data' => $fb_info)); // load the view
         $this->load->view('footer');
+                } else {
+
+                    redirect('/'); // Your FB session expired
+                }
+
+            }
+            catch (FacebookApiException $e) {
+                //User is not logged in
+
+
+                //   $login_url = $this->facebook->getLoginUrl();
+                //   echo 'Please <a href="' . $login_url . '">login.</a>';
+                redirect('/');
+            }
+        }
+        else {
+            // No user, so print a link for the user to login
+            //$login_url = $this->facebook->getLoginUrl();
+            //echo 'Please <a href="' . $login_url . '">login.</a>';
+
+            redirect('/');
+        }
     }
 
 

@@ -55,10 +55,8 @@ $image= base_url('images/background'.$bck.'.jpg');
             </div>
 
 
-            <div id="button">
-
+            <div id="button" onclick="window.location.href='home'">
                     <input id="finish" class="button" type="button" name="submit" value="Finish" >
-
             </div>
         </div>
     </div>

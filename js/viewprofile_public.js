@@ -1,42 +1,90 @@
 
 $(function(){
 
+    //Show Login Popup
+
+
+    $("#overlay").fadeIn();
+    $("#popup_endorse").fadeIn();
+    $("#endorse_popup1").click(function(){
+
+        $("#overlay").fadeIn();
+        $("#popup_endorse").fadeIn();
+
+    });
+
+
     // Endorse hobbies
 
-
-  $(".endorse").click(function(e)
+  $(".endorse").click(function()
   {
 
-    //  showHobbyPopup
-    //  alert($(this).html());
-
-      $("#popup_endorse_hobbies").fadeIn();
       $("#overlay").fadeIn();
 
+      // Obtain hobby and profile
+      hobby=$(this).siblings("#hobby").text();
+      var el=$(this).siblings("#hobby");
+      url=location.href;
+      urlString = [];
+      urlString = url.split("/");
+      urlString.reverse();
+      thisUser=urlString[0];
 
-      var hobby=$(this).siblings("#hobby").text();
+      //Check if endorsement exists
 
-      $("#endorse_popup1").click(function()
+      $.post("/shout/viewprofile/check_already_endorsed_hobby",{hobby: hobby, thisUser: thisUser},function(data,status)
       {
-
-          // Add endorsement
-          url=location.href;
-          var urlString = [];
-          urlString = url.split("/");
-          urlString.reverse();
-          thisUser=urlString[0];
-
-          $.post("/shout/viewprofile/add_hobby_endorsement/",{hobby: hobby, thisUser: thisUser},function(data,status)
+      if (data=='TRUE')
+      {
+          $("#popup_already_endorsed").fadeIn();
+      }
+      else
+      {
+        $.post("/shout/viewprofile/add_hobby_endorsement/",{hobby: hobby, thisUser: thisUser},function(data,status)
           {
-             $("#popup_endorse_hobbies").html(data);
+              $("#popup_endorse_success").html(data);
+              $("#popup_endorse_success").fadeIn();
           });
-
+      }
       });
 
-      e.stopPropagation();
-
-
   });
+
+    // Endorse about me
+
+    $(".endorse2").click(function()
+    {
+
+        $("#overlay").fadeIn();
+
+        // Obtain hobby and profile
+        aboutme=$(this).siblings("#what").text();
+        var el=$(this).siblings("#what");
+        url=location.href;
+        urlString = [];
+        urlString = url.split("/");
+        urlString.reverse();
+        thisUser=urlString[0];
+
+        //Check if endorsement exists
+
+        $.post("/shout/viewprofile/check_already_endorsed_aboutme",{aboutme: aboutme, thisUser: thisUser},function(data,status)
+        {
+            if (data=='TRUE')
+            {
+                $("#popup_already_endorsed").fadeIn();
+            }
+            else
+            {
+                $.post("/shout/viewprofile/add_aboutme_endorsement/",{aboutme: aboutme, thisUser: thisUser},function(data,status)
+                {
+                    $("#popup_endorse_success").html(data);
+                    $("#popup_endorse_success").fadeIn();
+                });
+            }
+        });
+
+    });
 
     // Hover endorse button
 
@@ -61,25 +109,16 @@ $(function(){
        }
    );
 
-    // Endorse about me
 
-  $(".endorse2").click(function(e)
-    {
-
-     //  showEndorsementPopup
-
-        $("#popup_endorse_aboutme").fadeIn();
-        $("#overlay").fadeIn();
-        e.stopPropagation();
-    });
 
 
     //Click overlay div
 
     $("#overlay").click(function()
     {
-        $("#popup_endorse_hobbies").fadeOut();
-        $("#popup_endorse_aboutme").fadeOut();
+        $("#popup_endorse").fadeOut();
+        $("#popup_already_endorsed").fadeOut();
+        $("#popup_endorse_success").fadeOut();
         $("#overlay").fadeOut();
     });
 

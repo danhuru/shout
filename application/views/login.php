@@ -8,6 +8,7 @@
     <script src="js/fb_custom.js" ></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/login.css'); ?>"">
 </head>
+
 <body>
 
 
@@ -52,7 +53,7 @@ if ($bck == 1 || $bck == 3) $color="black";
 
             <p id="step_description"> Create a profile </p>
 
-            <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+            <div class="fb-login-button" scope="email" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
 
             <p id="step_details">    Login, add your hobbies, include some details </p>
         </div>

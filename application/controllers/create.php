@@ -16,13 +16,41 @@ class Create extends CI_Controller {
     public function index()
     {
         $user_id = $this->facebook->getUser();
-        $user_fb_info=$this->Users->select_user($user_id);
+        if($user_id)
+        {
+            // We have a user ID, so probably a logged in user.
+            // If not, we'll get an exception, which we handle below.
+            try
+            {
+                $test = $this->facebook->api('/me?fields=id');
+                if ($test)
+                {
+                $user_fb_info=$this->Users->select_user($user_id);
+                $this->load->view('create',array('data' => $user_fb_info, 'error'=>' '));
+                }
+                else {
+                    // No user, so print a link for the user to login
+                    //$login_url = $this->facebook->getLoginUrl();
+                    //echo 'Please <a href="' . $login_url . '">login.</a>';
 
-      // $toDatabse = base64_encode(serialize($fb_info)); // encode $fb_info
-       // $this->session->set_userdata('fb_info', $toDatabse); // save to ci_sessions
+                    redirect('/');
+                }
+            }   catch (FacebookApiException $e) {
+                //User is not logged in
 
-        $this->load->view('create',array('data' => $user_fb_info, 'error'=>' '));
-      //  $this->load->view('upload_form', array('error' => ' ' ));
+
+                //   $login_url = $this->facebook->getLoginUrl();
+                //   echo 'Please <a href="' . $login_url . '">login.</a>';
+                redirect('/');
+            }
+        }
+        else {
+            // No user, so print a link for the user to login
+            //$login_url = $this->facebook->getLoginUrl();
+            //echo 'Please <a href="' . $login_url . '">login.</a>';
+
+            redirect('/');
+        }
 
     }
     public function get_hints($term)
@@ -39,7 +67,6 @@ class Create extends CI_Controller {
           }
         }
       }
-
     public function do_upload()
     {
        $user_id = $this->facebook->getUser();
@@ -68,7 +95,6 @@ class Create extends CI_Controller {
             echo $data['orig_name'];
         }
     }
-
     public function process_form()
     {
 

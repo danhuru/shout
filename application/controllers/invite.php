@@ -25,23 +25,52 @@ class Invite extends CI_Controller {
             $toDatabse = base64_encode(serialize($friends_info)); // encode $friends_info
             $this->session->set_userdata('friends', $toDatabse); // save to ci_sessions
 
-        } catch(FacebookApiException $e) {echo "Error";}
+        } catch(FacebookApiException $e) {
+
+            // Your FB session expired
+
+        }
 
     }
-
-     public function index()
+    public function index()
     {
-       // $fromDatabase=$this->session->userdata('fb_info'); // retrieve from ci_sessions
-       // $username=unserialize(base64_decode($fromDatabase)); // decode $fb_info
-
         $user_id = $this->facebook->getUser();
+        if($user_id)
+        {
+        try
+        {
+            $test = $this->facebook->api('/me?fields=id');
+            if ($test)
+            {
+
+        $this->Users->update_redirect_page($user_id,'invite');
         $fb_info=$this->Users->select_user($user_id);
 
         $this->get_friends(); // call get_friends to retrieve facebook friends
         $this->load->view('invite',array('data' => $fb_info)); // load the view
+
+            } else {
+
+                redirect('/');  // Your FB session expired
+            }
+        }
+        catch (FacebookApiException $e) {
+            //User is not logged in
+
+
+            //   $login_url = $this->facebook->getLoginUrl();
+            //   echo 'Please <a href="' . $login_url . '">login.</a>';
+            redirect('/');
+        }
+        }
+        else {
+            // No user, so print a link for the user to login
+            //$login_url = $this->facebook->getLoginUrl();
+            //echo 'Please <a href="' . $login_url . '">login.</a>';
+
+            redirect('/');
+        }
     }
-
-
     public function showfriends($filter)
     {
 

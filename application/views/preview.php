@@ -201,10 +201,8 @@ $image= base_url('images/background'.$bck.'.jpg');
             </div>
         </div>
 
-        <div id="button">
-            <form action="invite" method="post">
+        <div id="button" onclick="window.location.href='invite'">
                 <input class="button" type="submit" name="submit" value="Next">
-            </form>
         </div>
 
     </div>

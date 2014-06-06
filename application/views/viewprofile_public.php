@@ -5,8 +5,6 @@
     <script src="/shout/js/viewprofile.js" ></script>
     <script src="/shout/js/viewprofile_public.js" ></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/viewprofile_public.css'); ?>">
-
-
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 

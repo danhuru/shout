@@ -70,22 +70,21 @@
     ?>
 
 </div>
-<div id="popup_endorse_hobbies" class="popup_endorse">
+<div id="popup_endorse" class="popup_endorse">
 
 
     <?php
-    $endorsement_value='2.5';
     if ($user_is_logged_in == 0)
     {
 
-    echo 'Your vote for will add only 0.1 points to '.$data['USER_NAME'].'\'s hobby.';
+    echo 'Your vote for will add only 0.1 points to '.$data['USER_NAME'].'\'s referrals.';
     echo '<br>';
     echo '<br>';
     echo 'Your endorsement will be more relevant if you login with Facebook.';
     echo '<br>';
     echo '<br>';
     echo '<div id="login_message"> Endorse '.$data['USER_NAME'].' as his friend!</div>';
-    echo '<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>';
+    echo '<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>';
     echo '<br>';
     echo '<br>';
     echo 'Continue to <text id="endorse_popup1">endorse</text>'.' as anonymous.';
@@ -95,6 +94,10 @@
 
 
 </div>
-<div id="popup_endorse_aboutme" class="popup_endorse">
-    About Me
+<div id="popup_already_endorsed" class="popup_endorse">
+
+    You already endorsed this!
+
+</div>
+<div id="popup_endorse_success" class="popup_endorse">
 </div>
