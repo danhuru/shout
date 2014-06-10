@@ -43,6 +43,7 @@ class Login extends CI_Controller {
                     'query' => $fql,
                 ));
                 $fb_info['profile_url'] = strtolower(preg_replace('/\s+/', '', $fb_info[0]['name']));
+
                 $this->Users->insert_user($fb_info); //insert facebook info in db
                 $this->Users->update_redirect_page($user_id,'create');
                 redirect(site_url('create'));
@@ -52,10 +53,10 @@ class Login extends CI_Controller {
             // user ID even though the access token is invalid.
             // In this case, we'll get an exception, so we'll
             // just ask the user to login again here.
-            $login_url = $this->facebook->getLoginUrl();
-            echo 'Please <a href="' . $login_url . '">login.</a>';
-            error_log($e->getType());
-            error_log($e->getMessage());
+        //    $login_url = $this->facebook->getLoginUrl();
+        //    echo 'Please <a href="' . $login_url . '">login.</a>';
+        //    error_log($e->getType());
+         //   error_log($e->getMessage());
 
     //    }
    // } else {

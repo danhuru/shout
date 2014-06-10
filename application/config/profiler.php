@@ -10,8 +10,15 @@
 |	http://codeigniter.com/user_guide/general/profiling.html
 |
 */
-
-
+$config['benchmarks']          = FALSE;
+$config['config']          = FALSE;
+$config['queries']         = TRUE;
+$config['controller_info']          = FALSE;
+$config['get']         = FALSE;
+$config['http_headers']          = FALSE;
+$config['memory_usage']         = FALSE;
+$config['post']         = FALSE;
+$config['uri_string']          = FALSE;
 
 /* End of file profiler.php */
 /* Location: ./application/config/profiler.php */

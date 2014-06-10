@@ -51,7 +51,7 @@ class Invitefriends extends CI_Controller {
         $this->load->view('footer');
                 } else {
 
-                    redirect('/'); // Your FB session expired
+                    echo "Your FB session expired";
                 }
 
             }

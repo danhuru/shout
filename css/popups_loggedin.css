@@ -1,0 +1,189 @@
+.popup
+{
+    display:none;
+    position: absolute;
+    background-color: black;
+    background-color: rgba(25, 25, 25, 0.95);
+    border-radius: 10px;
+    border:5px solid white;
+    width:40%;
+    height:70%;
+    margin-left:30%;
+    margin-right:30%;
+    margin-top:5%;
+    overflow-y: auto;
+    color:lightgrey;
+    padding-top:10px;
+    padding-bottom:10px;
+    z-index: 50000;
+}
+.popup_endorse
+{
+    display:none;
+    position: absolute;
+    background-color: black;
+    background-color: rgba(25, 25, 25, 0.95);
+    border-radius: 10px;
+    border:5px solid white;
+    margin-left:30%;
+    margin-right:30%;
+    margin-top:5%;
+    color:lightgrey;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left: 10px;
+    padding-right:10px;
+    z-index: 50000;
+}
+#overlay
+{
+    position:absolute;
+    display:none;
+    width:99%;
+    height:97%;
+    background-color: rgba(25, 25, 25, 0.7);
+    min-height: 400px;
+    min-width: 1200px;
+    z-index: 1000;
+}
+#popup_aboutme
+{
+    font-size: 130%;
+    width:500px;
+}
+#pop_hobby
+{
+    float:left;
+    font-size: 130%;
+    color:white;
+    padding-left: 5%;
+}
+#pop_about
+{
+    float:left;
+    width: 150px;
+    height:100px;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    padding-top: 40px;
+    color:white;
+    text-align: center;
+    font-size: 70%;
+}
+
+#pop_what
+{
+    color:white;
+    font-size: 100%;
+}
+#pop_endorse_nr1
+{
+    float:left;
+    font-size: 130%
+}
+#pop_details
+{
+    float:left;
+    padding-left: 13%;
+}
+#pop_endorse_nr2
+{
+    background-image: url("../images/endorse_nr.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:40px;
+    height:30px;
+    text-align: center;
+    padding-top: 8px;
+    margin-left: 33%;
+    color:black;
+}
+#pop_show_nr_endorsement
+{
+    float:left;
+    font-size: 20px;
+    padding-left: 5px;
+}
+#login_message
+{
+    float:left;
+}
+.fb-login-button
+{
+    float:left;
+    margin-left:3%;
+ }
+#endorse_popup1
+{
+    color:white;
+}
+#endorse_popup1:hover
+{
+    text-decoration: underline;
+    cursor: hand;
+}
+#messsagetext
+{
+
+}
+#content
+{
+    width:400px;
+    height:200px;
+    max-width: 500px;
+    max-height: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#sendmessage
+{
+    background-color: lightgrey;
+}
+#send
+{
+    margin-left: 75%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.smallbutton
+{
+    margin-left: 5px;
+    background-color:#bbd537;
+    -webkit-border-top-left-radius:6px;
+    -moz-border-radius-topleft:6px;
+    border-top-left-radius:6px;
+    -webkit-border-top-right-radius:6px;
+    -moz-border-radius-topright:6px;
+    border-top-right-radius:6px;
+    -webkit-border-bottom-right-radius:6px;
+    -moz-border-radius-bottomright:6px;
+    border-bottom-right-radius:6px;
+    -webkit-border-bottom-left-radius:6px;
+    -moz-border-radius-bottomleft:6px;
+    border-bottom-left-radius:6px;
+    text-indent:0px;
+    border:1px solid #83c41a;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    font-weight:bold;
+    font-style:normal;
+    height:25px;
+    line-height:25px;
+    width:59px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #689324;
+}
+.smallbutton:hover
+{
+    background-color:#8cb82b;
+    cursor: hand;
+}
+.smallbutton:active
+{
+    position:relative;
+    top:1px;
+}

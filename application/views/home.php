@@ -66,7 +66,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                 <?php
 
                 $i=0;
-
+                if ($events){
                 foreach ($events as $event)
                 {
 
@@ -190,7 +190,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                     echo '</div>';
 
                 }
-
+                }
 
                 ?>
 
@@ -204,8 +204,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                     <br>
 
                 <?php
-                for($i=0;$i<4;$i++)
 
+                    for($i=0;$i<count($hobbies) && $i<4 ;$i++)
                 {
                     $hobby=$hobbies[$i];
                     echo '<div id="hobby">'.ucfirst($hobby['hobby']).'</div>';
@@ -247,7 +247,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 <br>
 
                 <?php
-                for ($i=0;$i<4;$i++)
+                for($i=0;$i<count($aboutme) && $i<4 ;$i++)
                 {
                     $about=$aboutme[$i];
                     $rand=rand(1,4);

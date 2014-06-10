@@ -82,25 +82,24 @@ class Viewprofile extends CI_Controller {
                     {
 
                         if ($user_id==$fb_info['USER_ID']) redirect("/viewprofile");
-                        else echo "Different user";
 
              //if user is logged in then show more
 
-                        //   $hobbies=$this->Users->get_hobbies($fb_info['USER_ID']);
-                        //    $aboutme=$this->Users->get_aboutme($fb_info['USER_ID']);
+                           $hobbies=$this->Users->get_hobbies($fb_info['USER_ID']);
+                           $aboutme=$this->Users->get_aboutme($fb_info['USER_ID']);
 
 
-                        //  $this->load->view('header',array('data' => $fb_info));
-                        //  $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
-                        //  $this->load->view('viewprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
-                        //  $this->load->view('footer');
+                          $this->load->view('header',array('data' => $fb_info));
+                          $this->load->view('popups_loggedin',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
+                          $this->load->view('viewprofile_loggedin',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
+                          $this->load->view('footer');
 
 
                     } else {
 
 
                         //else show only public profile
-                        redirect('/'); // Your FB session expired
+                        echo "Your FB session expired";
                     }
 
                 }
@@ -151,78 +150,144 @@ class Viewprofile extends CI_Controller {
     public function add_hobby_endorsement()
 
     {
-    //USER IS NOT LOGGED IN
-    $hobby=$this->input->post('hobby'); // GET HOBBY
-    $profile=$this->input->post('thisUser'); // GET PROFILE
-    $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
-    $user_ip = $this->input->ip_address(); //GET IP
-    $user_id_receiving=$user_info['USER_ID']; // GET USER RECEIVING
-    $user_name_receiving=$user_info['USER_NAME']; // GET USER RECEIVING
-    $user_profilelink_receiving=$user_info['PROFILE_URL']; // GET USER RECEIVING
-    $endorsement_desc=$hobby; //GET ENDORSEMENT
-    $endorsement_value=0.1; // not logged in
+        $hobby=$this->input->post('hobby'); // GET HOBBY
+        $profile=$this->input->post('thisUser'); // GET PROFILE
+        $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
+        $user_id_receiving=$user_info['USER_ID']; // GET USER RECEIVING
+        $user_name_receiving=$user_info['USER_NAME']; // GET USER RECEIVING
+        $user_profilelink_receiving=$user_info['PROFILE_URL']; // GET USER RECEIVING
+        $endorsement_desc=$hobby; //GET ENDORSEMENT
+        $user_ip = $this->input->ip_address(); //GET IP
+        $loggedin=$this->input->post('loggedin');
+        if ($loggedin==1)
+        {
+            //USER IS LOGGED IN
+            $endorsement_value=1;
+            $user_id_initiator = $this->facebook->getUser();
+            $user_info=$this->Users->select_user($user_id_initiator);
+            $user_name_initiator=$user_info['USER_NAME'];
+            $user_profilelink_initiator=$user_info['PROFILE_URL'];
+            $this->Users->insert_user_events(1,'endorsement-hobby','0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+            echo 'Endorsed for '.$hobby.'!';
+        }
+        else {
+            //USER IS NOT LOGGED IN
 
-    //INSERT EVENT
-    $this->Users->insert_user_events(1,'endorsement-hobby','1',$user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
-    //ECHO RESULT
-    echo 'Endorsed for '.$hobby.'!';
+            // CALCULATE FRIENDS IN COMMON
+
+          $endorsement_value=0.1; // not logged in
+          //INSERT EVENT
+         $this->Users->insert_user_events(1,'endorsement-hobby','1',$user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+          //ECHO RESULT
+         echo 'Endorsed for '.$hobby.'!';
+        }
     }
 
     public function check_already_endorsed_hobby()
 
     {
-        //user is not logged in
+
         $hobby=$this->input->post('hobby'); // GET HOBBY
         $profile=$this->input->post('thisUser'); // GET PROFILE
         $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
         $user_ip = $this->input->ip_address();
         $user_id_receiving=$user_info['USER_ID'];
-        $user_name_receiving=$user_info['USER_NAME'];
-        $user_profilelink_receiving=$user_info['PROFILE_URL'];
         $endorsement_desc=$hobby;
-        $endorsement_value=0.1; // not logged in
-        // Check if hobby is already endorsed by user
-        $ok=$this->Users->check_already_endorsed_anonymous($endorsement_desc,$user_ip,$user_id_receiving,1);
-        if($ok) echo "TRUE"; else echo "FALSE";
+        $loggedin=$this->input->post('loggedin');
+        if ($loggedin==1)
+        {
+            //USER IS LOGGED IN
+            $user_id_initiator = $this->facebook->getUser();
+            $ok=$this->Users->check_already_endorsed_loggedin($endorsement_desc,$user_id_initiator,$user_id_receiving,1);
+            if($ok) echo "TRUE"; else echo "FALSE";
+        }
+        else
+        {
+            //USER IS NOT LOGGED IN
+            // Check if hobby is already endorsed by user
+            $ok=$this->Users->check_already_endorsed_anonymous($endorsement_desc,$user_ip,$user_id_receiving,1);
+            if($ok) echo "TRUE"; else echo "FALSE";
+        }
     }
 
     public function add_aboutme_endorsement()
 
     {
-        //USER IS NOT LOGGED IN
-        $aboutme=$this->input->post('aboutme'); // GET HOBBY
+        $aboutme=$this->input->post('aboutme'); // GET ABOUTME
         $profile=$this->input->post('thisUser'); // GET PROFILE
         $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
-        $user_ip = $this->input->ip_address(); //GET IP
         $user_id_receiving=$user_info['USER_ID']; // GET USER RECEIVING
         $user_name_receiving=$user_info['USER_NAME']; // GET USER RECEIVING
         $user_profilelink_receiving=$user_info['PROFILE_URL']; // GET USER RECEIVING
         $endorsement_desc=$aboutme; //GET ENDORSEMENT
-        $endorsement_value=0.1; // not logged in
+        $user_ip = $this->input->ip_address(); //GET IP
+        $loggedin=$this->input->post('loggedin');
+        if ($loggedin==1)
+        {
+            //USER IS LOGGED IN
+            $endorsement_value=1;
+            $user_id_initiator = $this->facebook->getUser();
+            $user_info=$this->Users->select_user($user_id_initiator);
+            $user_name_initiator=$user_info['USER_NAME'];
+            $user_profilelink_initiator=$user_info['PROFILE_URL'];
+            $this->Users->insert_user_events(2,'endorsement-aboutme','0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+            echo 'Endorsed for '.$aboutme.'!';
+        }
+        else {
+            //USER IS NOT LOGGED IN
 
-        //INSERT EVENT
-        $this->Users->insert_user_events(2,'endorsement-aboutme','1',$user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
-        //ECHO RESULT
-        echo 'Endorsed for '.$aboutme.'!';
+            // CALCULATE FRIENDS IN COMMON
+
+            $endorsement_value=0.1; // not logged in
+            //INSERT EVENT
+            $this->Users->insert_user_events(2,'endorsement-aboutme','1',$user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+            //ECHO RESULT
+            echo 'Endorsed for '.$aboutme.'!';
+        }
     }
 
     public function check_already_endorsed_aboutme()
 
     {
-        //user is not logged in
+
         $aboutme=$this->input->post('aboutme'); // GET ABOUTME
         $profile=$this->input->post('thisUser'); // GET PROFILE
         $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
         $user_ip = $this->input->ip_address();
         $user_id_receiving=$user_info['USER_ID'];
-        $user_name_receiving=$user_info['USER_NAME'];
-        $user_profilelink_receiving=$user_info['PROFILE_URL'];
         $endorsement_desc=$aboutme;
-        $endorsement_value=0.1; // not logged in
-        // Check if hobby is already endorsed by user
-        $ok=$this->Users->check_already_endorsed_anonymous($endorsement_desc,$user_ip,$user_id_receiving,1);
-        if($ok) echo "TRUE"; else echo "FALSE";
+        $loggedin=$this->input->post('loggedin');
+        if ($loggedin==1)
+        {
+            //USER IS LOGGED IN
+            $user_id_initiator = $this->facebook->getUser();
+            $ok=$this->Users->check_already_endorsed_loggedin($endorsement_desc,$user_id_initiator,$user_id_receiving,2);
+            if($ok) echo "TRUE"; else echo "FALSE";
+        }
+        else
+        {
+            //USER IS NOT LOGGED IN
+            // Check if aboutme is already endorsed by user
+            $ok=$this->Users->check_already_endorsed_anonymous($endorsement_desc,$user_ip,$user_id_receiving,2);
+            if($ok) echo "TRUE"; else echo "FALSE";
+        }
     }
 
+    public function send_message()
 
+    {
+        $profile=$this->input->post('thisUser'); // GET PROFILE
+        $message_content=$this->input->post('message_content');
+        $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE
+        $user_id_receiving=$user_info['USER_ID']; // GET USER RECEIVING
+        $user_name_receiving=$user_info['USER_NAME']; // GET USER RECEIVING
+        $user_profilelink_receiving=$user_info['PROFILE_URL']; // GET USER RECEIVING
+        $user_ip = $this->input->ip_address(); //GET IP
+        $loggedin=$this->input->post('loggedin');
+        $user_id_initiator = $this->facebook->getUser();
+        $user_info=$this->Users->select_user($user_id_initiator);
+        $user_name_initiator=$user_info['USER_NAME'];
+        $user_profilelink_initiator=$user_info['PROFILE_URL'];
+        $this->Users->insert_user_events(5,'message','0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,null,null,$message_content);
+    }
 }

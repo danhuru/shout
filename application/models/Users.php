@@ -158,14 +158,14 @@ public function get_user_events($user_id)
         if ($query->num_rows() > 0)  return $query->result_array();
     }
 
-public function check_already_endorsed_loggedin($hobby, $user_id_initiator,$user_id_receiving,$event_type)
+public function check_already_endorsed_loggedin($endorsement_desc, $user_id_initiator,$user_id_receiving,$event_type)
 
 {
     $this->db->select('*');
     $this->db->from('user_events');
     $this->db->where('user_id_initiator', $user_id_initiator);
     $this->db->where('user_id_receiving', $user_id_receiving);
-    $this->db->where('endorsement_desc', $hobby);
+    $this->db->where('endorsement_desc', $endorsement_desc);
     $this->db->where('event_type', $event_type);
     $query = $this->db->get();
     if ($query->num_rows() > 0)   return $query->result_array();
@@ -215,11 +215,11 @@ public function insert_user_events
                 'USER_ID_RECEIVING' => $user_id_receiving,
                 'USER_NAME_RECEIVING' => $user_name_receiving,
                 'USER_PROFILELINK_RECEIVING' => $user_profilelink_receiving,
-                'ENDORSEMENT_STATUS' => '1',
+                'ENDORSEMENT_STATUS' => '0',
                 'ENDORSEMENT_DESC' => $endorsement_desc,
                 'ENDORSEMENT_VALUE' => $endorsement_value,
                 'MESSAGE_CONTENT' => $message_content,
-                'MESSAGE_STATUS' => '1',
+                'MESSAGE_STATUS' => '0',
                 'EVENT_TIMESTAMP' => date('Y-m-d').' '.date("h:i:s")
             );
 

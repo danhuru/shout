@@ -62,7 +62,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 <?php
 
-                for($i=0;$i<5;$i++)
+                for($i=0;$i<count($hobbies) && $i<5 ;$i++)
 
                 {
                     $hobby=$hobbies[$i];
@@ -108,8 +108,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                 <br>
 
                 <?php
-
-                for ($i=0;$i<4;$i++)
+                for($i=0;$i<count($aboutme) && $i<4 ;$i++)
                 {
                     $about=$aboutme[$i];
                     $rand=rand(1,4);

@@ -32,7 +32,7 @@ class Editprofile extends CI_Controller {
                 }
                 else {
 
-                    redirect('/'); // Your FB session expired
+                    echo "Your FB session expired";
                 }
 
             }

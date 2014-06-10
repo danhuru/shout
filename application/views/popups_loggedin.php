@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/popups.css'); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/popups_loggedin.css'); ?>">
 <script src="/shout/js/popups.js"></script>
 
 <script>(function(d, s, id) {
@@ -70,39 +70,20 @@
     ?>
 
 </div>
-<div id="popup_endorse" class="popup_endorse">
-
-
-    <?php
-
-    echo 'Your vote for will add only 0.1 points to '.$data['USER_NAME'].'\'s referrals.';
-    echo '<br>';
-    echo '<br>';
-    echo 'Your endorsement will be more relevant if you login with Facebook.';
-    echo '<br>';
-    echo '<br>';
-    echo '<div id="login_message"> Endorse '.$data['USER_NAME'].' as his friend!</div>';
-    echo '<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>';
-    echo '<br>';
-    echo '<br>';
-    echo 'Continue to <text id="endorse_popup1">endorse</text>'.' as anonymous.';
-     ?>
-
-
-</div>
 <div id="popup_message" class="popup_endorse">
 
+ <div id="mainmessage">
 
-    <?php
-    if ($user_is_logged_in == 0)
-    {
-        echo 'You must be logged in to send a message!';
-        echo '<br>';
-        echo '<br>';
-        echo '<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>';
-    }
-    ?>
+     <div id="messsagetext">
+         <textarea id="content">type message here...</textarea>
+     </div>
+     <div id="sendmessage">
 
+         <button id="send" class="smallbutton">Send</button>
+
+     </div>
+
+ </div>
 
 </div>
 <div id="popup_already_endorsed" class="popup_endorse">
@@ -111,4 +92,6 @@
 
 </div>
 <div id="popup_endorse_success" class="popup_endorse">
+</div>
+<div id="popup_message_success" class="popup_endorse">
 </div>

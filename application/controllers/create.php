@@ -33,7 +33,7 @@ class Create extends CI_Controller {
                     //$login_url = $this->facebook->getLoginUrl();
                     //echo 'Please <a href="' . $login_url . '">login.</a>';
 
-                    redirect('/');
+                    echo "Your FB session expired";
                 }
             }   catch (FacebookApiException $e) {
                 //User is not logged in

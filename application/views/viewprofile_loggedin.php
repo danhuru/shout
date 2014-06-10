@@ -2,24 +2,28 @@
 
 <head>
 
-    <script src="/shout/js/jquery-1.11.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/editprofile.css'); ?>">
-    <script src="/shout/js/editprofile.js"></script>
+    <script src="/shout/js/viewprofile.js" ></script>
+    <script src="/shout/js/viewprofile_loggedin.js" ></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/viewprofile_loggedin.css'); ?>">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
 </head>
 
 <body>
 
-
 <?php $bck=rand(1,6);
 $image= base_url('images/background'.$bck.'.jpg');
 ?>
 
+
 <div id="main" style="background-image: url('<?php echo $image;?>')">
+
+
 
     <div id="mainbox">
 
-        <!--    <div id="loggedin">Logged in as <?php echo $data[0]['name'];?>.</div> -->
+
 
         <div id="mainbox_contents">
 
@@ -29,9 +33,19 @@ $image= base_url('images/background'.$bck.'.jpg');
 
             <div id="profile_info">
 
-                <img id="profile_pic" src="<?php echo $data['PIC_BIG'];?>"></img>
+                <img id="profile_pic" src="<?php echo $data['PIC_BIG'];?>"</img>
 
                 <div id="profile_name"><?php echo $data['USER_NAME'];?> </div>
+
+                <div id="message_user">
+
+                <div id="message_ico"> <img width="24px" height="24px" src="<?php echo base_url('images/message.png');?>"></img>
+                </div>
+                <div id="text_message">
+                Message
+                </div>
+
+                </div>
 
                 <div id="profile_details">
 
@@ -57,37 +71,46 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 <?php
 
+                for($i=0;$i<count($hobbies) && $i<5 ;$i++)
 
-
-                for($i=0;$i<count($hobbies) && $i<4 ;$i++)
                 {
                     $hobby=$hobbies[$i];
+                    echo '<div>';
                     echo '<div id="hobby">'.ucfirst($hobby['hobby']).'</div>';
 
                     echo '<div id="endorse_nr1">';
-
-                    for ($i=1;$i<=$hobby['endorsements'];$i++)
+                    $j=1;
+                    for ($j;$j<=$hobby['endorsements'] && $j<=5;$j++)
 
                     {
                         echo '<img src='.base_url('images/endorse_nr.png').' width="25px" >';
                     }
+
+                    for ($j;$j<=5;$j++)
+
+                    {
+                        echo '<img src='.base_url('images/endorse_nr_grey.png').' width="25px" >';
+                    }
+
                     echo '</div>';
 
                     echo '<div id="show_nr_endorsement">';
                     echo $hobby['endorsements'];
                     echo '</div>';
-
-                    echo '<div id="delete_hobby" onclick="delete_hobby(this,\''.$data['USER_ID'].'\',\''.$hobby['hobby'].'\')">Delete</div>';
-
-                    echo "<br>";
-                    echo "<br>";
-                    echo '<div>';
-                    echo '<div id="details">'.$hobby['details'].'</div>';
-                    echo '<div id="edit_details" onclick="edit_details(this,\''.$hobby['details'].'\')">Edit</div>';
+                    echo '<div id="endorse" class="endorse">';
+                    echo '<img src='.base_url('images/bt_up.png').' width="25px" >';
                     echo '</div>';
+
                     echo "<br>";
                     echo "<br>";
+                    echo '<div id="details">'.$hobby['details'].'</div>';
+                    echo "<br>";
+                    echo "<br>";
+                    echo '</div>';
                 }
+
+                if (count($hobbies)>5) echo '<div id="view_hobbies" class="viewmore">View more</div>';
+
                 ?>
 
             </div>
@@ -104,22 +127,33 @@ $image= base_url('images/background'.$bck.'.jpg');
                     $about=$aboutme[$i];
                     $rand=rand(1,4);
                     $circle= base_url('images/circle'.$rand.'.png');
+                    $endorsement=base_url('images/endorse_nr.png');
 
-                    echo '<div id="about" style="background-image: url('.$circle.')">';
-                    echo '<text id="what">"'.ucfirst($about['aboutme']).'"</text>';
 
+                    echo '<div id="about">';
+                    echo '<div id="circle"> <img src="'.$circle.'" width="140px" ></div>';
+                    echo '<div id="what">"'.ucfirst($about['aboutme']).'"</div>';
+                    echo '<div id="img2"><img src="'.$endorsement.'" width="30px"></div>';
                     echo '<div id="endorse_nr2">';
                     echo $about['endorsements'];
                     echo '</div>';
 
+                    echo '<div id="endorse2" class="endorse2"><img src='.base_url('images/bt_up.png').' width="25px" ></div>';
+
                     if ($about['author']<>'you')
                     {
-                        echo "<i>from </i>";
+                        echo '<div id="text">';
+                        echo "<i>said </i>";
                         echo $about['author'];
+                        echo '</div>';
                     }
 
                     echo '</div>';
                 }
+
+
+                if (count($aboutme)>4) echo '<div id="view_aboutme" class="viewmore">View more</div>';
+
                 ?>
 
 

@@ -1,19 +1,6 @@
 
 $(function(){
 
-    //Show Login Popup
-
-
-    $("#overlay").fadeIn();
-    $("#popup_endorse").fadeIn();
-    $("#endorse_popup1").click(function(){
-
-        $("#overlay").fadeIn();
-        $("#popup_endorse").fadeIn();
-
-    });
-
-
     // Endorse hobbies
 
   $(".endorse").click(function()
@@ -32,15 +19,16 @@ $(function(){
 
       //Check if endorsement exists
 
-      $.post("/shout/viewprofile/check_already_endorsed_hobby",{hobby: hobby, thisUser: thisUser},function(data,status)
+      $.post("/shout/viewprofile/check_already_endorsed_hobby/",{hobby: hobby, thisUser: thisUser, loggedin: 1},function(data,status)
       {
+        //  console.log(data);
       if (data=='TRUE')
       {
           $("#popup_already_endorsed").fadeIn();
       }
       else
       {
-        $.post("/shout/viewprofile/add_hobby_endorsement/",{hobby: hobby, thisUser: thisUser},function(data,status)
+        $.post("/shout/viewprofile/add_hobby_endorsement/",{hobby: hobby, thisUser: thisUser, loggedin: 1},function(data,status)
           {
               $("#popup_endorse_success").html(data);
               $("#popup_endorse_success").fadeIn();
@@ -68,15 +56,16 @@ $(function(){
 
         //Check if endorsement exists
 
-        $.post("/shout/viewprofile/check_already_endorsed_aboutme",{aboutme: aboutme, thisUser: thisUser},function(data,status)
+        $.post("/shout/viewprofile/check_already_endorsed_aboutme/",{aboutme: aboutme, thisUser: thisUser, loggedin: 1},function(data,status)
         {
+           // console.log(data);
             if (data=='TRUE')
             {
                 $("#popup_already_endorsed").fadeIn();
             }
             else
             {
-                $.post("/shout/viewprofile/add_aboutme_endorsement/",{aboutme: aboutme, thisUser: thisUser},function(data,status)
+                $.post("/shout/viewprofile/add_aboutme_endorsement/",{aboutme: aboutme, thisUser: thisUser, loggedin: 1},function(data,status)
                 {
                     $("#popup_endorse_success").html(data);
                     $("#popup_endorse_success").fadeIn();
@@ -117,6 +106,7 @@ $(function(){
         $("#popup_message").fadeOut();
         $("#popup_already_endorsed").fadeOut();
         $("#popup_endorse_success").fadeOut();
+        $("#popup_message_success").fadeOut();
         $("#overlay").fadeOut();
     });
 
@@ -125,5 +115,42 @@ $(function(){
         $("#popup_message").fadeIn();
         $("#overlay").fadeIn();
     })
+
+    $("#send").click(function(){
+
+        url=location.href;
+        urlString = [];
+        urlString = url.split("/");
+        urlString.reverse();
+        thisUser=urlString[0];
+
+        message_content=$("#content").val();
+
+        $.post("/shout/viewprofile/send_message/",{thisUser: thisUser, message_content: message_content},function(data,status)
+        {
+            console.log(data);
+            $("#popup_message").fadeOut();
+            $("#popup_message_success").html("Your message was sent!");
+            $("#popup_message_success").fadeIn();
+            setTimeout(function(){
+                $("#content").val("type message here...");
+            }, 500);
+
+        });
+
+
+    });
+
+    $("#content").focus(function(){
+        if ($(this).val()=="type message here...")
+            $(this).val("");
+    });
+
+//Mouse leaves input, show default input text
+
+    $("#content").blur(function(){
+        if ($(this).val()=="")
+            $(this).val("type message here...");
+    });
 
 });

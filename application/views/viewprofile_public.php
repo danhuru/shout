@@ -37,6 +37,16 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 <div id="profile_name"><?php echo $data['USER_NAME'];?> </div>
 
+                <div id="message_user">
+
+                <div id="message_ico"> <img width="24px" height="24px" src="<?php echo base_url('images/message.png');?>"></img>
+                </div>
+                <div id="text_message">
+                Message
+                </div>
+
+                </div>
+
                 <div id="profile_details">
 
                     <?php
@@ -61,7 +71,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 <?php
 
-                for($i=0;$i<count($hobbies);$i++)
+                for($i=0;$i<count($hobbies) && $i<5 ;$i++)
 
                 {
                     $hobby=$hobbies[$i];
@@ -113,7 +123,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 <?php
 
-                for ($i=0;$i<4;$i++)
+                for($i=0;$i<count($aboutme) && $i<4 ;$i++)
                 {
                     $about=$aboutme[$i];
                     $rand=rand(1,4);

@@ -51,7 +51,7 @@ class Invite extends CI_Controller {
 
             } else {
 
-                redirect('/');  // Your FB session expired
+                echo "Your FB session expired";
             }
         }
         catch (FacebookApiException $e) {

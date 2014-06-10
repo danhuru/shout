@@ -24,7 +24,7 @@ class Finish extends CI_Controller {
                     $username=$this->Users->select_user($user_id);
                     $this->load->view('finish',array('data' => $username)); // load the view
                 } else {
-                    redirect('/');  // Your FB session expired
+                    echo "Your FB session expired";
                 }
             }
             catch (FacebookApiException $e) {

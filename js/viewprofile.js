@@ -34,5 +34,11 @@ $(function(){
     });
 
 
+    $("#text_message").click(function()
+    {
+        $("#popup_message").fadeIn();
+        $("#overlay").fadeIn();
+    })
+
 
 });

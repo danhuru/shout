@@ -28,11 +28,12 @@ class Preview extends CI_Controller {
                     $fb_info=$this->Users->select_user($user_id);
                     $hobbies=$this->Users->get_hobbies($user_id);
                     $aboutme=$this->Users->get_aboutme($user_id);
+                    $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme, 'user_is_logged_in' => 1)); // load the view
                     $this->load->view('preview',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
 
                 } else {
 
-                    redirect('/');  // Your FB session expired
+                    echo "Your FB session expired";
                 }
 
             }
