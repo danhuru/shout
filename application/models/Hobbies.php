@@ -20,7 +20,7 @@ class Hobbies extends CI_Model {
         $this->db->from('user_hobbies');
         $this->db->like('hobby', $term);
         $this->db->join('users_facebook', 'user_hobbies.user_id = users_facebook.user_id','inner');
-       // $this->db->where('user_id !=', $user_id);
+        $this->db->where_not_in('users_facebook.user_id', $user_id);
         $this->db->order_by('user_hobbies.endorsements', "desc");
         $query = $this->db->get();
 
@@ -31,8 +31,8 @@ class Hobbies extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('user_hobbies');
+        $this->db->where_not_in('users_facebook.user_id', $user_id);
         $this->db->join('users_facebook', 'user_hobbies.user_id = users_facebook.USER_ID','inner');
-       //  $this->db->where('user_id !=', $user_id);
         $this->db->order_by('user_hobbies.user_id', "random");
         $query = $this->db->get();
 

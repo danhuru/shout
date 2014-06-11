@@ -128,7 +128,7 @@ $(function(){
 
         $.post("/shout/viewprofile/send_message/",{thisUser: thisUser, message_content: message_content},function(data,status)
         {
-            console.log(data);
+            //console.log(data);
             $("#popup_message").fadeOut();
             $("#popup_message_success").html("Your message was sent!");
             $("#popup_message_success").fadeIn();

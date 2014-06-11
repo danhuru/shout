@@ -46,84 +46,6 @@
     min-width: 1200px;
     z-index: 1000;
 }
-#popup_aboutme
-{
-    font-size: 130%;
-    width:500px;
-}
-#pop_hobby
-{
-    float:left;
-    font-size: 130%;
-    color:white;
-    padding-left: 5%;
-}
-#pop_about
-{
-    float:left;
-    width: 150px;
-    height:100px;
-    margin-left: 12%;
-    margin-bottom: 3%;
-    background-repeat: no-repeat;
-    background-size:contain;
-    padding-top: 40px;
-    color:white;
-    text-align: center;
-    font-size: 70%;
-}
-
-#pop_what
-{
-    color:white;
-    font-size: 100%;
-}
-#pop_endorse_nr1
-{
-    float:left;
-    font-size: 130%
-}
-#pop_details
-{
-    float:left;
-    padding-left: 13%;
-}
-#pop_endorse_nr2
-{
-    background-image: url("../images/endorse_nr.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width:40px;
-    height:30px;
-    text-align: center;
-    padding-top: 8px;
-    margin-left: 33%;
-    color:black;
-}
-#pop_show_nr_endorsement
-{
-    float:left;
-    font-size: 20px;
-    padding-left: 5px;
-}
-#login_message
-{
-    float:left;
-}
-.fb-login-button
-{
-    float:left;
-    margin-left:3%;
- }
-#endorse_popup1
-{
-    color:white;
-}
-#endorse_popup1:hover
-{
-    text-decoration: underline;
-    cursor: hand;
-}
 #messsagetext
 {
 
@@ -140,9 +62,28 @@
     padding-right: 2%;
     font: 16px Calibri, sans-serif;
 }
-#sendmessage
+#sendbutton
 {
     background-color: lightgrey;
+}
+#buttonsdiv
+{
+    background-color: lightgrey;
+    float:right;
+    width:100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 5px;
+}
+#okbutton
+{
+    float:right;
+    margin-right: 2%;
+}
+#replybutton
+{
+    float:right;
+    margin-right: 3%;
 }
 #send
 {

@@ -62,6 +62,26 @@ public function get_hobbies($user_id)
         if ($query->num_rows() > 0)  return $query->result_array();
     }
 
+public function get_hobby_value($hobby)
+    {
+        $this->db->select('endorsements');
+        $this->db->from('user_hobbies');
+        $this->db->where('hobby', $hobby);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->row_array();
+    }
+
+public function get_aboutme_value($aboutme)
+    {
+        $this->db->select('endorsements');
+        $this->db->from('user_aboutme');
+        $this->db->where('aboutme', $aboutme);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->row_array();
+    }
+
 public function insert_user_hobbies($user_id,$hobbylist,$hobbydetailslist)
     {
 
@@ -113,7 +133,7 @@ public function insert_user_aboutme($user_id,$aboutmelist)
         {
             $data = array(
                 'USER_ID' => $user_id,
-                'ABOUTME' => ucfirst($aboutmelist[$i]) ,
+                'ABOUTME' => ucfirst($aboutmelist[$i]),
                 'AUTHOR' => 'you',
                 'ENDORSEMENTS' => '0'
             );
@@ -152,10 +172,62 @@ public function get_user_events($user_id)
         $this->db->select('*');
         $this->db->from('user_events');
         $this->db->where('user_id_receiving', $user_id);
+        $this->db->order_by('message_status', "desc");
         $this->db->order_by('event_timestamp', "desc");
         $query = $this->db->get();
 
         if ($query->num_rows() > 0)  return $query->result_array();
+    }
+
+public function view_event($event_id)
+{
+    $this->db->select('*');
+    $this->db->from('user_events');
+    $this->db->where('event_id', $event_id);
+    $query = $this->db->get();
+
+    if ($query->num_rows() > 0)  return $query->row_array();
+}
+
+public function update_event($event_id,$event_type)
+{
+    if ($event_type==5)
+
+    $data = array(
+        'message_status' => 1,
+    );
+
+    else
+        $data = array(
+        'endorsement_status' => 1,
+    );
+
+    $this->db->where('event_id', $event_id);
+    $this->db->update('user_events', $data);
+
+}
+
+public function update_user_hobby($hobby,$user_id_receiving,$endorsement_value)
+    {
+         $data = array(
+               'endorsements' => $endorsement_value
+            );
+
+        $this->db->where('hobby', $hobby);
+        $this->db->where('user_id', $user_id_receiving);
+        $this->db->update('user_hobbies', $data);
+
+    }
+
+public function update_user_aboutme($aboutme,$user_id_receiving,$endorsement_value)
+    {
+        $data = array(
+            'endorsements' => $endorsement_value
+        );
+
+        $this->db->where('aboutme', $aboutme);
+        $this->db->where('user_id', $user_id_receiving);
+        $this->db->update('user_aboutme', $data);
     }
 
 public function check_already_endorsed_loggedin($endorsement_desc, $user_id_initiator,$user_id_receiving,$event_type)

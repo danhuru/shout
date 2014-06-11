@@ -27,6 +27,7 @@ class Search extends CI_Controller {
         $fb_info=$this->Users->select_user($user_id);
 
         $this->load->view('header',array('data' => $fb_info));
+        $this->load->view('popups_message');
         $this->load->view('search');
         $this->load->view('footer');
 
@@ -59,7 +60,8 @@ class Search extends CI_Controller {
     {
         $user_id = $this->facebook->getUser();
 
-        if ($filter=='show_me_all') $data=$this->Hobbies->search_hobbies_default($user_id);
+        if ($filter=='show_me_all')
+        $data=$this->Hobbies->search_hobbies_default($user_id);
         else
         $data=$this->Hobbies->search_hobbies($filter,$user_id);
 
@@ -73,6 +75,7 @@ class Search extends CI_Controller {
          echo '<div id="profile_info_left">';
          echo '<div id="pic"><img src="'.$row['PIC'].'"></img></div>';
          echo '<div id="username">'.$row['USER_NAME'].'</div>';
+         echo '<div id="userid">'.$row['USER_ID'].'</div>';
          echo '</div>';
          echo '<div id="profile_info">';
 
@@ -92,19 +95,19 @@ class Search extends CI_Controller {
            echo '</div>';
 
            echo '<br>';
-           echo '<div id="interact">';
-
-           echo '<div id="viewprofile">';
+           echo '<div id="interact" class="interaction">';
+           echo '<a href="'.'profile/'.$row['PROFILE_URL'].'">';
+           echo '<div id="viewprofile" class="pressviewprofile">';
            echo '<div id="pic_interact"> <img width="24px" height="24px" src="'.base_url('images/profile.png').'"></img></div>';
-           echo '<div id="text">';
-          // echo $row['PROFILE_URL'];
+           echo '<div id="visitprofile">';
            echo 'Profile';
            echo '</div>';
            echo '</div>';
+           echo '</a>';
 
-           echo '<div id="message">';
+           echo '<div id="message" class="pressmessage">';
            echo '<div id="pic_interact"> <img width="24px" height="24px" src="'.base_url('images/message.png').'"></img></div>';
-           echo '<div id="text">';
+           echo '<div id="sendmessage">';
            echo 'Message';
            echo '</div>';
            echo '</div>';
@@ -117,6 +120,23 @@ class Search extends CI_Controller {
        }
         }
 
+    }
+
+    public function send_message()
+
+    {
+        $user_id=$this->input->post('thisUser'); // GET PROFILE
+        $message_content=$this->input->post('message_content');
+        $user_info=$this->Users->select_user($user_id); //GET USER_ID FROM PROFILE
+        $user_id_receiving=$user_info['USER_ID']; // GET USER RECEIVING
+        $user_name_receiving=$user_info['USER_NAME']; // GET USER RECEIVING
+        $user_profilelink_receiving=$user_info['PROFILE_URL']; // GET USER RECEIVING
+        $user_ip = $this->input->ip_address(); //GET IP
+        $user_id_initiator = $this->facebook->getUser();
+        $user_info=$this->Users->select_user($user_id_initiator);
+        $user_name_initiator=$user_info['USER_NAME'];
+        $user_profilelink_initiator=$user_info['PROFILE_URL'];
+        $this->Users->insert_user_events(5,'message','0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,null,null,$message_content);
     }
 
 }

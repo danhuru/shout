@@ -146,6 +146,10 @@ hr
     margin-bottom: 3%;
     margin-left: 2%;
 }
+#userid
+{
+    display:none;
+}
 #user_pic
 {
     float:left;

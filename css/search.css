@@ -1,6 +1,20 @@
 body{
     font: 16px Calibri, sans-serif;
 }
+a
+{
+    color:white;
+    text-decoration: none;
+}
+a:visited
+{
+    color:white;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
 #main
 {
     width: 100%;
@@ -117,6 +131,10 @@ body{
     text-align: center;
     width:100%;
 }
+#userid
+{
+    display:none;
+}
 #profile_info
 {
     float:left;
@@ -166,8 +184,17 @@ body{
     width:38%;
     margin-left: 15%;
 }
-#message:hover  {cursor:hand;}
-#text
+#message:hover
+{
+    cursor:hand;
+}
+#visitprofile
+{
+    float:left;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+#sendmessage
 {
     float:left;
     margin-left: 5%;

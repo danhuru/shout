@@ -3,26 +3,14 @@
 <head>
 
     <script src="/shout/js/search.js" ></script>
-
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/search.css'); ?>"">
-
-    <!-- styles needed by jScrollPane -->
-    <link rel="STYLESHEET" type="text/css" href="<?php echo base_url('css/jquery.jscrollpane.css'); ?>">
     <!-- latest jQuery direct from google's CDN -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- the mousewheel plugin - optional to provide mousewheel support -->
-    <script type="text/javascript" src="/shout/js/jquery.mousewheel.js"></script>
-    <!-- the jScrollPane script -->
-  <!--  <script type="text/javascript" src="/shout/js/jquery.jscrollpane.min.js"></script> -->
-
-
-
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
 </head>
 
-
 <body onload="searchResult('show_me_all')">
-
 
 <?php $bck=rand(1,6);
 $image= base_url('images/background'.$bck.'.jpg');
@@ -60,6 +48,8 @@ $image= base_url('images/background'.$bck.'.jpg');
 
 
 </body>
+
+<script src="/shout/js/search.js" ></script>
 
 </html>
 
