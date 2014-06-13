@@ -12,6 +12,13 @@ window.fbAsyncInit = function() {
      FB.Event.subscribe("auth.logout", function() {window.location = '/shout'});
 };
 
+
+function logout(){
+
+    FB.logout();
+
+}
+
 $(function(){
 
     //Main menu
@@ -45,14 +52,3 @@ $(function(){
         }
 
 
-
-function logout(){
-
-FB.logout(function(response) {
-    // user is now logged out
-    window.location.assign('/shout');
-});
-
-
-
-}

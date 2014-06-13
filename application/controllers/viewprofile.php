@@ -114,9 +114,9 @@ class Viewprofile extends CI_Controller {
                 }
                 catch (FacebookApiException $e) {
                     //User is not logged in or redirect('/'); // Your FB session expired
-
-                    $this->load->view('session_expired',array('current_url' => current_url()));
-                    echo "Your FB session expired";
+                    $this->load->view('popups_message'); // load the view
+                    $this->load->view('popups_session',array('current_url' => current_url()));
+                    redirect(current_url());
 
                 }
             }

@@ -48,10 +48,18 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 </div>
 
+
             </div>
 
+
+
             <div id="hobbies">
-                <div id="profile_name">My hobbies</div>
+                <div id="profile_name">My hobbies
+                    <div id="addmore" onclick="window.location.href='add'">Add more
+                    </div>
+                </div>
+
+
 
                 <br>
 
@@ -94,7 +102,10 @@ $image= base_url('images/background'.$bck.'.jpg');
 
             <div id="aboutme">
 
-                <div id="profile_name">My personality</div>
+                <div id="profile_name">My personality
+                    <div id="addmore" onclick="window.location.href='add'">Add more
+                    </div>
+                </div>
 
                 <br>
 
@@ -124,6 +135,14 @@ $image= base_url('images/background'.$bck.'.jpg');
 
 
             </div>
+
+
+
+
+
+
+
+
         </div>
 
 

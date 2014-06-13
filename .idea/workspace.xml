@@ -5,26 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05b7c534-71b7-4b7d-a96b-2c45947a6ec3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/header_public.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/session_login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/session_redirect.js" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\shout\application\views\session_expired.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/create.php" afterPath="$PROJECT_DIR$/application/controllers/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/editprofile.php" afterPath="$PROJECT_DIR$/application/controllers/editprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fb_login.js" afterPath="$PROJECT_DIR$/js/fb_login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/finish.php" afterPath="$PROJECT_DIR$/application/controllers/finish.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/add.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/add.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/add.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/add.php" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\shout\js\session_redirect.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/editprofile.css" afterPath="$PROJECT_DIR$/css/editprofile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/editprofile.php" afterPath="$PROJECT_DIR$/application/views/editprofile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/header.php" afterPath="$PROJECT_DIR$/application/views/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/header_public.php" afterPath="$PROJECT_DIR$/application/views/header_public.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/home.php" afterPath="$PROJECT_DIR$/application/controllers/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/invite.php" afterPath="$PROJECT_DIR$/application/controllers/invite.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/invitefriends.php" afterPath="$PROJECT_DIR$/application/controllers/invitefriends.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/popups.js" afterPath="$PROJECT_DIR$/js/popups.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/popups_session.php" afterPath="$PROJECT_DIR$/application/views/popups_session.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/preview.php" afterPath="$PROJECT_DIR$/application/controllers/preview.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/search.php" afterPath="$PROJECT_DIR$/application/controllers/search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/popups.php" afterPath="$PROJECT_DIR$/application/views/popups.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/popups_loggedin.php" afterPath="$PROJECT_DIR$/application/views/popups_loggedin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/session_login.js" afterPath="$PROJECT_DIR$/js/session_login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/topmenu.js" afterPath="$PROJECT_DIR$/js/topmenu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/viewprofile.php" afterPath="$PROJECT_DIR$/application/controllers/viewprofile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/viewprofile_loggedin.js" afterPath="$PROJECT_DIR$/js/viewprofile_loggedin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/viewprofile_public.js" afterPath="$PROJECT_DIR$/js/viewprofile_public.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/viewprofile_loggedin.php" afterPath="$PROJECT_DIR$/application/views/viewprofile_loggedin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/viewprofile_public.php" afterPath="$PROJECT_DIR$/application/views/viewprofile_public.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shout.iws" />
@@ -48,71 +46,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header_public.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/header_public.php">
+      <file leaf-file-name="home.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="57" selection-start="405" selection-end="405" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header_public.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/header_public.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="19" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="731">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewprofile.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/viewprofile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="53" selection-start="4411" selection-end="4429" vertical-scroll-proportion="-7.269231" vertical-offset="1188" max-vertical-offset="4369">
-              <folding>
-                <element signature="n#index#0;n#Viewprofile#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewprofile_public.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/viewprofile_public.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="18" selection-start="1902" selection-end="1902" vertical-scroll-proportion="28.76923" vertical-offset="1836" max-vertical-offset="3094">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="popups.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/popups.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="popups.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/popups.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="22" selection-start="1963" selection-end="1976" vertical-scroll-proportion="-5.9615383" vertical-offset="100" max-vertical-offset="510">
-              <folding>
-                <element signature="tag#div#1" expanded="false" />
-                <element signature="tag#div#2" expanded="false" />
-                <element signature="tag#div#3" expanded="false" />
-                <element signature="tag#div#4" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="viewprofile_public.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/viewprofile_public.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.4822695" vertical-offset="0" max-vertical-offset="2295">
+            <state line="286" column="6" selection-start="5061" selection-end="5061" vertical-scroll-proportion="0.33486238" vertical-offset="4716" max-vertical-offset="7616">
               <folding />
             </state>
           </provider>
@@ -133,17 +70,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/invite.php" />
-        <option value="$PROJECT_DIR$/application/views/finish.php" />
-        <option value="$PROJECT_DIR$/application/config/profiler.php" />
-        <option value="$PROJECT_DIR$/application/views/test.php" />
-        <option value="$PROJECT_DIR$/js/viewprofile.js" />
-        <option value="$PROJECT_DIR$/application/controllers/login.php" />
         <option value="$PROJECT_DIR$/application/views/preview.php" />
-        <option value="$PROJECT_DIR$/application/views/editprofile.php" />
-        <option value="$PROJECT_DIR$/application/views/popups.php" />
         <option value="$PROJECT_DIR$/css/popups_loggedin.css" />
-        <option value="$PROJECT_DIR$/application/views/popups_loggedin.php" />
         <option value="$PROJECT_DIR$/application/views/viewprofile.php" />
         <option value="$PROJECT_DIR$/css/search.css" />
         <option value="$PROJECT_DIR$/application/models/Hobbies.php" />
@@ -152,10 +80,8 @@
         <option value="$PROJECT_DIR$/css/popups_message.css" />
         <option value="$PROJECT_DIR$/js/home.js" />
         <option value="$PROJECT_DIR$/application/views/home.php" />
-        <option value="$PROJECT_DIR$/application/views/viewprofile_loggedin.php" />
         <option value="$PROJECT_DIR$/css/viewprofile_loggedin.css" />
         <option value="$PROJECT_DIR$/css/viewprofile_public.css" />
-        <option value="$PROJECT_DIR$/application/views/viewprofile_public.php" />
         <option value="$PROJECT_DIR$/application/models/Users.php" />
         <option value="$PROJECT_DIR$/css/session_expired.css" />
         <option value="$PROJECT_DIR$/js/session_expired.js" />
@@ -164,26 +90,37 @@
         <option value="$PROJECT_DIR$/css/popups_session.css" />
         <option value="$PROJECT_DIR$/js/popups_session.js" />
         <option value="$PROJECT_DIR$/css/home.css" />
-        <option value="$PROJECT_DIR$/js/topmenu.js" />
         <option value="$PROJECT_DIR$/js/fb_login.js" />
         <option value="$PROJECT_DIR$/js/fb_redirect.js" />
-        <option value="$PROJECT_DIR$/application/controllers/create.php" />
         <option value="$PROJECT_DIR$/application/controllers/editprofile.php" />
-        <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/application/controllers/invitefriends.php" />
         <option value="$PROJECT_DIR$/application/controllers/search.php" />
-        <option value="$PROJECT_DIR$/application/controllers/viewprofile.php" />
-        <option value="$PROJECT_DIR$/application/controllers/preview.php" />
         <option value="$PROJECT_DIR$/application/controllers/finish.php" />
         <option value="$PROJECT_DIR$/application/controllers/invite.php" />
         <option value="$PROJECT_DIR$/js/session_redirect.js" />
         <option value="$PROJECT_DIR$/application/views/popups_session.php" />
-        <option value="$PROJECT_DIR$/js/session_login.js" />
-        <option value="$PROJECT_DIR$/application/views/header_public.php" />
         <option value="$PROJECT_DIR$/css/header_public.css" />
-        <option value="$PROJECT_DIR$/js/popups.js" />
         <option value="$PROJECT_DIR$/js/viewprofile_loggedin.js" />
         <option value="$PROJECT_DIR$/js/viewprofile_public.js" />
+        <option value="$PROJECT_DIR$/application/views/add.php" />
+        <option value="$PROJECT_DIR$/css/add.css" />
+        <option value="$PROJECT_DIR$/application/views/editprofile.php" />
+        <option value="$PROJECT_DIR$/css/editprofile.css" />
+        <option value="$PROJECT_DIR$/application/controllers/preview.php" />
+        <option value="$PROJECT_DIR$/application/controllers/create.php" />
+        <option value="$PROJECT_DIR$/application/controllers/add.php" />
+        <option value="$PROJECT_DIR$/js/add.js" />
+        <option value="$PROJECT_DIR$/application/controllers/viewprofile.php" />
+        <option value="$PROJECT_DIR$/js/popups.js" />
+        <option value="$PROJECT_DIR$/application/controllers/home.php" />
+        <option value="$PROJECT_DIR$/application/views/popups.php" />
+        <option value="$PROJECT_DIR$/application/views/header_public.php" />
+        <option value="$PROJECT_DIR$/js/session_login.js" />
+        <option value="$PROJECT_DIR$/application/views/popups_loggedin.php" />
+        <option value="$PROJECT_DIR$/js/topmenu.js" />
+        <option value="$PROJECT_DIR$/application/views/viewprofile_loggedin.php" />
+        <option value="$PROJECT_DIR$/application/views/header.php" />
+        <option value="$PROJECT_DIR$/application/views/viewprofile_public.php" />
       </list>
     </option>
   </component>
@@ -376,11 +313,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\shout\css" />
+      <recent name="C:\xampp\htdocs\shout\application\controllers" />
       <recent name="C:\xampp\htdocs\shout\js" />
+      <recent name="C:\xampp\htdocs\shout\css" />
       <recent name="C:\xampp\htdocs\shout\application\views" />
       <recent name="C:\xampp\htdocs\shout\application\models" />
-      <recent name="C:\xampp\htdocs\shout\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\shout\application\views" />
@@ -518,7 +455,11 @@
       <created>1402650748076</created>
       <updated>1402650748076</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Stable version&#10;">
+      <created>1402660506698</created>
+      <updated>1402660506698</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -700,61 +641,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/search.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="1" selection-start="2861" selection-end="2861" vertical-scroll-proportion="-12.4" vertical-offset="3107" max-vertical-offset="3638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/finish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="1" selection-end="103" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1013" selection-end="1013" vertical-scroll-proportion="-11.115385" vertical-offset="306" max-vertical-offset="1037" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="28" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.6169429" vertical-offset="430" max-vertical-offset="1054" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Hobbies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="50" selection-start="498" selection-end="498" vertical-scroll-proportion="-10.346154" vertical-offset="3" max-vertical-offset="816" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/viewprofile_loggedin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="222" column="0" selection-start="3225" selection-end="3262" vertical-scroll-proportion="0.0" vertical-offset="3341" max-vertical-offset="3876">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/viewprofile_public.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="222" column="37" selection-start="3262" selection-end="3262" vertical-scroll-proportion="0.0" vertical-offset="3324" max-vertical-offset="3876">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/popups_message.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2363">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/popups_message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="140" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/popups_loggedin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="1" selection-start="771" selection-end="965" vertical-scroll-proportion="-3.4390805" vertical-offset="2295" max-vertical-offset="3366">
@@ -762,30 +648,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/viewprofile_loggedin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="3060">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/popups_loggedin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="53" selection-start="1930" selection-end="1943" vertical-scroll-proportion="0.30670103" vertical-offset="0" max-vertical-offset="388">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/invite.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="35" selection-end="167" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1632">
           <folding />
         </state>
       </provider>
@@ -804,37 +669,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="286" column="6" selection-start="5061" selection-end="5061" vertical-scroll-proportion="-5.84" vertical-offset="4716" max-vertical-offset="7616">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1674" selection-end="1674" vertical-scroll-proportion="-8.769231" vertical-offset="588" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/topmenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="39" selection-start="1362" selection-end="1362" vertical-scroll-proportion="0.38990825" vertical-offset="561" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/create.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6528">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="10" selection-start="1640" selection-end="3560" vertical-scroll-proportion="-10.923077" vertical-offset="719" max-vertical-offset="1377">
           <folding />
         </state>
       </provider>
@@ -880,64 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/editprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="20" selection-start="2940" selection-end="2940" vertical-scroll-proportion="-13.307693" vertical-offset="1320" max-vertical-offset="2465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fb_load_sdk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="337" selection-end="337" vertical-scroll-proportion="0.3686747" vertical-offset="0" max-vertical-offset="415">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fb_custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="415">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/fb_login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="23" selection-start="0" selection-end="2299" vertical-scroll-proportion="1.6385542" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="44" selection-start="1139" selection-end="1139" vertical-scroll-proportion="1.7545872" vertical-offset="0" max-vertical-offset="2159">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="1020" selection-end="1020" vertical-scroll-proportion="-2.9118388" vertical-offset="1462" max-vertical-offset="4981">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="17" selection-start="1116" selection-end="1116" vertical-scroll-proportion="-11.884615" vertical-offset="320" max-vertical-offset="2193">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/editprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="57" selection-start="1264" selection-end="1277" vertical-scroll-proportion="-11.115385" vertical-offset="306" max-vertical-offset="1343">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/invitefriends.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="57" selection-start="1807" selection-end="1807" vertical-scroll-proportion="-13.730769" vertical-offset="612" max-vertical-offset="1938">
@@ -961,15 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/preview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="45" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.5804878" vertical-offset="255" max-vertical-offset="935">
-          <folding>
-            <element signature="e#623#1525#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/finish.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="13" selection-start="407" selection-end="407" vertical-scroll-proportion="-3.9230769" vertical-offset="204" max-vertical-offset="1054">
@@ -984,53 +754,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="50" selection-start="1557" selection-end="1557" vertical-scroll-proportion="1.9615384" vertical-offset="867" max-vertical-offset="2482">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/session_redirect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="38" selection-end="38" vertical-scroll-proportion="0.08192771" vertical-offset="0" max-vertical-offset="415">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/popups_session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/session_login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.38990825" vertical-offset="204" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/viewprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="394" selection-end="394" vertical-scroll-proportion="-2.0317073" vertical-offset="1020" max-vertical-offset="2652">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/viewprofile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="53" selection-start="4411" selection-end="4429" vertical-scroll-proportion="-7.269231" vertical-offset="1188" max-vertical-offset="4369">
-          <folding>
-            <element signature="n#index#0;n#Viewprofile#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/header_public.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="57" selection-start="405" selection-end="405" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="425">
           <folding />
         </state>
       </provider>
@@ -1042,42 +768,270 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/popups.php">
+    <entry file="file://$PROJECT_DIR$/css/add.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="22" selection-start="1963" selection-end="1976" vertical-scroll-proportion="-5.9615383" vertical-offset="100" max-vertical-offset="510">
+        <state line="368" column="17" selection-start="5948" selection-end="5948" vertical-scroll-proportion="-7.52" vertical-offset="6068" max-vertical-offset="7820">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/editprofile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="14" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-9.64" vertical-offset="864" max-vertical-offset="5950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/preview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="55" selection-start="1425" selection-end="1426" vertical-scroll-proportion="-12.076923" vertical-offset="383" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="32" selection-start="3164" selection-end="3176" vertical-scroll-proportion="-4.6923075" vertical-offset="1663" max-vertical-offset="2193">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/editprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="21" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.69922876" vertical-offset="306" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="54" selection-start="3577" selection-end="3577" vertical-scroll-proportion="-9.076923" vertical-offset="1702" max-vertical-offset="2193">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/add.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="336" column="0" selection-start="9063" selection-end="9063" vertical-scroll-proportion="0.31143552" vertical-offset="5584" max-vertical-offset="6341">
           <folding>
-            <element signature="tag#div#1" expanded="false" />
-            <element signature="tag#div#2" expanded="false" />
-            <element signature="tag#div#3" expanded="false" />
-            <element signature="tag#div#4" expanded="false" />
+            <element signature="e#9385#9583#0" expanded="false" />
+            <element signature="e#9909#10120#0" expanded="false" />
+            <element signature="e#10144#10307#0" expanded="false" />
+            <element signature="e#10459#10672#0" expanded="false" />
+            <element signature="e#10696#10859#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/popups.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+        <state line="8" column="38" selection-start="238" selection-end="238" vertical-scroll-proportion="0.3119266" vertical-offset="0" max-vertical-offset="436">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="10" selection-start="1640" selection-end="3560" vertical-scroll-proportion="2.578406" vertical-offset="0" max-vertical-offset="2584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="6" selection-start="225" selection-end="225" vertical-scroll-proportion="57.53846" vertical-offset="1632" max-vertical-offset="2363">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="918" selection-end="980" vertical-scroll-proportion="0.19495413" vertical-offset="459" max-vertical-offset="1360">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/viewprofile_loggedin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="2943" selection-end="2943" vertical-scroll-proportion="4.826633" vertical-offset="0" max-vertical-offset="2788">
+        <state line="113" column="0" selection-start="2943" selection-end="2943" vertical-scroll-proportion="-1.0496454" vertical-offset="2365" max-vertical-offset="2788">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/viewprofile_public.php">
+    <entry file="file://$PROJECT_DIR$/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="18" selection-start="1902" selection-end="1902" vertical-scroll-proportion="28.76923" vertical-offset="1836" max-vertical-offset="3094">
+        <state line="45" column="44" selection-start="1139" selection-end="1139" vertical-scroll-proportion="-1.8433735" vertical-offset="1530" max-vertical-offset="2159">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/editprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="226" selection-end="226" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="2788">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewprofile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.007229" vertical-offset="418" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="59" selection-start="355" selection-end="359" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="4981">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="36" selection-start="1490" selection-end="1490" vertical-scroll-proportion="2.0345745" vertical-offset="0" max-vertical-offset="2499">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/viewprofile_public.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="219" selection-end="219" vertical-scroll-proportion="0.4822695" vertical-offset="0" max-vertical-offset="2295">
+        <state line="9" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="-1.738806" vertical-offset="852" max-vertical-offset="2295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/popups_loggedin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/popups_message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="140" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fb_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="58" selection-start="962" selection-end="962" vertical-scroll-proportion="0.57349396" vertical-offset="102" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/topmenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="2" selection-start="679" selection-end="679" vertical-scroll-proportion="0.49156627" vertical-offset="0" max-vertical-offset="578">
+          <folding>
+            <element signature="e#735#1329#0" expanded="false" />
+            <element signature="n#!!block;n#redirect#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fb_load_sdk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="64" selection-start="227" selection-end="227" vertical-scroll-proportion="0.1559633" vertical-offset="0" max-vertical-offset="436">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="256" selection-end="256" vertical-scroll-proportion="0.20731707" vertical-offset="0" max-vertical-offset="1003">
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/viewprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="53" selection-start="69" selection-end="69" vertical-scroll-proportion="-0.08292683" vertical-offset="102" max-vertical-offset="2652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/viewprofile_loggedin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="0.37317073" vertical-offset="0" max-vertical-offset="3077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/header_public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="54" selection-start="150" selection-end="150" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/popups.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="2234" selection-end="2234" vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1088">
+          <folding>
+            <element signature="e#213#967#0" expanded="false" />
+            <element signature="e#1035#1568#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/viewprofile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="53" selection-start="4476" selection-end="4494" vertical-scroll-proportion="-7.8461537" vertical-offset="1173" max-vertical-offset="4369">
+          <folding>
+            <element signature="n#index#0;n#Viewprofile#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="32" selection-end="167" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1632">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fb_custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="436">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/viewprofile_public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="55" selection-start="556" selection-end="556" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="3145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/session_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="45" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="952">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="286" column="6" selection-start="5061" selection-end="5061" vertical-scroll-proportion="0.33486238" vertical-offset="4716" max-vertical-offset="7616">
           <folding />
         </state>
       </provider>

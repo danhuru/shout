@@ -70,7 +70,8 @@ class Home extends CI_Controller {
             // No user, so print a link for the user to login
             //$login_url = $this->facebook->getLoginUrl();
             //echo 'Please <a href="' . $login_url . '">login.</a>';
-         //   echo "Your FB session expired";
+         //   echo "Your FB session            redirect('/');
+          //  expired";
             redirect('/');
         }
 

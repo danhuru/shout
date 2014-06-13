@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
+    <script src="/shout/js/fb_load_sdk.js" ></script>
+    <script src="/shout/js/session_login.js" ></script>
+
 </head>
 
 <body>

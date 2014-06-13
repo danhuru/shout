@@ -1,5 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/popups_loggedin.css'); ?>">
+
 <script src="/shout/js/popups.js"></script>
+
 
 <div id="overlay"></div>
 <div id="popup_hobbies" class="popup">

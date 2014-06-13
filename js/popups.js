@@ -14,7 +14,4 @@ $(function()
         $("#overlay").fadeOut();
     });
 
-
-
-
 });

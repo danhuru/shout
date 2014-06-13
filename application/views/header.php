@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/header.css'); ?>">
 <script src="/shout/js/jquery-1.11.0.min.js"></script>
-<script src="js/fb_load_sdk.js" ></script>
+<script src="/shout/js/fb_load_sdk.js"></script>
 <script src="/shout/js/topmenu.js"></script>
 
 <div id="header">

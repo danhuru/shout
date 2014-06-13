@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/header_public.css'); ?>">
 <script src="/shout/js/jquery-1.11.0.min.js"></script>
 
-
 <div id="header">
 
     <div id="header_logo">

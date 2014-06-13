@@ -10,8 +10,6 @@ window.fbAsyncInit = function() {
     // whenever someone who was previously logged out tries to log in again, the correct case below
     // will be handled.
 
-
-
     FB.Event.subscribe('auth.authResponseChange', function(response) {
         // Here we specify what we do with the response anytime this event occurs.
 
@@ -23,9 +21,7 @@ window.fbAsyncInit = function() {
 
             //Custom Code here
 
-        url=$('#current_url').text();
-        alert(url);
-        window.location.assign(url);
+        window.location.assign(document.URL);
 
             //End of Custom Code
 
@@ -50,4 +46,6 @@ window.fbAsyncInit = function() {
         }
     });
     FB.Event.subscribe("auth.logout", function() {window.location = '/shout'});
+
+
 };

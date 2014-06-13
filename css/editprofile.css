@@ -54,6 +54,19 @@ body{
     font-size: 24px;
     font-weight: bold;
 }
+#addmore
+{
+    color:orange;
+    float:right;
+    margin-right: 2%;
+    margin-top: 2%;
+    font-size: 16px;
+    font-weight: bold;
+}
+#addmore:hover
+{
+    cursor:hand;
+}
 #profile_details
 {
     float:left;
