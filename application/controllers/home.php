@@ -51,7 +51,10 @@ class Home extends CI_Controller {
 
           //   $login_url = $this->facebook->getLoginUrl();
           //   echo 'Please <a href="' . $login_url . '">login.</a>';
-             echo "Your FB session expired";
+           //  $this->load->view('home',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme,'events' => $events)); // load the view
+             $this->load->view('popups_message'); // load the view
+             $this->load->view('popups_session',array('current_url' => current_url()));
+
           //   redirect('/');
     }
 }
@@ -83,8 +86,6 @@ class Home extends CI_Controller {
     public function confirm_endorsement()
     {
 
-
-        $this->output->enable_profiler(TRUE);
         $event_id=$this->input->post('event_id');
         $event_info=$this->Users->view_event($event_id);
         $user_id_receiving=$event_info['user_id_receiving'];
@@ -94,12 +95,12 @@ class Home extends CI_Controller {
         if($event_info['event_type']==1)
 
         {
-        $hobby=$event_info['endorsement_desc'];
-        $endorsement_initial=$this->Users->get_hobby_value($hobby);
+        $hobby_id=$event_info['target_id'];
+        $endorsement_initial=$this->Users->get_hobby_value($hobby_id);
         $endorsement=$endorsement_initial['endorsements'] + $endorsement_value;
 
       //update user_hobbies
-        $this->Users->update_user_hobby($hobby,$user_id_receiving,$endorsement);
+        $this->Users->update_user_hobby($hobby_id,$user_id_receiving,$endorsement);
       //update_user_events
         $this->Users->update_event($event_id,1);
 
@@ -108,39 +109,19 @@ class Home extends CI_Controller {
         if($event_info['event_type']==2)
 
         {
-            $aboutme=$event_info['endorsement_desc'];
-            $endorsement_initial=$this->Users->get_aboutme_value($aboutme);
+            $aboutme_id=$event_info['target_id'];
+            $endorsement_initial=$this->Users->get_aboutme_value($aboutme_id);
             $endorsement=$endorsement_initial['endorsements'] + $endorsement_value;
-
             //update user_hobbies
-            $this->Users->update_user_aboutme($aboutme,$user_id_receiving,$endorsement);
+            $this->Users->update_user_aboutme($aboutme_id,$user_id_receiving,$endorsement);
             //update_user_events
-        //    $this->Users->update_event($event_id,2);
+            $this->Users->update_event($event_id,2);
         }
 
-        if($event_info['event_type']==3)
-        {
-            $hobby=$event_info['endorsement_desc'];
-            $endorsement_initial=$this->Users->get_hobby_value($hobby);
-            $endorsement=$endorsement_initial['endorsements'] + $endorsement_value;
+        if($event_info['event_type']==3) { ; } // NOT IMPLEMENTED YET
 
-            //update user_hobbies
-            $this->Users->update_user_hobby($hobby,$user_id_receiving,$endorsement);
-            //update_user_events
-            $this->Users->update_event($event_id,3);}
 
-        if($event_info['event_type']==4)
-
-        {
-            $hobby=$event_info['endorsement_desc'];
-            $endorsement_initial=$this->Users->get_hobby_value($hobby);
-            $endorsement=$endorsement_initial['endorsements'] + $endorsement_value;
-
-            //update user_hobbies
-            $this->Users->update_user_hobby($hobby,$user_id_receiving,$endorsement);
-            //update_user_events
-            $this->Users->update_event($event_id,4);
-        }
+        if($event_info['event_type']==4) { ; } // NOT IMPLEMENTED YET
 
     }
 

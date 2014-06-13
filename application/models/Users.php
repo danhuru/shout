@@ -62,21 +62,41 @@ public function get_hobbies($user_id)
         if ($query->num_rows() > 0)  return $query->result_array();
     }
 
-public function get_hobby_value($hobby)
+public function get_hobby_value($hobby_id)
     {
         $this->db->select('endorsements');
         $this->db->from('user_hobbies');
-        $this->db->where('hobby', $hobby);
+        $this->db->where('hobby_id', $hobby_id);
         $query = $this->db->get();
 
         if ($query->num_rows() > 0)  return $query->row_array();
     }
 
-public function get_aboutme_value($aboutme)
+public function get_hobby_desc($hobby_id)
+    {
+        $this->db->select('hobby');
+        $this->db->from('user_hobbies');
+        $this->db->where('hobby_id', $hobby_id);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->row_array();
+    }
+
+public function get_aboutme_value($aboutme_id)
     {
         $this->db->select('endorsements');
         $this->db->from('user_aboutme');
-        $this->db->where('aboutme', $aboutme);
+        $this->db->where('aboutme_id', $aboutme_id);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->row_array();
+    }
+
+public function get_aboutme_desc($aboutme_id)
+    {
+        $this->db->select('aboutme');
+        $this->db->from('user_aboutme');
+        $this->db->where('aboutme_id', $aboutme_id);
         $query = $this->db->get();
 
         if ($query->num_rows() > 0)  return $query->row_array();
@@ -116,7 +136,7 @@ $this->db->update('users_facebook', $data);
 
 public function get_aboutme($user_id)
     {
-        $this->db->select('user_id,aboutme,endorsements,author');
+        $this->db->select('*');
         $this->db->from('user_aboutme');
         $this->db->where('user_id', $user_id);
         $query = $this->db->get();
@@ -207,51 +227,51 @@ public function update_event($event_id,$event_type)
 
 }
 
-public function update_user_hobby($hobby,$user_id_receiving,$endorsement_value)
+public function update_user_hobby($hobby_id,$user_id_receiving,$endorsement_value)
     {
          $data = array(
                'endorsements' => $endorsement_value
             );
 
-        $this->db->where('hobby', $hobby);
+        $this->db->where('hobby_id', $hobby_id);
         $this->db->where('user_id', $user_id_receiving);
         $this->db->update('user_hobbies', $data);
 
     }
 
-public function update_user_aboutme($aboutme,$user_id_receiving,$endorsement_value)
+public function update_user_aboutme($aboutme_id,$user_id_receiving,$endorsement_value)
     {
         $data = array(
             'endorsements' => $endorsement_value
         );
 
-        $this->db->where('aboutme', $aboutme);
+        $this->db->where('aboutme_id', $aboutme_id);
         $this->db->where('user_id', $user_id_receiving);
         $this->db->update('user_aboutme', $data);
     }
 
-public function check_already_endorsed_loggedin($endorsement_desc, $user_id_initiator,$user_id_receiving,$event_type)
+public function check_already_endorsed_loggedin($target_id, $user_id_initiator,$user_id_receiving,$event_type)
 
 {
     $this->db->select('*');
     $this->db->from('user_events');
     $this->db->where('user_id_initiator', $user_id_initiator);
     $this->db->where('user_id_receiving', $user_id_receiving);
-    $this->db->where('endorsement_desc', $endorsement_desc);
+    $this->db->where('target_id', $target_id);
     $this->db->where('event_type', $event_type);
     $query = $this->db->get();
     if ($query->num_rows() > 0)   return $query->result_array();
 
 }
 
-public function check_already_endorsed_anonymous($endorsement_desc, $user_ip,$user_id_receiving,$event_type)
+public function check_already_endorsed_anonymous($target_id, $user_ip,$user_id_receiving,$event_type)
 
     {
         $this->db->select('*');
         $this->db->from('user_events');
         $this->db->where('user_ip', $user_ip);
         $this->db->where('user_id_receiving', $user_id_receiving);
-        $this->db->where('endorsement_desc', $endorsement_desc);
+        $this->db->where('target_id', $target_id);
         $this->db->where('event_type', $event_type);
         $query = $this->db->get();
 
@@ -263,6 +283,7 @@ public function insert_user_events
 (
     $event_type,
     $event_type_desc,
+    $target_id,
     $user_anonymous,
     $user_ip,
     $user_id_initiator,
@@ -279,7 +300,8 @@ public function insert_user_events
             $data = array(
                 'EVENT_TYPE' => $event_type,
                 'EVENT_TYPE_DESC' => $event_type_desc ,
-                'USER_ANONYMOUS' => $user_anonymous ,
+                'TARGET_ID' => $target_id,
+                'USER_ANONYMOUS' => $user_anonymous,
                 'USER_IP' => $user_ip ,
                 'USER_ID_INITIATOR' => $user_id_initiator,
                 'USER_NAME_INITIATOR' => $user_name_initiator,
@@ -292,7 +314,7 @@ public function insert_user_events
                 'ENDORSEMENT_VALUE' => $endorsement_value,
                 'MESSAGE_CONTENT' => $message_content,
                 'MESSAGE_STATUS' => '0',
-                'EVENT_TIMESTAMP' => date('Y-m-d').' '.date("h:i:s")
+                'EVENT_TIMESTAMP' => date('Y-m-d').' '.date("H:i:s")
             );
 
           $this->db->insert('user_events', $data);

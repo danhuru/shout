@@ -9,8 +9,8 @@ $(function(){
       $("#overlay").fadeIn();
 
       // Obtain hobby and profile
-      hobby=$(this).siblings("#hobby").text();
-      var el=$(this).siblings("#hobby");
+      hobby_id=$(this).siblings("#hobby_id").text();
+      var el=$(this).siblings("#hobby_id");
       url=location.href;
       urlString = [];
       urlString = url.split("/");
@@ -19,7 +19,7 @@ $(function(){
 
       //Check if endorsement exists
 
-      $.post("/shout/viewprofile/check_already_endorsed_hobby/",{hobby: hobby, thisUser: thisUser, loggedin: 1},function(data,status)
+      $.post("/shout/viewprofile/check_already_endorsed_hobby/",{hobby_id: hobby_id, thisUser: thisUser, loggedin: 1},function(data,status)
       {
         //  console.log(data);
       if (data=='TRUE')
@@ -28,7 +28,7 @@ $(function(){
       }
       else
       {
-        $.post("/shout/viewprofile/add_hobby_endorsement/",{hobby: hobby, thisUser: thisUser, loggedin: 1},function(data,status)
+        $.post("/shout/viewprofile/add_hobby_endorsement/",{hobby_id: hobby_id, thisUser: thisUser, loggedin: 1},function(data,status)
           {
               $("#popup_endorse_success").html(data);
               $("#popup_endorse_success").fadeIn();
@@ -46,8 +46,8 @@ $(function(){
         $("#overlay").fadeIn();
 
         // Obtain hobby and profile
-        aboutme=$(this).siblings("#what").text();
-        var el=$(this).siblings("#what");
+        aboutme_id=$(this).siblings("#aboutme_id").text();
+         var el=$(this).siblings("#aboutme_id");
         url=location.href;
         urlString = [];
         urlString = url.split("/");
@@ -56,7 +56,7 @@ $(function(){
 
         //Check if endorsement exists
 
-        $.post("/shout/viewprofile/check_already_endorsed_aboutme/",{aboutme: aboutme, thisUser: thisUser, loggedin: 1},function(data,status)
+        $.post("/shout/viewprofile/check_already_endorsed_aboutme/",{aboutme_id: aboutme_id, thisUser: thisUser, loggedin: 1},function(data,status)
         {
            // console.log(data);
             if (data=='TRUE')
@@ -65,8 +65,9 @@ $(function(){
             }
             else
             {
-                $.post("/shout/viewprofile/add_aboutme_endorsement/",{aboutme: aboutme, thisUser: thisUser, loggedin: 1},function(data,status)
+                $.post("/shout/viewprofile/add_aboutme_endorsement/",{aboutme_id: aboutme_id, thisUser: thisUser, loggedin: 1},function(data,status)
                 {
+                    console.log(data);
                     $("#popup_endorse_success").html(data);
                     $("#popup_endorse_success").fadeIn();
                 });
