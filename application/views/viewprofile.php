@@ -111,18 +111,25 @@ $image= base_url('images/background'.$bck.'.jpg');
                     $about=$aboutme[$i];
                     $rand=rand(1,4);
                     $circle= base_url('images/circle'.$rand.'.png');
+                    $endorsement=base_url('images/endorse_nr.png');
 
-                    echo '<div id="about" style="background-image: url('.$circle.')">';
-                    echo '<text id="what">"'.ucfirst($about['aboutme']).'"</text>';
-
+                    echo '<div id="about">';
+                    echo '<div id="aboutme_id">'.$about['aboutme_id'].'</div>';
+                    echo '<div id="circle"> <img src="'.$circle.'" width="140px" ></div>';
+                    echo '<div id="what">"'.ucfirst($about['aboutme']).'"</div>';
+                    echo '<div id="img2"><img src="'.$endorsement.'" width="40px"></div>';
                     echo '<div id="endorse_nr2">';
                     echo $about['endorsements'];
                     echo '</div>';
 
+
+
                     if ($about['author']<>'you')
                     {
-                        echo "<i>from </i>";
+                        echo '<div id="text">';
+                        echo "<i>said </i>";
                         echo $about['author'];
+                        echo '</div>';
                     }
 
                     echo '</div>';

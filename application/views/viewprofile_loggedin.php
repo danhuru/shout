@@ -135,7 +135,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                     echo '<div id="aboutme_id">'.$about['aboutme_id'].'</div>';
                     echo '<div id="circle"> <img src="'.$circle.'" width="140px" ></div>';
                     echo '<div id="what">"'.ucfirst($about['aboutme']).'"</div>';
-                    echo '<div id="img2"><img src="'.$endorsement.'" width="30px"></div>';
+                    echo '<div id="img2"><img src="'.$endorsement.'" width="40px"></div>';
                     echo '<div id="endorse_nr2">';
                     echo $about['endorsements'];
                     echo '</div>';

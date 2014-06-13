@@ -42,7 +42,8 @@ class Finish extends CI_Controller {
 
                 //   $login_url = $this->facebook->getLoginUrl();
                 //   echo 'Please <a href="' . $login_url . '">login.</a>';
-                redirect('/');
+                $this->load->view('popups_message'); // load the view
+                $this->load->view('popups_session',array('current_url' => current_url()));
             }
         }
         else {

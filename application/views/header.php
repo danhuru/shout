@@ -10,10 +10,10 @@
     </div>
     <div id ="rightmenu">
 
-        <a href="search"><img width=42px height=42px src="<?php echo base_url('images/search.jpg');?>"></img></a>
+        <a href="/shout/search"><img width=42px height=42px src="<?php echo base_url('images/search.jpg');?>"></img></a>
         <a href="search.php"><img width=42px height=42px src="<?php echo base_url('images/messages.jpg');?>"></img></a>
         <a href="search.php"><img width=42px height=42px src="<?php echo base_url('images/alert.jpg');?>"></img></a>
-        <a href="invitefriends"><img width=42px height=42px src="<?php echo base_url('images/settings.jpg');?>"></img></a>
+        <a href="/shout/invitefriends"><img width=42px height=42px src="<?php echo base_url('images/settings.jpg');?>"></img></a>
 
     </div>
     <div id ="mainmenu">
