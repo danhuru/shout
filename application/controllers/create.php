@@ -25,8 +25,16 @@ class Create extends CI_Controller {
                 $test = $this->facebook->api('/me?fields=id');
                 if ($test)
                 {
+
+
                 $user_fb_info=$this->Users->select_user($user_id);
+
+                    if ($user_fb_info['REDIRECT_PAGE']=='create'){
+
                 $this->load->view('create',array('data' => $user_fb_info, 'error'=>' '));
+
+                    }
+                    else redirect($user_fb_info['REDIRECT_PAGE']);
                 }
                 else {
                     // No user, so print a link for the user to login

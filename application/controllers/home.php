@@ -23,7 +23,10 @@ class Home extends CI_Controller {
          $test = $this->facebook->api('/me?fields=id');
          if ($test)
          {
-                    //User is logged in
+
+
+
+                 //User is logged in
         $this->Users->update_redirect_page($user_id,'home');
         $fb_info=$this->Users->select_user($user_id);
         $hobbies=$this->Users->get_hobbies($user_id);
@@ -33,12 +36,17 @@ class Home extends CI_Controller {
 
         $events=$this->Users->get_user_events($user_id);
 
+             if ($fb_info['REDIRECT_PAGE']=='home'){
+
         // LOAD THE VIEWS
         $this->load->view('header',array('data' => $fb_info));
         $this->load->view('popups_loggedin',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
         $this->load->view('popups_message'); // load the view
         $this->load->view('home',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme,'events' => $events)); // load the view
         $this->load->view('footer');
+
+             }
+             else redirect($fb_info['REDIRECT_PAGE']);
 
         } else {
              echo "Your FB session expired";

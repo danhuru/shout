@@ -42,13 +42,21 @@ class Invitefriends extends CI_Controller {
                 if ($test)
                 {
 
+
+
         $fb_info=$this->Users->select_user($user_id);
+
+                    if ($fb_info['REDIRECT_PAGE']=='home'){
 
         $this->get_friends(); // call get_friends to retrieve facebook friends
 
         $this->load->view('header',array('data' => $fb_info));
         $this->load->view('invitefriends',array('data' => $fb_info)); // load the view
         $this->load->view('footer');
+
+                    }
+                    else redirect($fb_info['REDIRECT_PAGE']);
+
                 } else {
 
                     echo "Your FB session expired";

@@ -43,11 +43,19 @@ class Invite extends CI_Controller {
             if ($test)
             {
 
-        $this->Users->update_redirect_page($user_id,'invite');
+
+
         $fb_info=$this->Users->select_user($user_id);
 
+                if ($fb_info['REDIRECT_PAGE']=='invite'){
+
+
+        $this->Users->update_redirect_page($user_id,'invite');
         $this->get_friends(); // call get_friends to retrieve facebook friends
         $this->load->view('invite',array('data' => $fb_info)); // load the view
+
+                }
+                else redirect($fb_info['REDIRECT_PAGE']);
 
             } else {
 

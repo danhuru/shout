@@ -8,11 +8,10 @@ $(function(){
     $("#popup_endorse").fadeIn();
     $("#endorse_popup1").click(function(){
 
-        $("#overlay").fadeIn();
-        $("#popup_endorse").fadeIn();
+        $("#overlay").fadeOut();
+        $("#popup_endorse").fadeOut();
 
     });
-
 
     // Endorse hobbies
 

@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/header.css'); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/header_public.css'); ?>">
 <script src="/shout/js/jquery-1.11.0.min.js"></script>
-<script src="/shout/js/topmenu.js"></script>
+
 
 <div id="header">
 
@@ -9,7 +9,7 @@
     </div>
     <div id ="login">
 
-        Get your Shout account now!
+       <a href="/shout"> Get your Shout account now! </a>
 
     </div>
 

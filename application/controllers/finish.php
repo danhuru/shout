@@ -20,9 +20,18 @@ class Finish extends CI_Controller {
                 $test = $this->facebook->api('/me?fields=id');
                 if ($test)
                 {
-                    $this->Users->update_redirect_page($user_id,'finish');
+
+
                     $username=$this->Users->select_user($user_id);
+
+                    if ($username['REDIRECT_PAGE']=='finish')
+                    {
+                     $this->Users->update_redirect_page($user_id,'finish');
                     $this->load->view('finish',array('data' => $username)); // load the view
+
+                    }
+                    else redirect($username['REDIRECT_PAGE']);
+
                 } else {
                     echo "Your FB session expired";
                 }

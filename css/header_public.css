@@ -1,0 +1,38 @@
+#header
+{
+    width: 100%;
+    height: 45px;
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 1200px;
+}
+#header_logo
+{
+    float: left;
+    margin-left: 1%;
+    width:11%;
+}
+#header_image
+{
+    width:80%;
+}
+#login
+{
+    float:right;
+    margin-right: 3%;
+    margin-top: 0.7%;
+    font-size: 18px;
+}
+a
+{
+    color:orangered;
+    text-decoration: none;
+}
+a:visited
+{
+    color:orangered;
+}
+a:hover
+{
+    text-decoration: underline;
+}

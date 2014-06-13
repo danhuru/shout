@@ -111,6 +111,8 @@ $(function(){
         $("#overlay").fadeOut();
     });
 
+
+
     $("#text_message").click(function()
     {
         $("#popup_message").fadeIn();

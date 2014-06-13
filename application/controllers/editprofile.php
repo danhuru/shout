@@ -24,11 +24,16 @@ class Editprofile extends CI_Controller {
                 if ($test)
                 {
             $fb_info=$this->Users->select_user($user_id); // GET USER FACEBOOK INFO
+
+                    if ($fb_info['REDIRECT_PAGE']=='home'){
+
             $hobbies=$this->Users->get_hobbies($user_id);
             $aboutme=$this->Users->get_aboutme($user_id);
             $this->load->view('header',array('data' => $fb_info));
             $this->load->view('editprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
             $this->load->view('footer');
+                    }
+                    else redirect($fb_info['REDIRECT_PAGE']);
                 }
                 else {
 

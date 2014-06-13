@@ -81,19 +81,28 @@ class Viewprofile extends CI_Controller {
                     if ($test)
                     {
 
+
+
                         if ($user_id==$fb_info['USER_ID']) redirect("/viewprofile");
 
              //if user is logged in then show more
+
+
+                           $user_info=$this->Users->select_user($user_id);
+
+                        if ($user_info['REDIRECT_PAGE']=='home'){
 
                            $hobbies=$this->Users->get_hobbies($fb_info['USER_ID']);
                            $aboutme=$this->Users->get_aboutme($fb_info['USER_ID']);
 
 
-                          $this->load->view('header',array('data' => $fb_info));
+                          $this->load->view('header',array('data' => $user_info));
                           $this->load->view('popups_loggedin',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
                           $this->load->view('viewprofile_loggedin',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
                           $this->load->view('footer');
 
+                        }
+                        else redirect($user_info['REDIRECT_PAGE']);
 
                     } else {
 
