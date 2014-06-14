@@ -1,82 +1,4 @@
-function confirm_delete() {
-    if (confirm("Are you sure you want to remove this hobby from your profile?") == true) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function delete_hobby(x,user,hobby)
-
-{
-
-    if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-    } else {  // code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            ;
-        }
-    }
-
-
-
-   if (confirm_delete()==true) {
-
-    xmlhttp.open("POST","editprofile/delete_hobby/"+user+"/"+hobby,true);
-       // xmlhttp.send();
-    x.innerHTML='Deleted';
-   }
-}
-
-function save(x){
-
-    // update database
-
-}
-
-function cancel(x){
-
-
-      alert(x.parentNode.parentNode.firstChild.innerHTML);
-
-   // var div = document.createElement('div id="details');
-   // document.body.appendChild(div);
-    var newChild=document.createTextNode(x.parentNode.parentNode.firstChild.innerHTML);
-
-
-  x.parentNode.parentNode.replaceChild(newChild,x.parentNode.parentNode.firstChild);
-
-}
-
-
-function edit_details(x, hobby_details)
-
-{
-
-    if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-    } else {  // code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-            ;
-        }
-    }
-        var createinput='<input id="detail_input" value="'+hobby_details+'"</input>';
-        var newbuttons='<button class ="smallbutton" onclick="save(this)">Save</button><button class ="smallbutton_cancel" onclick="cancel(this)">Cancel</button>';
-
-        x.parentNode.firstChild.innerHTML=createinput;
-        x.parentNode.lastChild.innerHTML=newbuttons;
-
-}
-
-
+$(function(){
 // Popup hobbies
 
 $("#view_hobbies").click(function(e)
@@ -87,13 +9,11 @@ $("#view_hobbies").click(function(e)
     }
 );
 
-
-
 // Popup aboutme
 
 $("#view_aboutme").click(function(e)
     {
-        $("#popus_aboutme").fadeIn();
+        $("#popup_aboutme").fadeIn();
         $("#overlay").fadeIn();
         e.stopPropagation();
     }
@@ -104,6 +24,112 @@ $("#view_aboutme").click(function(e)
 $("#overlay").click(function()
 {
     $("#popup_hobbies").fadeOut();
-    $("#popus_aboutme").fadeOut();
+    $("#popup_aboutme").fadeOut();
+    $("#popup_delete").fadeOut();
     $("#overlay").fadeOut();
+    $("#ok").off("click");
+});
+
+    $("#nobutton").click(function()
+    {
+        $("#popup_delete").fadeOut();
+        $("#overlay").fadeOut();
+        $("#ok").off("click");
+    });
+
+    $("#okbutton").click(function()
+    {
+        $("#popup_delete").fadeOut();
+        $("#overlay").fadeOut();
+        $("#ok").off("click");
+    });
+
+
+
+    $(".delete").click(function()
+    {
+
+
+     hobby_id=$(this).siblings("#hobby_id").text();
+     aboutme_id=$(this).siblings("#aboutme_id").text();
+
+     parent=$(this).parent();
+
+   //  if(hobby_id) alert(hobby_id); else alert('no hobby');
+
+    // if(aboutme_id) alert(aboutme_id); else alert('no aboutme');
+
+     $("#popup_delete").fadeIn();
+     $("#overlay").fadeIn();
+
+       $("#ok").on("click",function(){
+
+           if(hobby_id)
+           $.post('editprofile/delete_hobby', {
+               hobby_id: hobby_id,
+           } , function(data,status){
+
+            parent.remove();
+
+           });
+
+           if(aboutme_id)
+           $.post('editprofile/delete_aboutme', {
+               aboutme_id: aboutme_id,
+           } , function(data,status){
+
+            parent.remove();
+
+           });
+
+       })
+
+ })
+
+    $('.edit').click(function()
+ {
+
+    $(this).parent().hide();
+
+    $(this).parent().after('<div id="details"><input id="editbox1" type="text" value="'+$(this).siblings().text()+'"></input></div><div id="savecancel"><text class="save">Save</text> | <text class="cancel">Cancel</text></div>');
+
+     $(".cancel").on('click',function(){
+         $(this).parent().siblings('#initial').show();
+         $(this).parent().siblings('#details').remove();
+         $(this).parent().remove();
+
+     });
+     $(".save").on('click',function(){
+
+
+             newvalue=$(this).parent().siblings('#details').children('#editbox1').val();
+
+            if(newvalue)
+
+            {
+
+             hobby_id=$(this).parent().siblings('#hobby_id').text();
+             $(this).parent().siblings('#initial').children('#details').text(newvalue);
+             $(this).parent().siblings('#initial').show();
+             $(this).parent().siblings('#details').remove();
+             $(this).parent().remove();
+
+             $.post('editprofile/update_hobby_details', {
+                    hobby_id: hobby_id,
+                    hobby_details: newvalue
+                } , function(data,status){
+
+                   console.log(data);
+
+                });
+            }
+     });
+
+
+
+     //edit
+     //call update function
+
+ })
+
 });

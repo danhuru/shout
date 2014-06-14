@@ -6,13 +6,33 @@ class Hobbies extends CI_Model {
         parent::__construct();
     }
 
-    public function delete_hobby($user_id,$hobby)
+    public function delete_hobby($user_id,$hobby_id)
     {
         //delete from user_hobbies where user_id=$1 and hobby=$2
         $this->db->where('user_id', $user_id);
-        $this->db->where('hobby', $hobby);
+        $this->db->where('hobby_id', $hobby_id);
         $this->db->delete('user_hobbies');
     }
+
+    public function delete_aboutme($user_id,$aboutme_id)
+    {
+        //delete from user_hobbies where user_id=$1 and hobby=$2
+        $this->db->where('user_id', $user_id);
+        $this->db->where('aboutme_id', $aboutme_id);
+        $this->db->delete('user_aboutme');
+    }
+
+    public function update_hobby_details($user_id,$hobby_id,$hobby_details)
+    {
+        $data = array(
+            'details' => $hobby_details
+        );
+        $this->db->where('user_id', $user_id);
+        $this->db->where('hobby_id', $hobby_id);
+        $this->db->update('user_hobbies',$data);
+    }
+
+
 
     public function search_hobbies($term,$user_id)
     {

@@ -30,6 +30,7 @@ class Editprofile extends CI_Controller {
             $hobbies=$this->Users->get_hobbies($user_id);
             $aboutme=$this->Users->get_aboutme($user_id);
             $this->load->view('header',array('data' => $fb_info));
+            $this->load->view('popups_edit',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
             $this->load->view('editprofile',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
             $this->load->view('footer');
                     }
@@ -62,14 +63,32 @@ class Editprofile extends CI_Controller {
 
     }
 
-    public function delete_hobby($user_id,$hobby)
+    public function delete_hobby()
     {
-        $this->Hobbies->delete_hobby($user_id,$hobby);
+        $hobby_id=$this->input->post('hobby_id');
+        $user_id = $this->facebook->getUser();
+        $this->Hobbies->delete_hobby($user_id,$hobby_id);
     }
 
-    public function edit_details($user_id,$hobby)
+    public function delete_aboutme()
     {
-        $this->Hobbies->update_hobby($user_id,$hobby);
+        $aboutme_id=$this->input->post('aboutme_id');
+        $user_id = $this->facebook->getUser();
+        $this->Hobbies->delete_aboutme($user_id,$aboutme_id);
+    }
+
+    public function update_hobby_details()
+    {
+        $this->output->enable_profiler(TRUE);
+        $hobby_id=$this->input->post('hobby_id');
+        $hobby_details=$this->input->post('hobby_details');
+        $user_id = $this->facebook->getUser();
+        $this->Hobbies->update_hobby_details($user_id,$hobby_id,$hobby_details);
+    }
+
+    public function edit_details($user_id,$hobby_id)
+    {
+        $this->Hobbies->update_hobby($user_id,$hobby_id);
     }
 
 }

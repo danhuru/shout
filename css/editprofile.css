@@ -130,10 +130,44 @@ hr
     float:right;
     margin-right: 3%;
 }
+#delete_aboutme
+{
+    float:left;
+    margin-left: 30%;
+
+}
+#delete_hobby:hover{cursor:hand; text-decoration: underline}
+#delete_aboutme:hover{cursor:hand; text-decoration: underline}
+#edit_details:hover{cursor:hand; text-decoration: underline}
+#edit_details2:hover{cursor:hand; text-decoration: underline}
+#savecancel
+{
+    float:right;
+    margin-right: 3%;
+}
+.save:hover{cursor:hand; text-decoration: underline}
+.cancel:hover{cursor:hand; text-decoration: underline}
+
 #edit_details
 {
     float:right;
     margin-right: 3%;
+}
+#edit_details2
+{
+    float:left;
+    margin-left: 23%;
+}
+#editbox1
+{
+    border-radius: 4px;
+    padding-left: 1%;
+    background-color: transparent;
+    color:white;
+}
+#editbox1:focus
+{
+    background-color: rgba(100, 100, 100, 0.70);
 }
 #detail_input
 {
@@ -279,6 +313,20 @@ hr
     padding-right: 5px;
     margin-right: 3%;
 }
+
+.viewmore
+{
+    float:left;
+    width:100%;
+    text-align: center;
+    margin-bottom: 2%;
+    text-decoration: underline;
+}
+.viewmore:hover
+{
+    cursor:hand;
+}
+
 a:link {color:#FFFFFF;}      /* unvisited link */
 a:visited {color:#FFFFFF;}  /* visited link */
 a:hover {color:#FFFFFF;}  /* mouse over link */

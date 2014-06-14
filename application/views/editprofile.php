@@ -65,37 +65,51 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 <?php
 
-
-
-                for($i=0;$i<count($hobbies) && $i<4 ;$i++)
+                for($i=0;$i<count($hobbies) && $i<5 ;$i++)
                 {
                     $hobby=$hobbies[$i];
+
+                    echo '<div>';
+
+                    echo '<div id="hobby_id">'.$hobby['hobby_id'].'</div>';
                     echo '<div id="hobby">'.ucfirst($hobby['hobby']).'</div>';
 
                     echo '<div id="endorse_nr1">';
-
-                    for ($i=1;$i<=$hobby['endorsements'];$i++)
+                    $j=1;
+                    for ($j;$j<=$hobby['endorsements'] && $j<=5;$j++)
 
                     {
                         echo '<img src='.base_url('images/endorse_nr.png').' width="25px" >';
                     }
+
+                    for ($j;$j<=5;$j++)
+
+                    {
+                        echo '<img src='.base_url('images/endorse_nr_grey.png').' width="25px" >';
+                    }
+
                     echo '</div>';
 
                     echo '<div id="show_nr_endorsement">';
                     echo $hobby['endorsements'];
                     echo '</div>';
 
-                    echo '<div id="delete_hobby" onclick="delete_hobby(this,\''.$data['USER_ID'].'\',\''.$hobby['hobby'].'\')">Delete</div>';
+                    echo '<div id="delete_hobby" class="delete">Delete</div>';
 
                     echo "<br>";
                     echo "<br>";
-                    echo '<div>';
+                    echo '<div id="initial">';
                     echo '<div id="details">'.$hobby['details'].'</div>';
-                    echo '<div id="edit_details" onclick="edit_details(this,\''.$hobby['details'].'\')">Edit</div>';
+                    echo '<div id="edit_details" class="edit">Edit</div>';
                     echo '</div>';
                     echo "<br>";
                     echo "<br>";
+
+                    echo '</div>';
                 }
+
+                if (count($hobbies)>5) echo '<div id="view_hobbies" class="viewmore">View more</div>';
+
                 ?>
 
             </div>
@@ -135,7 +149,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                         echo $about['author'];
                         echo '</div>';
                     }
-
+                    echo '<div id="delete_aboutme" class="delete">Delete</div>';
                     echo '</div>';
                 }
 

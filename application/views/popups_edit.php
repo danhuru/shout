@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/popups_loggedin.css'); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/popups_edit.css'); ?>">
 
 <script src="/shout/js/popups.js"></script>
 
@@ -64,28 +64,30 @@
     ?>
 
 </div>
-<div id="popup_message" class="popup_endorse">
 
- <div id="mainmessage">
+<div id="popup_delete" class="popup_endorse">
 
-     <div id="messsagetext">
-         <textarea id="content">type message here...</textarea>
-     </div>
-     <div id="sendmessage">
+    <div id="mainmessage">
 
-         <button id="send" class="smallbutton">Send</button>
+        <div id="messsagetext">
 
-     </div>
+            Are you sure you want to delete this?
 
- </div>
+        </div>
+        <div id="buttonsdiv">
+            <div id="okbutton">
+
+                <button id="ok" class="smallbutton">Yes</button>
+
+            </div>
+            <div id="nobutton">
+
+                <button id="cancel" class="smallbutton">No</button>
+
+            </div>
+        </div>
+    </div>
+
 
 </div>
-<div id="popup_already_endorsed" class="popup_endorse">
 
-    You already endorsed this!
-
-</div>
-<div id="popup_endorse_success" class="popup_endorse">
-</div>
-<div id="popup_message_success" class="popup_endorse">
-</div>
