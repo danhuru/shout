@@ -207,7 +207,7 @@ $image= base_url('images/background'.$bck.'.jpg');
             </div>
             <div id="endorsement_panel">
 
-                <div id="hobbies">
+                <div id="hobbieshome">
                     <div id="titles">My hobbies</div>
 
                     <br>
@@ -217,9 +217,9 @@ $image= base_url('images/background'.$bck.'.jpg');
                     for($i=0;$i<count($hobbies) && $i<4 ;$i++)
                 {
                     $hobby=$hobbies[$i];
-                    echo '<div id="hobby">'.ucfirst($hobby['hobby']).'</div>';
+                    echo '<div id="hobbyhome">'.ucfirst($hobby['hobby']).'</div>';
 
-                    echo '<div id="endorse_nr1">';
+                    echo '<div id="endorse_nr1home">';
                     $j=1;
                     for ($j;$j<=$hobby['endorsements'] && $j<=5;$j++)
 
@@ -235,13 +235,13 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                     echo '</div>';
 
-                    echo '<div id="show_nr_endorsement">';
+                    echo '<div id="show_nr_endorsementhome">';
                     echo $hobby['endorsements'];
                     echo '</div>';
 
                     echo "<br>";
                     echo "<br>";
-                    echo '<div id="details">'.$hobby['details'].'</div>';
+                    echo '<div id="detailshome">'.$hobby['details'].'</div>';
                     echo "<br>";
                     echo "<br>";
                 }
@@ -250,7 +250,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
             </div>
 
-                <div id="aboutme">
+                <div id="aboutmehome">
                     <div id="titles">My personality</div>
 
 <br>
@@ -262,10 +262,10 @@ $image= base_url('images/background'.$bck.'.jpg');
                     $rand=rand(1,4);
                     $circle= base_url('images/circle'.$rand.'.png');
 
-                    echo '<div id="about" style="background-image: url('.$circle.')">';
-                    echo '<text id="what">'.ucfirst($about['aboutme']).'</text>';
+                    echo '<div id="abouthome" style="background-image: url('.$circle.')">';
+                    echo '<text id="whathome">'.ucfirst($about['aboutme']).'</text>';
 
-                    echo '<div id="endorse_nr2">';
+                    echo '<div id="endorse_nr2home">';
                     echo $about['endorsements'];
                     echo '</div>';
 

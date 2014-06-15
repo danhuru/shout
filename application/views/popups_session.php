@@ -3,8 +3,8 @@
 <head>
 
 
-    <script src="js/fb_load_sdk.js" ></script>
-    <script src="js/session_login.js" ></script>
+    <script src="/shout/js/fb_load_sdk.js" ></script>
+    <script src="/shout/js/session_login.js" ></script>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/popups_session.css'); ?>">

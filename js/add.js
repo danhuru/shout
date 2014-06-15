@@ -111,7 +111,7 @@ $("#addhobbies").mouseleave(function(){
 function getResults(str){
 
     if (str) {
-        $.get("create/get_hints/"+str,function(data){
+        $.get("create/get_hints/",{str:str},function(data){
             $("#addhobbiessuggestions").html(data);
             $("#addhobbiessuggestions").show();
             $("text").click(function(){

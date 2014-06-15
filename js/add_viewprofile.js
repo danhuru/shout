@@ -109,7 +109,7 @@ $("#hobbies").mouseleave(function(){
 function getResults(str){
 
     if (str) {
-        $.get("/shout/create/get_hints/"+str,function(data){
+        $.get("/shout/create/get_hints/",{str:str},function(data){
             $("#addhobbiessuggestions").html(data);
             $("#addhobbiessuggestions").show();
             $("text").click(function(){

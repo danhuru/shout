@@ -9,6 +9,8 @@
 
     {
         $hobby=$hobbies[$i];
+        echo '<div>';
+        echo '<div id="hobby_id">'.$hobby['hobby_id'].'</div>';
         echo '<div id="hobby">'.ucfirst($hobby['hobby']).'</div>';
 
         echo '<div id="endorse_nr1">';
@@ -30,12 +32,16 @@
         echo '<div id="show_nr_endorsement">';
         echo $hobby['endorsements'];
         echo '</div>';
+        echo '<div id="endorse" class="endorse">';
+        echo '<img src='.base_url('images/bt_up.png').' width="25px" >';
+        echo '</div>';
 
         echo "<br>";
         echo "<br>";
         echo '<div id="details">'.$hobby['details'].'</div>';
         echo "<br>";
         echo "<br>";
+        echo '</div>';
     }
     ?>
 </div>
@@ -57,7 +63,7 @@
         echo $about['endorsements'];
         echo '</div>';
 
-
+        echo '<div id="endorse2" class="endorse2"><img src='.base_url('images/bt_up.png').' width="25px" ></div>';
 
         if ($about['author']<>'you')
         {
@@ -83,7 +89,7 @@
     echo 'Your endorsement will be more relevant if you login with Facebook.';
     echo '<br>';
     echo '<br>';
-    echo '<div id="login_message"> Endorse '.$data['USER_NAME'].' as his friend!</div>';
+    echo '<div id="login_message"> Endorse '.$data['USER_NAME'].' as a friend!</div>';
     echo '<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>';
     echo '<br>';
     echo '<br>';

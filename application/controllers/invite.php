@@ -80,13 +80,15 @@ class Invite extends CI_Controller {
             redirect('/');
         }
     }
-    public function showfriends($filter)
+    public function showfriends()
     {
 
         $fromDatabase=$this->session->userdata('friends');  // retrieve from ci_sessions
         $data=unserialize(base64_decode($fromDatabase));  // decode $friends
 
         // Build HTML list
+
+        $filter=$this->input->get('str');
 
              for ($id=0; $id<count($data); $id++)
         {

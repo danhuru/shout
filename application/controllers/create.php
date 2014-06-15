@@ -62,10 +62,14 @@ class Create extends CI_Controller {
         }
 
     }
-    public function get_hints($term)
+    public function get_hints()
     {
         //if (strlen($str)>1) // Hint string has at least 2 chars
         //{
+        $term=$this->input->get('str');
+
+       // var_dump($term);
+
         $hints=$this->Hobbies->get_hobbies_hints($term);
         if($hints)
         {

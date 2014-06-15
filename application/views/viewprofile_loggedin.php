@@ -2,11 +2,11 @@
 
 <head>
 
+    <script src="/shout/js/jquery-1.11.0.min.js"></script>
     <script src="/shout/js/viewprofile.js" ></script>
     <script src="/shout/js/viewprofile_loggedin.js" ></script>
     <script src="/shout/js/add_viewprofile.js" ></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/viewprofile_loggedin.css'); ?>">
-    <script src="/shout/js/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
@@ -68,8 +68,6 @@ $image= base_url('images/background'.$bck.'.jpg');
             </div>
 
             <div id="hobbies">
-
-
 
                 <div id="profile_name">My hobbies    <div id="suggesthobby" class="suggest">Suggest</div> </div>
 

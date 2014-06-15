@@ -63,9 +63,12 @@ class Search extends CI_Controller {
         }
     }
 
-    public function searchResult($filter)
+    public function searchResult()
 
     {
+
+        $filter=$this->input->get('str');
+
         $user_id = $this->facebook->getUser();
 
         if ($filter=='show_me_all')

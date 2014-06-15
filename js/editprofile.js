@@ -35,6 +35,8 @@ $("#overlay").click(function()
         $("#popup_delete").fadeOut();
         $("#overlay").fadeOut();
         $("#ok").off("click");
+        $("#popup_hobbies").fadeOut();
+        $("#popup_aboutme").fadeOut();
     });
 
     $("#okbutton").click(function()
@@ -42,6 +44,8 @@ $("#overlay").click(function()
         $("#popup_delete").fadeOut();
         $("#overlay").fadeOut();
         $("#ok").off("click");
+        $("#popup_hobbies").fadeOut();
+        $("#popup_aboutme").fadeOut();
     });
 
 

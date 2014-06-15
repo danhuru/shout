@@ -7,7 +7,7 @@
             name: "Invitation",
             to: id,
             link: url,
-            description:'Rate me please!'
+            description:'Hi! Please endorse my profile on Shout!'
         },function(response)
             {
                 if (response && !response.error_code) {
@@ -28,18 +28,10 @@
         if (str.length==0) {
             str="show_me_all";
         }
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-        } else {  // code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange=function() {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                document.getElementById("showfriendsresults").innerHTML=xmlhttp.responseText;
-            }
-        }
 
-        xmlhttp.open("GET","invite/showfriends/"+str,true);
-        xmlhttp.send();
+        $.get("invite/showfriends/",{str:str},function(data,status)
+        {
+            $("#showfriendsresults").html(data);
+        });
+
     }

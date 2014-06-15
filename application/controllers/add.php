@@ -64,20 +64,6 @@ class Add extends CI_Controller {
         }
 
     }
-    public function get_hints($term)
-    {
-        //if (strlen($str)>1) // Hint string has at least 2 chars
-        //{
-        $hints=$this->Hobbies->get_hobbies_hints($term);
-        if($hints)
-        {
-
-       foreach($hints as $hint)
-         {
-             echo '<text id="option">'.$hint['hobby_desc'].'</text><br>';
-          }
-        }
-      }
     public function do_upload()
     {
        $user_id = $this->facebook->getUser();

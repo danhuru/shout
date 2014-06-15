@@ -108,7 +108,7 @@ class Viewprofile extends CI_Controller {
 
 
                         //else show only public profile
-                        echo "Your FB session expired";
+                      ;
                     }
 
                 }
@@ -123,13 +123,13 @@ class Viewprofile extends CI_Controller {
                 $hobbies=$this->Users->get_hobbies($fb_info['USER_ID']);
                 $aboutme=$this->Users->get_aboutme($fb_info['USER_ID']);
                 $this->load->view('header_public',array('data' => $fb_info));
-                $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme, 'user_is_logged_in' => 0)); // load the view
+                $this->load->view('popups_public',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme, 'user_is_logged_in' => 0)); // load the view
                 $this->load->view('viewprofile_public',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
                 $this->load->view('footer');
             }
         }
         // else this user does not exist
-        else ;//echo "//Sorry this user does not exist";
+        else echo "//Sorry this user does not exist";
     }
 
     public function suggest_form()
