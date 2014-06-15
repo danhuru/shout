@@ -117,36 +117,74 @@ class Viewprofile extends CI_Controller {
                     $this->load->view('popups_message'); // load the view
                     $this->load->view('popups_session',array('current_url' => current_url()));
                  //   redirect(current_url());
-
                 }
             }
             else {
-
                 $hobbies=$this->Users->get_hobbies($fb_info['USER_ID']);
                 $aboutme=$this->Users->get_aboutme($fb_info['USER_ID']);
-
                 $this->load->view('header_public',array('data' => $fb_info));
                 $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme, 'user_is_logged_in' => 0)); // load the view
                 $this->load->view('viewprofile_public',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
                 $this->load->view('footer');
-
             }
-
-
-
-
-
-
         }
         // else this user does not exist
+        else ;//echo "//Sorry this user does not exist";
+    }
 
-        // if user is owner then
+    public function suggest_form()
+    {
 
-        // load corresponding view
+        $this->output->enable_profiler(TRUE);
 
-        else
+        $hobbylist=$this->input->post('hobbylist');
+        $hobbydetailslist=$this->input->post('hobbydetailslist');
+        $aboutmelist=$this->input->post('aboutmelist');
+
+        if($hobbylist || $aboutmelist) {
+
+        // GET TARGET USER
+        $profile=$this->input->post('thisUser');
+        $user_info=$this->Users->select_user_profile($profile);
+
+        $user_id_receiving=$user_info['USER_ID']; // GET USER RECEIVING
+        $user_name_receiving=$user_info['USER_NAME']; // GET USER RECEIVING
+        $user_profilelink_receiving=$user_info['PROFILE_URL']; // GET USER RECEIVING
+
+        // GET CURRENT USER
+
+        $user_id_initiator = $this->facebook->getUser();
+        $thisUser_info=$this->Users->select_user($user_id_initiator);
+
+        $user_id_initiator=$thisUser_info['USER_ID']; // GET USER RECEIVING
+        $user_name_initiator=$thisUser_info['USER_NAME']; // GET USER RECEIVING
+        $user_profilelink_initiator=$thisUser_info['PROFILE_URL']; // GET USER RECEIVING
+
+        $user_ip = $this->input->ip_address();
+
+        if ($hobbylist)
         {
-            echo "Sorry this user does not exist";
+
+            for($i=0; $i<count($hobbylist); $i++)
+            {
+
+              $hobby=$hobbylist[$i];
+              $hobbydetails=$hobbydetailslist[$i];
+              $this->Users->insert_user_events(3,'referral-hobby',null,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$hobby,$hobbydetails,1,null);
+            }
+        }
+
+        if ($aboutmelist)
+        {
+
+            for($i=0; $i<count($aboutmelist); $i++)
+            {
+
+                $aboutme=$aboutmelist[$i];
+                $this->Users->insert_user_events(4,'referral-aboutme',null,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$aboutme,null,1 ,null);
+            }
+        }
+
         }
 
     }
@@ -174,7 +212,7 @@ class Viewprofile extends CI_Controller {
             $user_info=$this->Users->select_user($user_id_initiator);
             $user_name_initiator=$user_info['USER_NAME'];
             $user_profilelink_initiator=$user_info['PROFILE_URL'];
-            $this->Users->insert_user_events(1,'endorsement-hobby',$hobby_id,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+            $this->Users->insert_user_events(1,'endorsement-hobby',$hobby_id,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,null,$endorsement_value,null);
             echo 'Endorsed for '.$endorsement_desc.'!';
         }
         else {
@@ -184,7 +222,7 @@ class Viewprofile extends CI_Controller {
 
           $endorsement_value=0.1; // not logged in
           //INSERT EVENT
-         $this->Users->insert_user_events(1,'endorsement-hobby',$hobby_id,'1', $user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+         $this->Users->insert_user_events(1,'endorsement-hobby',$hobby_id,'1', $user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,null,$endorsement_value,null);
           //ECHO RESULT
          echo 'Endorsed for '.$endorsement_desc.'!';
         }
@@ -238,7 +276,7 @@ class Viewprofile extends CI_Controller {
             $user_info=$this->Users->select_user($user_id_initiator);
             $user_name_initiator=$user_info['USER_NAME'];
             $user_profilelink_initiator=$user_info['PROFILE_URL'];
-            $this->Users->insert_user_events(2,'endorsement-aboutme',$aboutme_id,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+            $this->Users->insert_user_events(2,'endorsement-aboutme',$aboutme_id,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,null,$endorsement_value,null);
             echo 'Endorsed for '.$endorsement_desc.'!';
         }
         else {
@@ -248,7 +286,7 @@ class Viewprofile extends CI_Controller {
 
             $endorsement_value=0.1; // not logged in
             //INSERT EVENT
-            $this->Users->insert_user_events(2,'endorsement-aboutme',$aboutme_id,'1',$user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,$endorsement_value,null);
+            $this->Users->insert_user_events(2,'endorsement-aboutme',$aboutme_id,'1',$user_ip,null,null,null,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,$endorsement_desc,null,$endorsement_value,null);
             //ECHO RESULT
             echo 'Endorsed for '.$endorsement_desc.'!';
         }
@@ -295,6 +333,6 @@ class Viewprofile extends CI_Controller {
         $user_info=$this->Users->select_user($user_id_initiator);
         $user_name_initiator=$user_info['USER_NAME'];
         $user_profilelink_initiator=$user_info['PROFILE_URL'];
-        $this->Users->insert_user_events(5,'message',null,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,null,null,$message_content);
+        $this->Users->insert_user_events(5,'message',null,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,null,null,null,$message_content);
     }
 }

@@ -8,6 +8,7 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('Users');
+        $this->load->model('Hobbies');
     }
 
     public function index()
@@ -100,7 +101,6 @@ class Home extends CI_Controller {
         $user_id_receiving=$event_info['user_id_receiving'];
         $endorsement_value=$event_info['endorsement_value'];
 
-
         if($event_info['event_type']==1)
 
         {
@@ -127,10 +127,28 @@ class Home extends CI_Controller {
             $this->Users->update_event($event_id,2);
         }
 
-        if($event_info['event_type']==3) { ; } // NOT IMPLEMENTED YET
+        if($event_info['event_type']==3)
+
+        {
+
+        $hobby=$event_info['endorsement_desc'];
+        $hobbydetails=$event_info['endorsement_details'];
+        $this->Users->update_event($event_id,3);
+        $this->Hobbies->insert_user_new_hobby($user_id_receiving,$hobby,$hobbydetails);
+
+        }
+
+        if($event_info['event_type']==4)
+        {
 
 
-        if($event_info['event_type']==4) { ; } // NOT IMPLEMENTED YET
+            $aboutme=$event_info['endorsement_desc'];
+            $names=explode(" ",$event_info['user_name_initiator']);
+            $author=$names[0];
+
+           $this->Users->update_event($event_id,4);
+            $this->Hobbies->insert_user_new_aboutme($user_id_receiving,$aboutme,$author);
+        }
 
     }
 

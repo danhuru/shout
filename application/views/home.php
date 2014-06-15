@@ -86,7 +86,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                     switch ($event['event_type']) {
                             case 1:
 
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                                else  echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> endorsed you for a hobby</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
@@ -94,7 +95,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                                 if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
                                 break;
                             case 2:
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                                if($event['user_name_initiator'])  echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> subscribed to a referral about you</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
@@ -102,7 +104,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                                 if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
                                 break;
                             case 3:
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                                else '<div id="event_detail"><b id="username">Someone (anonymous)</b> said you one of you hobbies is</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
@@ -110,7 +113,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                                 if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
                                 break;
                             case 4:
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b>  said about you</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
@@ -137,7 +141,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                     echo '<div id="userid">'.$event['event_id'].'</div>';
                     switch ($event['event_type']) {
                             case 1:
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                                else  echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> endorsed you for a hobby</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
@@ -145,7 +150,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                                 if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
                                 break;
                             case 2:
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                                if($event['user_name_initiator'])  echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> subscribed to a referral about you</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
@@ -153,7 +159,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                                 if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
                                 break;
                             case 3:
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                                else '<div id="event_detail"><b id="username">Someone (anonymous)</b> said you one of you hobbies is</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
@@ -161,7 +168,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                                 if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
                                 break;
                             case 4:
-                                echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b>  said about you</div>';
                                 echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
                                 echo '<br>';
                                 echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';

@@ -11,6 +11,7 @@ $(function()
         $("#popup_endorse_success").fadeOut();
         $("#popup_message_success").fadeOut();
         $("#popup_show_message").fadeOut();
+        $("#popup_add_hobby").fadeOut();
         $("#overlay").fadeOut();
     });
 

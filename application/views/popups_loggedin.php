@@ -89,3 +89,51 @@
 </div>
 <div id="popup_message_success" class="popup_endorse">
 </div>
+<div id="popup_add_hobby" class="popup">
+
+    <div id="addhobbies">
+
+        <div id="titles">Suggest a hobby to <?php echo $data['USER_NAME'];?></div >
+
+        <input type="text" id="addhobby" autocomplete="off" value="type here..."></input>
+
+        <div id="addhobbiessuggestions">
+
+            e.g. tennis, reading...
+
+
+        </div>
+
+
+    </div>
+
+
+    <div id="showhobbies"> </div>
+
+
+    <div id="addaboutmes">
+
+        <div id="titles">Say something about <?php echo $data['USER_NAME'];?> </div>
+
+        <input type="text" id="addaboutme" autocomplete="off" value="type here..."></input>
+
+        <div id="addaboutmesuggestions">
+
+            e.g. great listener, always punctual...
+
+        </div>
+
+        <input id="addaboutmebutton" type="button" class="smallbutton"  value="Add"></input>
+
+    </div>
+
+    <div id="showaboutme">
+
+
+    </div>
+
+    <div id="button">
+        <input id="submitprofile" class="smallbutton" type="button" value="Finish">
+    </div>
+
+</div>

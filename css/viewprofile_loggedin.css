@@ -224,3 +224,224 @@ body{
     cursor: hand;
 }
 #hobby_id, #aboutme_id {display:none}
+#suggesthobby
+{
+    color:orange;
+    float:right;
+    margin-right: 2%;
+    margin-top: 2%;
+    font-size: 16px;
+    font-weight: bold;
+}
+#suggesthobby:hover
+{
+    cursor:hand;
+}
+#addhobbies
+{
+    float:left;
+    width:100%;
+}
+#addhobby
+{
+    float:left;
+    width:50%;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    padding-left: 1%;
+    border:0px;
+    background-color: rgba(100, 100, 100, 0.70);
+    color:white;
+}
+#addhobby:focus
+{
+    background-color: rgba(100, 100, 100, 0.70);
+}
+#addhobbiessuggestions
+{
+    width:320px;
+    float:left;
+    background: white;
+    margin-top: 35px;
+    display: none;
+    color:black;
+    font-weight: bold;
+    position: absolute;
+    font-size: 18px;
+    margin-left: 16px;
+}
+#showhobbies
+{
+    display:none;
+    width:100%;
+}
+#hobbydetails
+{
+    float:left;
+    width:100%;
+    font-size: 20px;
+    color:white;
+    padding-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#hobby_name
+{
+    float:left;
+    width:20%;
+}
+#hobbydetails
+{
+    float:left;
+    width:100%;
+    font-size: 20px;
+    color:white;
+    padding-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#hobby_name
+{
+    float:left;
+    width:20%;
+}
+#img_endorse
+{
+    float:left;
+    margin-left: 3%;
+}
+#rating
+{
+    float:left;
+    margin-left: 1%;
+}
+#delete
+{
+    float:left;
+    margin-left: 3%;
+    font-weight: bold;
+    color:red;
+}
+#delete:hover
+{
+    cursor: hand;
+}
+#deletecircle
+{
+    float:left;
+    margin-left: 60px;
+    margin-top: 10%;
+    font-weight: bold;
+    color:red;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+#deletecircle:hover
+{
+    cursor: hand;
+}
+#details
+{
+    float:left;
+    width:100%;
+}
+#detailsinput
+{
+    float:left;
+    margin-top:1%;
+    margin-left: 3%;
+    width:40%;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 0px;
+    padding-left: 1%;
+    background-color: rgba(100, 100, 100, 0.70);
+    color:white;
+}
+#detailsinput:focus
+{
+    background-color: rgba(100, 100, 100, 0.70);
+}
+#option
+{
+    width:97%;
+    float:left;
+    padding-left: 3%;
+}
+#option:hover
+{
+    cursor:hand;
+    background-color: #bbd537;
+    color:white;
+}
+#addaboutmes
+{
+    float:left;
+    width:100%;
+}
+#addaboutme
+{
+    float:left;
+    width:50%;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    padding-left: 1%;
+    border:0px;
+    background-color: rgba(100, 100, 100, 0.70);
+    color:white;
+}
+#addaboutme:focus
+{
+    background-color: rgba(100, 100, 100, 0.70);
+}
+#addaboutmebutton
+{
+    float:left;
+    margin-top: 1%;
+}
+#addaboutmesuggestions
+{
+    width:320px;
+    float:left;
+    background: white;
+    display: none;
+    color:black;
+    margin-top: 35px;
+    font-weight: bold;
+    position: absolute;
+    font-size: 18px;
+    margin-left: 16px;
+}
+#showaboutme
+{
+    float:left;
+    width:100%;
+    display:none;
+}
+#aboutmecircle
+{
+    float:left;
+    width: 130px;
+    height:130px;
+    margin-left: 3%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    text-align: center;
+    padding-top: 3%;
+    font-size: 14px;
+    text-align: center;
+    color:white;
+}
+#what
+{
+    font-size: 130%;
+    text-align: center;
+    color:white;
+}

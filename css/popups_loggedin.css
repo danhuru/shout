@@ -191,3 +191,105 @@
     position:relative;
     top:1px;
 }
+#titles
+{
+    color:white;
+    padding-left: 2%;
+    font-size: 18px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-weight: bold;
+}
+#addhobby
+{
+    float:left;
+    width:50%;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-bottom: 1%;
+    padding-left: 1%;
+    border:0px;
+    background-color: rgba(100, 100, 100, 0.70);
+    color:white;
+}
+#addhobby:focus
+{
+    background-color: rgba(100, 100, 100, 0.70);
+}
+#deletecircle
+{
+    float:left;
+    margin-left: 60px;
+    margin-top: 10%;
+    font-weight: bold;
+    color:red;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+#deletecircle:hover
+{
+    cursor: hand;
+}
+#what
+{
+    font-size: 130%;
+    text-align: center;
+    color:white;
+}
+#details
+{
+    float:left;
+    width:40%;
+}
+#detailsinput
+{
+    float:left;
+    margin-top:1%;
+    margin-left: 3%;
+    width:80%;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 0px;
+    padding-left: 1%;
+    background-color: rgba(100, 100, 100, 0.70);
+    color:white;
+}
+#detailsinput:focus
+{
+    background-color: rgba(100, 100, 100, 0.70);
+}
+#hobbydetails
+{
+    float:left;
+    width:80%;
+    font-size: 20px;
+    color:white;
+    padding-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#hobby_name
+{
+    float:left;
+    width:20%;
+}
+#button
+{
+    margin-top: 5%;
+    margin-left: 2%;
+}
+#errormsg
+{
+    margin-top: 1.3%;
+    float:left;
+    margin-left:2%;
+    background-color: orange;
+    color:white;
+    font-size: 16px;
+    border-radius: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
+}

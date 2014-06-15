@@ -14,12 +14,37 @@ class Hobbies extends CI_Model {
         $this->db->delete('user_hobbies');
     }
 
+    public function insert_user_new_hobby($user_id,$hobby,$hobbydetails)
+    {
+            $data = array(
+                'USER_ID' => $user_id,
+                'HOBBY' => ucfirst($hobby) ,
+                'DETAILS' => $hobbydetails,
+                'ENDORSEMENTS' => '1'
+            );
+
+            $this->db->insert('user_hobbies', $data);
+    }
+
     public function delete_aboutme($user_id,$aboutme_id)
     {
         //delete from user_hobbies where user_id=$1 and hobby=$2
         $this->db->where('user_id', $user_id);
         $this->db->where('aboutme_id', $aboutme_id);
         $this->db->delete('user_aboutme');
+    }
+
+    public function insert_user_new_aboutme($user_id,$aboutme,$author)
+    {
+
+            $data = array(
+                'USER_ID' => $user_id,
+                'ABOUTME' => ucfirst($aboutme) ,
+                'ENDORSEMENTS' => '1',
+                'AUTHOR' => $author
+            );
+
+            $this->db->insert('user_aboutme', $data);
     }
 
     public function update_hobby_details($user_id,$hobby_id,$hobby_details)
@@ -31,8 +56,6 @@ class Hobbies extends CI_Model {
         $this->db->where('hobby_id', $hobby_id);
         $this->db->update('user_hobbies',$data);
     }
-
-
 
     public function search_hobbies($term,$user_id)
     {

@@ -293,6 +293,7 @@ public function insert_user_events
     $user_name_receiving,
     $user_profilelink_receiving,
     $endorsement_desc,
+    $endorsement_details,
     $endorsement_value,
     $message_content
 )
@@ -311,6 +312,7 @@ public function insert_user_events
                 'USER_PROFILELINK_RECEIVING' => $user_profilelink_receiving,
                 'ENDORSEMENT_STATUS' => '0',
                 'ENDORSEMENT_DESC' => $endorsement_desc,
+                'ENDORSEMENT_DETAILS' => $endorsement_details,
                 'ENDORSEMENT_VALUE' => $endorsement_value,
                 'MESSAGE_CONTENT' => $message_content,
                 'MESSAGE_STATUS' => '0',
