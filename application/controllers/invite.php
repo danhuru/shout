@@ -43,8 +43,6 @@ class Invite extends CI_Controller {
             if ($test)
             {
 
-
-        $this->Users->update_redirect_page($user_id,'invite');
         $fb_info=$this->Users->select_user($user_id);
 
                 if ($fb_info['REDIRECT_PAGE']=='invite'){

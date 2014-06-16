@@ -4,6 +4,7 @@
 
     <script src="/shout/js/fb_login.js" ></script>
     <script src="/shout/js/fb_load_sdk.js" ></script>
+    <script src="/shout/js/twitter.js" ></script>
     <script src="/shout/js/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/finish.css'); ?>"">
     <script src="/shout/js/finish.js" ></script>
@@ -56,7 +57,7 @@ $image= base_url('images/background'.$bck.'.jpg');
             </div>
 
 
-            <div id="button" onclick="window.location.href='home'">
+            <div id="button">
                     <input id="next" class="button" type="button" name="submit" value="Finish" >
             </div>
         </div>

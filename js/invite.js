@@ -35,14 +35,16 @@
 
     }
 
-    $.(function(){
+    $(function(){
 
-        $('#next').click(function(){
+          $('#next').click(function(){
 
             $.get("/shout/invite/set_page/",function(data,status)
             {
-                ;
+                window.location.href='finish';
             });
+
+
 
         });
 

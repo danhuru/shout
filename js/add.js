@@ -356,7 +356,6 @@ function getResults(str){
                     hobbylist: hobbyList,
                     hobbydetailslist: hobbyDetailsList,
                     aboutmelist: aboutmeList,
-                    bckpic: bckpic
                 } , function(data,status){
                   //  alert("Data: " + data + "\nStatus: " + status);
 
@@ -370,7 +369,6 @@ function getResults(str){
                         hobbylist: hobbyList,
                         hobbydetailslist: hobbyDetailsList,
                         aboutmelist: null,
-                        bckpic: bckpic
                     } , function(data,status){
                         //  alert("Data: " + data + "\nStatus: " + status);
 
@@ -384,7 +382,6 @@ function getResults(str){
                         hobbylist: null,
                         hobbydetailslist: hobbyDetailsList,
                         aboutmelist: aboutmeList,
-                        bckpic: bckpic
                     } , function(data,status){
                         //  alert("Data: " + data + "\nStatus: " + status);
 

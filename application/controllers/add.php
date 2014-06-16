@@ -100,10 +100,8 @@ class Add extends CI_Controller {
         $hobbylist=$this->input->post('hobbylist',TRUE);
         $hobbydetailslist=$this->input->post('hobbydetailslist',TRUE);
         $aboutmelist=$this->input->post('aboutmelist',TRUE);
-        $bckpic=$this->input->post('bckpic',TRUE);
         if($hobbylist) $this->Users->insert_user_hobbies($user_id,$hobbylist,$hobbydetailslist); //insert hobbies
         if($aboutmelist) $this->Users->insert_user_aboutme($user_id,$aboutmelist); //insert aboutme
-        $this->Users->update_bck_pic($user_id,$bckpic); //update bckpic flag
     }
 
     public function update_bckpic($value)

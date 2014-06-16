@@ -192,6 +192,7 @@ public function get_user_events($user_id)
         $this->db->select('*');
         $this->db->from('user_events');
         $this->db->where('user_id_receiving', $user_id);
+        $this->db->order_by('endorsement_status', "asc");
         $this->db->order_by('message_status', "asc");
         $this->db->order_by('event_timestamp', "desc");
         $query = $this->db->get();
@@ -299,6 +300,7 @@ public function check_already_endorsed_anonymous($target_id, $user_ip,$user_id_r
         $this->db->from('user_events');
         $this->db->where('user_ip', $user_ip);
         $this->db->where('user_id_receiving', $user_id_receiving);
+        $this->db->where('user_anonymous', 1);
         $this->db->where('target_id', $target_id);
         $this->db->where('event_type', $event_type);
         $query = $this->db->get();

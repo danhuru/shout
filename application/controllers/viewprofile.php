@@ -295,7 +295,7 @@ class Viewprofile extends CI_Controller {
     public function check_already_endorsed_aboutme()
 
     {
-
+      //  $this->output->enable_profiler(TRUE);
         $aboutme_id=$this->input->post('aboutme_id'); // GET ABOUTME
         $profile=$this->input->post('thisUser'); // GET PROFILE
         $user_info=$this->Users->select_user_profile($profile); //GET USER_ID FROM PROFILE

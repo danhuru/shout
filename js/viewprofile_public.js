@@ -73,7 +73,7 @@ $(function(){
             console.log(data);
             if (data=='TRUE')
             {
-                $("#popup_already_endorsed").fadeIn();
+               $("#popup_already_endorsed").fadeIn();
             }
             else
             {
