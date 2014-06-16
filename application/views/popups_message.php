@@ -2,7 +2,7 @@
 <script src="/shout/js/popups.js"></script>
 
 
-<div id="overlay"></div>
+
 <div id="popup_message" class="popup_endorse">
 
  <div id="mainmessage">

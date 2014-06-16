@@ -28,7 +28,7 @@ class Home extends CI_Controller {
 
 
                  //User is logged in
-        $this->Users->update_redirect_page($user_id,'home');
+
         $fb_info=$this->Users->select_user($user_id);
         $hobbies=$this->Users->get_hobbies($user_id);
         $aboutme=$this->Users->get_aboutme($user_id);
@@ -40,6 +40,7 @@ class Home extends CI_Controller {
              if ($fb_info['REDIRECT_PAGE']=='home'){
 
         // LOAD THE VIEWS
+        $this->Users->update_redirect_page($user_id,'home');
         $this->load->view('header',array('data' => $fb_info));
         $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme)); // load the view
         $this->load->view('popups_message'); // load the view
@@ -156,5 +157,343 @@ class Home extends CI_Controller {
     {
         $this->facebook->destroySession();
         redirect('/');
+    }
+
+    public function show_events()
+    {
+
+        //$value=$this->input->get('value');
+
+        $value=$this->input->get('value');
+
+        $user_id = $this->facebook->getUser();
+        $events=$this->Users->get_user_events($user_id);
+
+        if($value==1) // show messages only
+
+        {
+        $i=0;
+        if ($events){
+
+               foreach ($events as $event)
+                {
+                    if($event['event_type']==5)
+                    {
+                    $i++;
+                    echo '<div id="event">';
+
+                    if ($i%2==1)
+
+                    {
+                        $user_info=$this->Users->select_user($event['user_id_initiator']);
+                        echo '<div id="user_pic">';
+                        echo '<img id="user_profile_pic" src="'.$user_info['PIC_BIG'].'"</img>';
+                        echo '</div>';
+                        echo '<div id="triangle1"></div>';
+                        echo '<div id="event_desc1">';
+                        echo '<div id="userid">'.$event['event_id'].'</div>';
+
+                                echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  sent you a message</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['message_status']==1) echo '<div id="status" class="status">Viewed</div>'; else echo '<div id="status" class="status">View message</div>';
+
+
+                    }
+
+                    else
+                    {
+                        echo '<div id="event_desc2">';
+                        $user_info=$this->Users->select_user($event['user_id_initiator']);
+                             echo '<div id="userid">'.$event['event_id'].'</div>';
+
+                        echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  sent you a message</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['message_status']==1) echo '<div id="status" class="status">Viewed</div>'; else echo '<div id="status" class="status">View message</div>';
+                        echo '</div>';
+                        echo '<div id="triangle2"></div>';
+                        echo '<div id="user_pic">';
+                        echo '<img id="user_profile_pic" src="'.$user_info['PIC_BIG'].'"</img>';
+
+                    }
+
+                    echo '</div>';
+                    echo '</div>';
+                    }
+                }
+            }
+        }
+
+        if ($value==2) // show endorsements only
+        {
+        $i=0;
+        if ($events){
+            foreach ($events as $event)
+            {
+                if($event['event_type']!=5)
+                {
+                $i++;
+                echo '<div id="event">';
+
+
+                if ($i%2==1)
+
+                {
+
+                    echo '<div id="user_pic">';
+                    $user_info=$this->Users->select_user($event['user_id_initiator']);
+                    echo '<img id="user_profile_pic" src="'.$user_info['PIC_BIG'].'"</img>';
+                    echo '</div>';
+                    echo '<div id="triangle1"></div>';
+                    echo '<div id="event_desc1">';
+                    echo '<div id="userid">'.$event['event_id'].'</div>';
+                    switch ($event['event_type']) {
+                        case 1:
+                            if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                            else  echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> endorsed you for a hobby</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        case 2:
+                            if($event['user_name_initiator'])  echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                            else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> subscribed to a referral about you</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        case 3:
+                            if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                            else '<div id="event_detail"><b id="username">Someone (anonymous)</b> said you one of you hobbies is</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        case 4:
+                            if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                            else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b>  said about you</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        default:
+
+                    }
+
+                }
+
+                else
+                {
+                    echo '<div id="event_desc2">';
+                    $user_info=$this->Users->select_user($event['user_id_initiator']);
+                    echo '<div id="userid">'.$event['event_id'].'</div>';
+                    switch ($event['event_type']) {
+                        case 1:
+                            if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                            else  echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> endorsed you for a hobby</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        case 2:
+                            if($event['user_name_initiator'])  echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                            else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> subscribed to a referral about you</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        case 3:
+                            if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                            else '<div id="event_detail"><b id="username">Someone (anonymous)</b> said you one of you hobbies is</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        case 4:
+                            if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                            else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b>  said about you</div>';
+                            echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                            echo '<br>';
+                            echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                            echo '<hr>';
+                            if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                            break;
+                        default:
+                    }
+
+
+                    echo '</div>';
+                    echo '<div id="triangle2"></div>';
+                    echo '<div id="user_pic">';
+                    echo '<img id="user_profile_pic" src="'.$user_info['PIC_BIG'].'"</img>';
+                }
+
+                echo '</div>';
+                echo '</div>';
+                }
+            }
+            }
+        }
+        if ($value==3) // show both
+
+        {
+        $i=0;
+        if ($events){
+                foreach ($events as $event)
+                {
+
+                    $i++;
+                    echo '<div id="event">';
+
+                    if ($i%2==1)
+
+                    {
+
+                        echo '<div id="user_pic">';
+                        $user_info=$this->Users->select_user($event['user_id_initiator']);
+                        echo '<img id="user_profile_pic" src="'.$user_info['PIC_BIG'].'"</img>';
+                        echo '</div>';
+                        echo '<div id="triangle1"></div>';
+                        echo '<div id="event_desc1">';
+                        echo '<div id="userid">'.$event['event_id'].'</div>';
+                        switch ($event['event_type']) {
+                            case 1:
+
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                                else  echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> endorsed you for a hobby</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 2:
+                                if($event['user_name_initiator'])  echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> subscribed to a referral about you</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 3:
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                                else '<div id="event_detail"><b id="username">Someone (anonymous)</b> said you one of you hobbies is</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 4:
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b>  said about you</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 5:
+                                echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  sent you a message</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['message_status']==1) echo '<div id="status" class="status">Viewed</div>'; else echo '<div id="status" class="status">View message</div>';
+                                break;
+                            default:
+
+                        }
+
+                    }
+
+                    else
+                    {
+                        echo '<div id="event_desc2">';
+                        $user_info=$this->Users->select_user($event['user_id_initiator']);
+                        echo '<div id="userid">'.$event['event_id'].'</div>';
+                        switch ($event['event_type']) {
+                            case 1:
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> endorsed you for a hobby</div>';
+                                else  echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> endorsed you for a hobby</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 2:
+                                if($event['user_name_initiator'])  echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> subscribed to a referral about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b> subscribed to a referral about you</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 3:
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b> said you one of you hobbies is</div>';
+                                else '<div id="event_detail"><b id="username">Someone (anonymous)</b> said you one of you hobbies is</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 4:
+                                if($event['user_name_initiator']) echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  said about you</div>';
+                                else echo '<div id="event_detail"><b id="username">Someone (anonymous)</b>  said about you</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['endorsement_status']==1) echo '<div id="status" class="status">Confirmed</div>'; else echo '<div id="status" class="status">Confirm</div>';
+                                break;
+                            case 5:
+                                echo '<div id="event_detail"><b id="username" onclick="window.location.assign(\'profile/'.$user_info['PROFILE_URL'].'\')">'.$event['user_name_initiator'].'</b>  sent you a message</div>';
+                                echo '<div id="date">'.substr($event['event_timestamp'],0,-3).'</div>';
+                                echo '<br>';
+                                echo '<div id="event_message">'.ucfirst($event['endorsement_desc']).'</div>';
+                                echo '<hr>';
+                                if ($event['message_status']==1) echo '<div id="status" class="status">Viewed</div>'; else echo '<div id="status" class="status">View message</div>';
+                                break;
+                            default:
+
+                        }
+
+                        echo '</div>';
+                        echo '<div id="triangle2"></div>';
+                        echo '<div id="user_pic">';
+                        echo '<img id="user_profile_pic" src="'.$user_info['PIC_BIG'].'"</img>';
+
+                    }
+
+                    echo '</div>';
+                    echo '</div>';
+
+                }
+            }
+        }
+
     }
 }

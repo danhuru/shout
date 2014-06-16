@@ -88,3 +88,27 @@
     float: left;
     font-size: 18px;
 }
+#messages, #alerts {display:none}
+
+#messages
+{
+    background-color: orange;
+    position: absolute;
+    margin-left: 80px;
+    margin-top: -40px;
+    font-size: 14px;
+    color:white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#alerts
+{
+    background-color: orange;
+    position: absolute;
+    margin-left: 120px;
+    margin-top: -40px;
+    font-size: 14px;
+    color:white;
+    font-weight: bold;
+    border-radius: 10px;
+}

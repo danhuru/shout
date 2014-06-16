@@ -89,26 +89,55 @@ $(function(){
 
     // Hover endorse button
 
-   $(".endorse").hover
-   (
-       function()
-    {
+    $(".endorse").hover
+    (
+        function()
+        {
 
-        var el=$(this).siblings("#hobby");
-        el.css("border","2px solid black");
-        el.css('border-radius','5px');
-        el.css('color','orange');
+            $(this).children().attr("src", '/shout/images/plus.png');
+            $(this).children().attr("width", '27px');
+            var el=$(this).siblings("#hobby");
+            el.css("border","2px solid black");
+            el.css('border-radius','5px');
+            el.css('color','orange');
 
-    },
-       function()
-       {
-           var el=$(this).siblings("#hobby");
-           el.css("border","2px solid transparent");
-         //  el.css('border-radius','5px');
-           el.css('color','white');
+        },
+        function()
+        {
+            $(this).children().attr("src", '/shout/images/plus_grey.png')
+            $(this).children().attr("width", '25px');
+            var el=$(this).siblings("#hobby");
+            el.css("border","2px solid transparent");
+            //  el.css('border-radius','5px');
+            el.css('color','white');
 
-       }
-   );
+        }
+    );
+
+    $(".endorse2").hover
+    (
+        function()
+        {
+
+            $(this).children().attr("src", '/shout/images/plus.png');
+            $(this).children().attr("width", '27px');
+            var el=$(this).siblings("#hobby");
+            el.css("border","2px solid black");
+            el.css('border-radius','5px');
+            el.css('color','orange');
+
+        },
+        function()
+        {
+            $(this).children().attr("src", '/shout/images/plus_grey.png')
+            $(this).children().attr("width", '25px');
+            var el=$(this).siblings("#hobby");
+            el.css("border","2px solid transparent");
+            //  el.css('border-radius','5px');
+            el.css('color','white');
+
+        }
+    );
 
     //Click overlay div
 

@@ -106,5 +106,12 @@ class Add extends CI_Controller {
         $this->Users->update_bck_pic($user_id,$bckpic); //update bckpic flag
     }
 
+    public function update_bckpic($value)
+
+    {
+        $user_id = $this->facebook->getUser();
+        $this->Users->update_bck_pic($user_id,$value);
+    }
+
 }
 

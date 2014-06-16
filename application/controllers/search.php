@@ -147,7 +147,7 @@ class Search extends CI_Controller {
         $user_info=$this->Users->select_user($user_id_initiator);
         $user_name_initiator=$user_info['USER_NAME'];
         $user_profilelink_initiator=$user_info['PROFILE_URL'];
-        $this->Users->insert_user_events(5,'message',null,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,null,null,$message_content);
+        $this->Users->insert_user_events(5,'message',null,'0',$user_ip,$user_id_initiator,$user_name_initiator,$user_profilelink_initiator,$user_id_receiving,$user_name_receiving,$user_profilelink_receiving,null,null,null,$message_content);
     }
 
 }

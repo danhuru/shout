@@ -11,8 +11,15 @@
 
 <body>
 
-<?php $bck=rand(1,6);
-$image= base_url('images/background'.$bck.'.jpg');
+<?php
+if($data['BCK_PIC']==0) {
+
+    $bck=rand(1,6);
+    $image= base_url('images/background'.$bck.'.jpg');
+
+}
+else $image=base_url('images/upload/bckpic_'.$data['USER_ID'].'jpg');
+
 ?>
 
 

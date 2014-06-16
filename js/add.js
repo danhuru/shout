@@ -183,7 +183,7 @@ function getResults(str){
 
 //Upload image
 
-        var bckpic;
+        bckpic=0;
 
         function getDoc(frame) {
             var doc = null;
@@ -238,7 +238,11 @@ function getResults(str){
                             $("#multi-msg").html('');
                             var url='/shout/images/upload/' + data;
                             $('#main').css('background-image', 'url(' + url + ')');
-                            bckpic=1;
+
+                            $.get("/shout/add/update_bckpic/1",function(data){ });
+
+                            $('#checkusedefault').prop('checked',false);
+
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown)
@@ -275,6 +279,11 @@ function getResults(str){
                     var url='/shout/images/upload/' + data;
                     $('#main').css('background-image', 'url(' + url + ')');
                     bckpic=1;
+
+                    $.get("/shout/add/update_bckpic/1",function(data){ });
+                    $('#checkusedefault').prop('checked',false);
+
+
                 });
 
             }
@@ -291,7 +300,6 @@ function getResults(str){
 
 
 // Submit Profile form
-
 
     $("#submitprofile").click(function()
 
@@ -339,8 +347,6 @@ function getResults(str){
 
            var aboutmeList = [];
            $(".aboutme").each(function() { aboutmeList.push($(this).text()) });
-
-
 
             if (errorList.length==0)  {
 
@@ -394,5 +400,23 @@ function getResults(str){
           }
 
     );
+
+
+    $('#checkusedefault').change(function()
+    {
+
+        if($('#checkusedefault').prop('checked')==false) { $.get("/shout/add/update_bckpic/1",function(data){ });
+            $('#settings').fadeOut();
+            $('#settings').text('(Settings saved!)');
+            $('#settings').fadeIn();
+        }
+
+        else { $.get("/shout/add/update_bckpic/0",function(data){ });
+            $('#settings').fadeOut();
+            $('#settings').text('(Settings saved!)');
+            $('#settings').fadeIn();
+        }
+
+        });
 
 });

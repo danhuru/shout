@@ -2,8 +2,13 @@
 
 $(function(){
 
-    $("#finish").click(function(){
-        window.location.href = "home";
-    });
+          $('#next').click(function(){
+
+            $.get("/shout/finish/set_page/",function(data,status)
+            {
+                ;
+            });
+
+        });
 
 });

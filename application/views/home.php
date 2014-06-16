@@ -24,8 +24,15 @@
 <body>
 
 
-<?php $bck=rand(1,6);
-$image= base_url('images/background'.$bck.'.jpg');
+<?php
+if($data['BCK_PIC']==0) {
+
+    $bck=rand(1,6);
+    $image= base_url('images/background'.$bck.'.jpg');
+
+}
+else $image=base_url('images/upload/bckpic_'.$data['USER_ID'].'jpg');
+
 ?>
 
 <div id="main" style="background-image: url('<?php echo $image;?>')">
@@ -59,12 +66,21 @@ $image= base_url('images/background'.$bck.'.jpg');
 
             </div>
             <div id="newspanel">
-                <div id="titles">News feed</div>
+                <div id="titles">News feed
+                    <div id="select">
+
+                        <input type="checkbox" id="chkmsg" class="checkbox" value="1" checked> Messages
+                        <input type="checkbox" id="chkend" class="checkbox" value="2" checked> Endorsements
+
+                    </div>
+
+                </div>
                 <div id="newsfeed">
+
                 <br>
 
                 <?php
-
+/*
                 $i=0;
                 if ($events){
                 foreach ($events as $event)
@@ -200,7 +216,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 
                 }
                 }
-
+*/
                 ?>
 
             </div>
@@ -278,6 +294,8 @@ $image= base_url('images/background'.$bck.'.jpg');
                     echo '</div>';
                 }
                 if (count($aboutme)>4) echo '<div id="view_aboutme" class="viewmore">View more</div>';
+
+
                 ?>
 
 

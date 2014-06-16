@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <script src="/shout/js/create_profile.js"></script>
+    <script src="/shout/js/preview.js"></script>
     <script src="/shout/js/jquery-1.11.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/preview.css'); ?>">
     <script src="/shout/js/viewprofile.js" ></script>
@@ -149,7 +149,7 @@ $image= base_url('images/background'.$bck.'.jpg');
         </div>
 
         <div id="button" onclick="window.location.href='invite'">
-                <input class="button" type="submit" name="submit" value="Next">
+                <input id="next" class="button" type="submit" name="submit" value="Next">
         </div>
 
     </div>

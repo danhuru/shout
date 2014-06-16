@@ -35,17 +35,7 @@
     padding-right:10px;
     z-index: 50000;
 }
-#overlay
-{
-    position:absolute;
-    display:none;
-    width:99%;
-    height:97%;
-    background-color: rgba(25, 25, 25, 0.7);
-    min-height: 400px;
-    min-width: 1200px;
-    z-index: 1000;
-}
+
 #messsagetext
 {
 

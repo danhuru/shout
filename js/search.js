@@ -35,6 +35,7 @@ $('#showSearchResults').on('click','.pressmessage',function(){
         message_content=$("#content").val();
 
 
+
        $.post("/shout/search/send_message/",{thisUser: thisUser, message_content: message_content},function(data,status)
        {
        //console.log(data);

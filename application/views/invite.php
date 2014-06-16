@@ -4,6 +4,7 @@
 
     <script src="/shout/js/fb_login.js" ></script>
     <script src="/shout/js/fb_load_sdk.js" ></script>
+    <script src="/shout/js/jquery-1.11.0.min.js"></script>
     <script src="/shout/js/invite.js" ></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/invite.css'); ?>"">
 
@@ -41,7 +42,7 @@ $image= base_url('images/background'.$bck.'.jpg');
 <div id="showfriendsresults"></div>
 </div>
 <div id="button" onclick="window.location.href='finish'">
-    <input class="button" type="submit" name="submit" value="Next">
+    <input id="next" class="button" type="submit" name="submit" value="Next">
 </div>
 </div>
  </div>

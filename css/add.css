@@ -453,3 +453,12 @@ a:active {color:#FFFFFF;}  /* selected link */
     position:relative;
     top:1px;
 }
+#usepic
+{
+    margin-left: 2%;
+}
+
+#settings
+{
+    color:orange;
+}

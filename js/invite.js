@@ -28,10 +28,22 @@
         if (str.length==0) {
             str="show_me_all";
         }
-
-        $.get("invite/showfriends/",{str:str},function(data,status)
+        $.get("/shout/invite/showfriends/",{str:str},function(data,status)
         {
             $("#showfriendsresults").html(data);
         });
 
     }
+
+    $.(function(){
+
+        $('#next').click(function(){
+
+            $.get("/shout/invite/set_page/",function(data,status)
+            {
+                ;
+            });
+
+        });
+
+    });

@@ -15,8 +15,14 @@
 
 <body>
 
-<?php $bck=rand(1,6);
-$image= base_url('images/background'.$bck.'.jpg');
+<?php if($data['BCK_PIC']==0) {
+
+    $bck=rand(1,6);
+    $image= base_url('images/background'.$bck.'.jpg');
+
+}
+else $image=base_url('images/upload/bckpic_'.$data['USER_ID'].'jpg');
+
 ?>
 
 
@@ -105,7 +111,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                     echo $hobby['endorsements'];
                     echo '</div>';
                     echo '<div id="endorse" class="endorse">';
-                    echo '<img src='.base_url('images/bt_up.png').' width="25px" >';
+                    echo '<img src='.base_url('images/plus_grey.png').' width="25px" >';
                     echo '</div>';
 
                     echo "<br>";
@@ -145,7 +151,7 @@ $image= base_url('images/background'.$bck.'.jpg');
                     echo $about['endorsements'];
                     echo '</div>';
 
-                    echo '<div id="endorse2" class="endorse2"><img src='.base_url('images/bt_up.png').' width="25px" ></div>';
+                    echo '<div id="endorse2" class="endorse2"><img src='.base_url('images/plus_grey.png').' width="25px" ></div>';
 
                     if ($about['author']<>'you')
                     {

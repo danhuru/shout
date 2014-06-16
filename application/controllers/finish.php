@@ -26,7 +26,6 @@ class Finish extends CI_Controller {
 
                     if ($username['REDIRECT_PAGE']=='finish')
                     {
-                     $this->Users->update_redirect_page($user_id,'finish');
                     $this->load->view('finish',array('data' => $username)); // load the view
 
                     }
@@ -55,4 +54,11 @@ class Finish extends CI_Controller {
 
         }
    }
+
+    public function set_page()
+
+    {
+        $user_id = $this->facebook->getUser();
+        $this->Users->update_redirect_page($user_id,'home');
+    }
 }

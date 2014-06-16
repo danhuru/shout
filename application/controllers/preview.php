@@ -27,12 +27,10 @@ class Preview extends CI_Controller {
 
 
                                         //User is logged in
-
                     $fb_info=$this->Users->select_user($user_id);
 
                 if ($fb_info['REDIRECT_PAGE']=='preview'){
 
-                    $this->Users->update_redirect_page($user_id,'preview');
                     $hobbies=$this->Users->get_hobbies($user_id);
                     $aboutme=$this->Users->get_aboutme($user_id);
                     $this->load->view('popups',array('data' => $fb_info, 'hobbies' => $hobbies,'aboutme' => $aboutme, 'user_is_logged_in' => 1)); // load the view
@@ -66,6 +64,13 @@ class Preview extends CI_Controller {
         }
 
 
+    }
+
+    public function set_page()
+
+    {
+        $user_id = $this->facebook->getUser();
+        $this->Users->update_redirect_page($user_id,'invite');
     }
 
 }

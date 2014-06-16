@@ -8,8 +8,15 @@
 
 <body>
 
-<?php $bck=rand(1,6);
+<?php
+
+if($data['BCK_PIC']==0) {
+
+$bck=rand(1,6);
 $image= base_url('images/background'.$bck.'.jpg');
+
+}
+else $image=base_url('images/upload/bckpic_'.$data['USER_ID'].'jpg');
 ?>
 
 <div id="main" style="background-image: url('<?php echo $image;?>')">
@@ -105,6 +112,15 @@ $image= base_url('images/background'.$bck.'.jpg');
 
 
                     </div>
+
+                <div id="usepic">
+
+
+                    <input type="checkbox" id="checkusedefault" class="checkbox" value="1" <?php if ($data['BCK_PIC']==0) echo 'checked';?> > Use default backgrounds
+
+                    <text id="settings"></text>
+
+                </div>
 
 
                 <div id="button">

@@ -92,21 +92,6 @@
 
 
 </div>
-<div id="popup_message" class="popup_endorse">
-
-
-    <?php
-    if ($user_is_logged_in == 0)
-    {
-        echo 'You must be logged in to send a message!';
-        echo '<br>';
-        echo '<br>';
-        echo '<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true"></div>';
-    }
-    ?>
-
-
-</div>
 <div id="popup_already_endorsed" class="popup_endorse">
 
     You already endorsed this!

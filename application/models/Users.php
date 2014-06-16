@@ -192,6 +192,34 @@ public function get_user_events($user_id)
         $this->db->select('*');
         $this->db->from('user_events');
         $this->db->where('user_id_receiving', $user_id);
+        $this->db->order_by('message_status', "asc");
+        $this->db->order_by('event_timestamp', "desc");
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->result_array();
+    }
+
+    public function check_unread_messages($user_id)
+    {
+        $this->db->select('*');
+        $this->db->from('user_events');
+        $this->db->where('user_id_receiving', $user_id);
+        $this->db->where('event_type', 5);
+        $this->db->where('message_status', 0);
+        $this->db->order_by('message_status', "desc");
+        $this->db->order_by('event_timestamp', "desc");
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0)  return $query->result_array();
+    }
+
+    public function check_unconfirmed_endorsements($user_id)
+    {
+        $this->db->select('*');
+        $this->db->from('user_events');
+        $this->db->where('user_id_receiving', $user_id);
+        $this->db->where('event_type !=', 5);
+        $this->db->where('endorsement_status', 0);
         $this->db->order_by('message_status', "desc");
         $this->db->order_by('event_timestamp', "desc");
         $query = $this->db->get();

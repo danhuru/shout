@@ -43,6 +43,58 @@ $(function(){
                 return origValue.replace("_hover.jpg",".jpg");
             });
         });
+
+
+    // Refresh Header
+
+    // First run
+
+    $.get("/shout/header/refresh_header/",function(data){
+
+        alertsArray = [];
+        alertsArray = data.split(",");
+        messages=alertsArray[0];
+        alerts=alertsArray[1];
+
+        if (messages) {
+            $('#messages').text(messages);
+            $('#messages').show();
+        }
+        if (alerts) {
+            $('#alerts').text(alerts);
+            $('#alerts').show();
+        }
+
+        console.log(' '+messages+' '+alerts);
+
+    });
+
+    // Refresh every x seconds
+
+    setInterval(function(){
+
+    $.get("/shout/header/refresh_header/",function(data){
+
+        alertsArray = [];
+        alertsArray = data.split(",");
+        messages=alertsArray[0];
+        alerts=alertsArray[1];
+
+        if (messages) {
+            $('#messages').text(messages);
+            $('#messages').show();
+        }
+        if (alerts) {
+            $('#alerts').text(alerts);
+            $('#alerts').show();
+        }
+
+        console.log(' '+messages+' '+alerts);
+
+    });
+
+    },10000);
+
 });
 
 

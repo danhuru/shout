@@ -11,9 +11,12 @@
     <div id ="rightmenu">
 
         <a href="/shout/search"><img width=42px height=42px src="<?php echo base_url('images/search.jpg');?>"></img></a>
-        <a href="search.php"><img width=42px height=42px src="<?php echo base_url('images/messages.jpg');?>"></img></a>
-        <a href="search.php"><img width=42px height=42px src="<?php echo base_url('images/alert.jpg');?>"></img></a>
+        <a href="/shout/home"><img width=42px height=42px src="<?php echo base_url('images/messages.jpg');?>"></img></a>
+        <a href="/shout/home"><img width=42px height=42px src="<?php echo base_url('images/alert.jpg');?>"></img></a>
         <a href="/shout/invitefriends"><img width=42px height=42px src="<?php echo base_url('images/settings.jpg');?>"></img></a>
+
+        <div id="messages"></div>
+        <div id="alerts"></div>
 
     </div>
     <div id ="mainmenu">
