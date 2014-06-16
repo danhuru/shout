@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "login";
 $route['profile/(:any)'] = "viewprofile/template/$1";
-$route['404_override'] = '';
+$route['404_override'] = 'Default_404/error';
 
 
 /* End of file routes.php */
