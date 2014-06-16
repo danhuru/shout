@@ -122,7 +122,7 @@
 #endorse_popup1:hover
 {
     text-decoration: underline;
-    cursor: hand;
+    cursor: pointer;
 }
 #messsagetext
 {
@@ -189,7 +189,7 @@
 .smallbutton:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .smallbutton:active
 {

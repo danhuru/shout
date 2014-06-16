@@ -31,6 +31,7 @@ class Search extends CI_Controller {
                     if ($fb_info['REDIRECT_PAGE']=='home'){
 
         $this->load->view('header',array('data' => $fb_info));
+        $this->load->view('popups');
         $this->load->view('popups_message');
         $this->load->view('search');
         $this->load->view('footer');

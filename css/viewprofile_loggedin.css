@@ -76,7 +76,7 @@ body{
 }
 .viewmore:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 
 /*HOBBIES*/
@@ -194,11 +194,11 @@ body{
 }
 #endorse:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #endorse2:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 
 #message_user
@@ -221,7 +221,7 @@ body{
 #text_message:hover
 {
     text-decoration: underline;
-    cursor: hand;
+    cursor: pointer;
 }
 #hobby_id, #aboutme_id {display:none}
 #suggesthobby
@@ -235,7 +235,7 @@ body{
 }
 #suggesthobby:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #addhobbies
 {
@@ -327,7 +327,7 @@ body{
 }
 #delete:hover
 {
-    cursor: hand;
+    cursor: pointer;
 }
 #deletecircle
 {
@@ -342,7 +342,7 @@ body{
 }
 #deletecircle:hover
 {
-    cursor: hand;
+    cursor: pointer;
 }
 #details
 {
@@ -374,7 +374,7 @@ body{
 }
 #option:hover
 {
-    cursor:hand;
+    cursor: pointer;
     background-color: #bbd537;
     color:white;
 }

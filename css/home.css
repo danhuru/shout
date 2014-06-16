@@ -12,7 +12,7 @@ body{
 }
 .viewmore:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #main
 {
@@ -246,7 +246,7 @@ hr
 #username:hover
 {
     text-decoration: underline;
-    cursor:hand;
+    cursor: pointer;
 }
 #event_message
 {
@@ -267,7 +267,7 @@ hr
 }
 #status:hover
 {
-    cursor: hand;
+    cursor: pointer;
     text-decoration: underline;
 }
 #endorsement_panel
@@ -399,7 +399,7 @@ hr
 .button:hover
 {
 background-color:#8cb82b;
-cursor: hand;
+cursor: pointer;
 }
 .button:active
 {
@@ -464,7 +464,7 @@ a:active {color:#FFFFFF;}  /* selected link */
 .smallbutton:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .smallbutton:active
 {

@@ -193,7 +193,7 @@ a:hover{
 }
 #delete:hover
 {
-    cursor: hand;
+    cursor: pointer;
 }
 #deletecircle
 {
@@ -208,7 +208,7 @@ a:hover{
 }
 #deletecircle:hover
 {
-    cursor: hand;
+    cursor: pointer;
 }
 #details
 {
@@ -240,7 +240,7 @@ a:hover{
 }
 #option:hover
 {
-    cursor:hand;
+    cursor: pointer;
     background-color: #bbd537;
     color:white;
 }
@@ -400,7 +400,7 @@ a:hover{
 .button:hover
 {
 background-color:#8cb82b;
-cursor: hand;
+cursor: pointer;
 }
 .button:active
 {

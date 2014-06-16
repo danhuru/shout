@@ -65,7 +65,7 @@ body{
 }
 #addmore:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #profile_details
 {
@@ -136,17 +136,17 @@ hr
     margin-left: 30%;
 
 }
-#delete_hobby:hover{cursor:hand; text-decoration: underline}
-#delete_aboutme:hover{cursor:hand; text-decoration: underline}
-#edit_details:hover{cursor:hand; text-decoration: underline}
-#edit_details2:hover{cursor:hand; text-decoration: underline}
+#delete_hobby:hover{cursor: pointer; text-decoration: underline}
+#delete_aboutme:hover{cursor: pointer; text-decoration: underline}
+#edit_details:hover{cursor: pointer; text-decoration: underline}
+#edit_details2:hover{cursor: pointer; text-decoration: underline}
 #savecancel
 {
     float:right;
     margin-right: 3%;
 }
-.save:hover{cursor:hand; text-decoration: underline}
-.cancel:hover{cursor:hand; text-decoration: underline}
+.save:hover{cursor: pointer; text-decoration: underline}
+.cancel:hover{cursor: pointer; text-decoration: underline}
 
 #edit_details
 {
@@ -287,7 +287,7 @@ hr
 .button:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .button:active
 {
@@ -324,7 +324,7 @@ hr
 }
 .viewmore:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 
 a:link {color:#FFFFFF;}      /* unvisited link */
@@ -366,7 +366,7 @@ a:active {color:#FFFFFF;}  /* selected link */
 .smallbutton:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .smallbutton:active
 {
@@ -406,7 +406,7 @@ a:active {color:#FFFFFF;}  /* selected link */
 .smallbutton_cancel:hover
 {
     background-color:darkred;
-    cursor: hand;
+    cursor: pointer;
 }
 .smallbutton_cancel:active
 {

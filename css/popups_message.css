@@ -115,7 +115,7 @@
 .smallbutton:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .smallbutton:active
 {

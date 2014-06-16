@@ -76,7 +76,7 @@ body{
 }
 .viewmore:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 
 /*HOBBIES*/
@@ -194,11 +194,11 @@ body{
 }
 #endorse:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #endorse2:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 
 #message_user
@@ -221,6 +221,6 @@ body{
 #text_message:hover
 {
     text-decoration: underline;
-    cursor: hand;
+    cursor: pointer;
 }
 #hobby_id, #aboutme_id {display:none}

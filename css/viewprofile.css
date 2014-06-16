@@ -147,7 +147,7 @@ hr
 }
 .viewmore:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #hobby
 {
@@ -243,11 +243,11 @@ hr
 }
 #endorse:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #endorse2:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #aboutme_id {display:none}
 
@@ -288,7 +288,7 @@ hr
 .button:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .button:active
 {
@@ -346,7 +346,7 @@ a:active {color:#FFFFFF;}  /* selected link */
 .smallbutton:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .smallbutton:active
 {

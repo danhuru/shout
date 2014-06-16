@@ -230,7 +230,7 @@ body{
 }
 #delete:hover
 {
-    cursor: hand;
+    cursor: pointer;
 }
 #deletecircle
 {
@@ -245,7 +245,7 @@ body{
 }
 #deletecircle:hover
 {
-    cursor: hand;
+    cursor: pointer;
 }
 #details
 {
@@ -277,7 +277,7 @@ body{
 }
 #option:hover
 {
-    cursor:hand;
+    cursor: pointer;
     background-color: #bbd537;
     color:white;
 }
@@ -432,7 +432,7 @@ body{
 .button:hover
 {
 background-color:#8cb82b;
-cursor: hand;
+cursor: pointer;
 }
 .button:active
 {
@@ -478,7 +478,7 @@ a:active {color:#FFFFFF;}  /* selected link */
 .smallbutton:hover
 {
     background-color:#8cb82b;
-    cursor: hand;
+    cursor: pointer;
 }
 .smallbutton:active
 {

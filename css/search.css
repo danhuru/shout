@@ -177,7 +177,7 @@ a:hover
     float:left;
     width:30%;
 }
-#viewprofile:hover {cursor:hand;}
+#viewprofile:hover {cursor: pointer;}
 #message
 {
     float:left;
@@ -186,7 +186,7 @@ a:hover
 }
 #message:hover
 {
-    cursor:hand;
+    cursor: pointer;
 }
 #visitprofile
 {
@@ -194,11 +194,21 @@ a:hover
     margin-left: 5%;
     margin-top: 3%;
 }
+#visitprofile:hover
+{
+    cursor:pointer;
+    text-decoration: underline;
+}
 #sendmessage
 {
     float:left;
     margin-left: 5%;
     margin-top: 3%;
+}
+#sendmessage:hover
+{
+    cursor:pointer;
+    text-decoration: underline;
 }
 #loader
 {
