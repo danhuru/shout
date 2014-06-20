@@ -101,9 +101,7 @@ body{
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 5%;
-    /* box-shadow: 10px 10px 5px rgba(50, 50, 50, 0.70); */
     background-color: rgba(50, 50, 50, 0.70);
-    /*border-radius:15px; */
 }
 h2
 {
